@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-/*HEADER*/
+/* HEADER */
+#header-param {
+    color: #803500;
+}
 
 .params {
     list-style-type: none;
@@ -9,22 +12,67 @@
     justify-content: space-around;
     width: 100%;
 }
-.menuParam {
+
+#menuParam {
     display: flex;
     gap: 2em;
 }
+
 .header-param:hover {
     cursor: pointer;
     color: #803500;
 }
+
+/* Tabs */
+.nav {
+  border-bottom: 0.5px solid #803500;
+  
+}
+.nav-link {
+    color: #803500;
+    border: none; 
+    background-color: transparent; 
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    transition: color 0.3s ease; 
+    padding: 10px 15px ;
+    padding-bottom: 3em;
+ 
+}
+
+.nav-link:hover {
+    color: #ff6700; 
+    background-color: transparent; 
+    border: none; 
+    text-decoration: none; 
+}
+
+.nav-link.active {
+    color: #ff6700;
+    font-weight: 700;
+    background-color: transparent;
+    border: none; 
+}
+
+/* Кнопки */
 .buttons-login {
     display: flex;
     gap: 2em;
 }
+
+button {
+    font-size: 14px; 
+    font-weight: 600; 
+    max-height: 3em;
+    width: 7em;
+    margin-top: 1em;
+}
+
 button:hover {
     cursor: pointer;
 }
-/*MAIN PAGE*/
+
+/* MAIN PAGE */
 body {
     background-color: #fff0e6;
     color: #331500;
@@ -34,8 +82,8 @@ body {
 .bookstore-name h1 {
     margin: 0;
 }
+
 .bookstore-name p {
     text-transform: uppercase;
     margin: 0;
-    
 }
