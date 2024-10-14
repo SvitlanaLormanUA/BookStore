@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 $body-bg: #f3ebcc;
 $login-btn-color: #E78F81;
 $login-btn-color-hover: #e87d6c;
 
 $register-btn-color: #803500;
 $register-btn-color-hover: #5e2400;
-/* HEADER */
+
 #header-param {
     color: #803500;
 }
@@ -30,11 +29,10 @@ $register-btn-color-hover: #5e2400;
     color: #803500;
 }
 
-/* Tabs */
 .nav {
   border-bottom: 0.5px solid #803500;
-  
 }
+
 .nav-link {
     color: #803500;
     border: none; 
@@ -42,9 +40,8 @@ $register-btn-color-hover: #5e2400;
     font-family: 'Mulish', sans-serif;
     font-weight: 600;
     transition: color 0.3s ease; 
-    padding: 10px 15px ;
+    padding: 10px 15px;
     padding-bottom: 3em;
- 
 }
 
 .nav-link:hover {
@@ -58,53 +55,48 @@ $register-btn-color-hover: #5e2400;
     color: #ff6700;
     font-weight: 700;
     background-color: transparent;
-    border: none; 
+    border: none;
 }
-/* Custom Button Styles */
+
 .custom-login-btn {
     background-color: $login-btn-color;  
     border-color: $login-btn-color;    
-    color: #e9e9e9;               
+    color: #e9e9e9;
 }
 
 .custom-register-btn {
     background-color: $register-btn-color; 
     border-color: $register-btn-color;      
-    color: #e9e9e9;              
+    color: #e9e9e9;
 }
 
-.custom-login-btn:hover {
+.custom-login-btn:hover,
+.custom-login-btn:focus,
+.custom-login-btn:active {
     background-color: $login-btn-color-hover;  
-    border-color: $login-btn-color-hover;     
+    border-color: $login-btn-color-hover;
 }
 
-.custom-register-btn:hover {
+.custom-register-btn:hover,
+.custom-register-btn:focus,
+.custom-register-btn:active {
     background-color: $register-btn-color-hover; 
-    border-color:  $register-btn-color-hover;    
+    border-color: $register-btn-color-hover;
 }
 
-
-/* Кнопки */
 .buttons-login {
     display: flex;
     gap: 2em;
 }
 
 button {
-    font-size: 14px; 
-    font-weight: 600; 
+    font-size: 14px;
+    font-weight: 600;
     max-height: 3em;
     width: 7em;
     margin-top: 1em;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-.btn {
-    margin-top: 2em;
-}
-button:hover {
-    cursor: pointer;
-}
-
-/* MAIN PAGE */
 
 
 body {
@@ -113,6 +105,7 @@ body {
     font-family: 'Mulish', sans-serif;
     padding: 2em;
 }
+
 .bookstore-name h1 {
     margin: 0;
 }

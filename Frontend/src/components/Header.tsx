@@ -8,7 +8,7 @@ export default function Header() {
     return (
         <div className="header-container">
             <ul className="params">
-                <Tabs className="menuParam mb-3" defaultActiveKey="main" id="fill-tab-example" fill>
+                <Tabs className="menuParam mb-3" defaultActiveKey="/main" id="fill-tab-example" fill>
                 <Tab eventKey="team" title={<Link to="/" className="nav-link">Main Page</Link>}>
                 </Tab>
                     <Tab eventKey="shop" title={<Link to="/shop" className="nav-link">Shop</Link>}>

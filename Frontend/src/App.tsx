@@ -36,10 +36,6 @@ const router = createBrowserRouter([
                 element: <div>About Us Page</div>,
                 errorElement: <NotFound />
             },
-            {
-                path: '*',
-                element: <Navigate to="/" replace /> 
-            }
         ]
 
     }
