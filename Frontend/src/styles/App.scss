@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+/*HEADER*/
+
+.params {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.menuParam {
+    display: flex;
+    gap: 2em;
+}
+.header-param:hover {
+    cursor: pointer;
+    color: #803500;
+}
+.buttons-login {
+    display: flex;
+    gap: 2em;
+}
+button:hover {
+    cursor: pointer;
+}
+/*MAIN PAGE*/
+body {
+    background-color: #fff0e6;
+    color: #331500;
+    font-family: 'Mulish', sans-serif;
+}
+
+.bookstore-name h1 {
+    margin: 0;
+}
+.bookstore-name p {
+    text-transform: uppercase;
+    margin: 0;
+    
+}
