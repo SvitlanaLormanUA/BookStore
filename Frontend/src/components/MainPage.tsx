@@ -7,8 +7,7 @@ export default function MainPage() {
            
             <section className='bookstore-name'>
                 <p>best choice</p>
-                <h1>Bam</h1>
-                <h1>Book</h1>
+                <h1>Bam Book</h1>
             </section>
         </>
     );
