@@ -1,6 +1,6 @@
 
 import  "../styles/App.css";
-import Header from "./Header";
+
 export default function MainPage() {
     return (
         <>

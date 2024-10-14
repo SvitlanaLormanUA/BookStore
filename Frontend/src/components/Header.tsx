@@ -20,9 +20,10 @@ export default function Header() {
                
                 </Tabs>
                 <div className="buttons-login">
-                    <Button className="login" variant="primary">Login</Button>
-                    <Button className="register">Sign Up</Button>
+                        <Button className="custom-login-btn">Login</Button>
+                        <Button className="custom-register-btn">Sign Up</Button>
                 </div>
+
             </ul>
         </div>
     );
