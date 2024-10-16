@@ -99,7 +99,6 @@ body {
 
 .bookstore-name {
   align-self: center;
-  margin-bottom: 1em;
 }
 
 .bookstore-name h1 {
@@ -177,6 +176,41 @@ body {
 
 .book-list {
   margin: 2em;
+}
+
+.books-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.books-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  outline: none;
+  transition: border-color 0.3s ease;
+  height: 2em;
+  margin: 0em;
+  margin-top: 0.2em;
+  padding-left: 0.2em;
+  padding: 1em;
+}
+
+.books-input-container button {
+  background-color: #803500;
+  border: 2px solid #803500;
+  color: white;
+  border-radius: 0.5em;
+  margin-bottom: 0.8em;
+  padding: 0.3em;
+}
+
+.books-input:focus + button {
+  border: 2px solid #5e2400;
+  background-color: #5e2400;
+  color: white;
+  outline: none;
 }
 
 /*# sourceMappingURL=App.css.map */

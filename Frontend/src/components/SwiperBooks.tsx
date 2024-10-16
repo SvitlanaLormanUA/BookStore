@@ -18,8 +18,7 @@ export default function SwiperBooks({ books }) {
       <section className="book-list" >
         <Swiper
           spaceBetween={10} 
-          slidesPerView={3}
-          centeredSlides={true}
+          
           loop={true}
           grabCursor={true}
           effect="coverflow"
@@ -38,10 +37,34 @@ export default function SwiperBooks({ books }) {
             delay: 1000,
             disableOnInteraction: false,
           }}
+          breakpoints= {{
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                slideToClickedSlide: true,
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                slideToClickedSlide: true,
+                pagination: false,
+            },
+            1014: {
+              slidesPerView: 3,
+              centeredSlides: true,
+              spaceBetween: 10,
+              pagination: true,
+            }
+           
+        }}
           modules={[FreeMode, Pagination, Autoplay]}
           onSlideChange={() => console.log('slide change')}
           onSwiper={(swiper) => console.log(swiper)}
+          
           className="swiper-container"
+
         >
           {books.map((book, index) => (
             <SwiperSlide key={index}>

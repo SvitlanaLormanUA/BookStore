@@ -24,6 +24,12 @@ export default function MainPage() {
         <section className="bookstore-name">
           <p>best choice</p>
           <h1>Bam Book</h1>
+          
+
+          <div className="books-input-container">
+             <input type="text" className="books-input" placeholder=""/>
+              <button>Search</button>
+          </div>
         </section>
         <section className="swiperBooks">
              <SwiperBooks books={books} />
