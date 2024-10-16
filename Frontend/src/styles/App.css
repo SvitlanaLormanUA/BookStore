@@ -97,6 +97,11 @@ body {
   padding: 2em;
 }
 
+.bookstore-name {
+  align-self: center;
+  margin-bottom: 1em;
+}
+
 .bookstore-name h1 {
   margin: 0;
 }
@@ -104,6 +109,74 @@ body {
 .bookstore-name p {
   text-transform: uppercase;
   margin: 0;
+}
+
+/*SLIDER*/
+.welcomePage {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 2em;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.book-item {
+  text-align: center;
+  transition: transform 0.3s ease;
+  padding: 10px;
+}
+
+.book-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-width: 30%;
+  transition: transform 0.3s ease;
+}
+
+.book-item h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.book-item p {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.swiper-slide-active .book-item {
+  transform: scale(1.1);
+}
+
+.swiper-slide-next .book-item,
+.swiper-slide-prev .book-item {
+  transform: scale(0.9);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+}
+
+.swiperBooks {
+  max-width: 40%;
+  text-align: center;
+}
+
+.swiperBooks h2 {
+  margin-bottom: 1em;
+}
+
+.book-list {
+  margin: 2em;
 }
 
 /*# sourceMappingURL=App.css.map */

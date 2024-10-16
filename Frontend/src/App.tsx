@@ -2,7 +2,7 @@ import {  createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom
 import MainPage from './components/MainPage';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
-
+import './styles/mediaQueries.css'
 const router = createBrowserRouter([
     {
         path: '/',
