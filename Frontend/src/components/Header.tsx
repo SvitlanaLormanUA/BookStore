@@ -4,6 +4,9 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { useState } from 'react';
 import '../styles/App.css';
+import { FaShoppingCart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
+
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,12 +25,18 @@ export default function Header() {
             </div>
             <ul className={`params ${isMenuOpen ? 'open' : ''}`}>
                 <Tabs className="menuParam mb-3" defaultActiveKey="/main" id="fill-tab-example" fill>
-                    <Tab eventKey="team" title={<Link to="/" className="nav-link">Main Page</Link>} />
+                    <Tab eventKey="books" title={<Link to="/genres" className="nav-link">Books</Link>} />
+                    <Tab eventKey="main" title={<Link to="/" className="nav-link">Main Page</Link>} />
                     <Tab eventKey="shop" title={<Link to="/shop" className="nav-link">Shop</Link>} />
                     <Tab eventKey="blog" title={<Link to="/blog" className="nav-link">Blog</Link>} />
                     <Tab eventKey="about" title={<Link to="/about" className="nav-link">About us</Link>} />
                 </Tabs>
+                
                 <div className="buttons-login">
+                <div className="chosen-books">
+               <Link to="/basket"> <FaShoppingCart size="2em"/></Link>
+               <Link to="/favorite">  <FaHeart size="2em" /></Link>
+                </div>
                     <Button className="custom-login-btn">Login</Button>
                     <Button className="custom-register-btn">Sign Up</Button>
                 </div>

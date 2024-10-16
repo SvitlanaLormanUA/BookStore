@@ -36,6 +36,21 @@ const router = createBrowserRouter([
                 element: <div>About Us Page</div>,
                 errorElement: <NotFound />
             },
+            {
+                path: '/genres',
+                element: <div>Genres Page</div>,
+                errorElement: <NotFound />
+            },
+            {
+                path: '/basket',
+                element: <div>Basket Page</div>,
+                errorElement: <NotFound />
+            },
+            {
+                path: '/favorite',
+                element: <div>Favorite Page</div>,
+                errorElement: <NotFound />
+            }
         ]
 
     }

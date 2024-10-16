@@ -8,6 +8,9 @@ $login-btn-color-hover: #e87d6c;
 $register-btn-color: #803500;
 $register-btn-color-hover: #5e2400;
 
+body {
+  padding: 5rem ;
+}
 #header-param {
     color: #803500;
 }
@@ -88,7 +91,19 @@ $register-btn-color-hover: #5e2400;
     display: flex;
     gap: 2em;
 }
-
+.chosen-books {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 3em;
+    margin: 0;
+    margin-top: 1.5em;
+    margin-right: 2em;
+}
+.chosen-books:hover {
+    cursor: pointer;
+    
+}
 button {
     font-size: 14px;
     font-weight: 600;

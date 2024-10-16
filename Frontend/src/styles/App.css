@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import 'bootstrap/dist/css/bootstrap.min.css';
+body {
+  padding: 5rem;
+}
+
 #header-param {
   color: #803500;
 }
@@ -79,6 +83,20 @@
 .buttons-login {
   display: flex;
   gap: 2em;
+}
+
+.chosen-books {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 3em;
+  margin: 0;
+  margin-top: 1.5em;
+  margin-right: 2em;
+}
+
+.chosen-books:hover {
+  cursor: pointer;
 }
 
 button {

@@ -27,7 +27,7 @@ export default function MainPage() {
           
 
           <div className="books-input-container">
-             <input type="text" className="books-input" placeholder=""/>
+             <input type="text" className="books-input" placeholder="Find a book..."/>
               <button>Search</button>
           </div>
         </section>
