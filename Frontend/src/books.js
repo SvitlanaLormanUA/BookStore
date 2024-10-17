@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
- const books = [
+const books = [
     {
         id: uuidv4(),
         title: 'Where the Crawdads Sing',
@@ -9,12 +9,13 @@ import { v4 as uuidv4 } from 'uuid';
         genre: 'Mystery',
         description: 'A young woman raised in the marshes of North Carolina becomes the prime suspect in a murder case.',
         img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1582135294i/36809135.jpg',
-        popular: true,
+        popular: false,
         soldCopies: 2000000,
         copiesInStock: 500,
         price: 12.99,
         isForSale: true,
-        sale: 10 // 10% off
+        sale: 10,
+        new: false
     },
     {
         id: uuidv4(),
@@ -29,7 +30,8 @@ import { v4 as uuidv4 } from 'uuid';
         copiesInStock: 200,
         price: 9.99,
         isForSale: true,
-        sale: 15 // 15% off
+        sale: 15,
+        new: false
     },
     {
         id: uuidv4(),
@@ -44,7 +46,8 @@ import { v4 as uuidv4 } from 'uuid';
         copiesInStock: 350,
         price: 14.99,
         isForSale: true,
-        sale: 5
+        sale: 5,
+        new: true
     },
     {
         id: uuidv4(),
@@ -59,7 +62,8 @@ import { v4 as uuidv4 } from 'uuid';
         copiesInStock: 400,
         price: 11.99,
         isForSale: true,
-        sale: 20 // 20% off
+        sale: 20,
+        new: false
     },
     {
         id: uuidv4(),
@@ -74,7 +78,8 @@ import { v4 as uuidv4 } from 'uuid';
         copiesInStock: 300,
         price: 13.99,
         isForSale: true,
-        sale: 10
+        sale: 10,
+        new: true
     },
     {
         id: uuidv4(),
@@ -89,7 +94,8 @@ import { v4 as uuidv4 } from 'uuid';
         copiesInStock: 100,
         price: 16.99,
         isForSale: true,
-        sale: 25 // 25% off
+        sale: 25,
+        new: false
     },
     {
         id: uuidv4(),
@@ -104,7 +110,8 @@ import { v4 as uuidv4 } from 'uuid';
         copiesInStock: 250,
         price: 10.99,
         isForSale: true,
-        sale: 10
+        sale: 10,
+        new: false
     },
     {
         id: uuidv4(),
@@ -119,7 +126,8 @@ import { v4 as uuidv4 } from 'uuid';
         copiesInStock: 150,
         price: 12.49,
         isForSale: true,
-        sale: 5
+        sale: 5,
+        new: false
     },
     {
         id: uuidv4(),
@@ -134,7 +142,8 @@ import { v4 as uuidv4 } from 'uuid';
         copiesInStock: 120,
         price: 15.99,
         isForSale: true,
-        sale: 15
+        sale: 15,
+        new: false
     },
     {
         id: uuidv4(),
@@ -149,7 +158,57 @@ import { v4 as uuidv4 } from 'uuid';
         copiesInStock: 180,
         price: 9.99,
         isForSale: true,
-        sale: 20
+        sale: 20,
+        new: false
+    },
+
+    {
+        id: uuidv4(),
+        title: 'Dune',
+        author: 'Frank Herbert',
+        year: 1965,
+        genre: 'Science Fiction',
+        description: 'Set on the desert planet Arrakis, this epic tale follows the journey of Paul Atreides as he navigates politics, religion, and the fight for control of the universe’s most valuable resource.',
+        img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1555447414i/44767458.jpg',
+        popular: false,
+        soldCopies: 20000000,
+        copiesInStock: 300,
+        price: 19.99,
+        isForSale: true,
+        sale: 15,
+        new: false
+    },
+    {
+        id: uuidv4(),
+        title: 'The Song of Achilles',
+        author: 'Madeline Miller',
+        year: 2011,
+        genre: 'Fantasy',
+        description: 'A retelling of the myth of Achilles and Patroclus, exploring their friendship, love, and the events leading up to the Trojan War.',
+        img: 'https://m.media-amazon.com/images/I/81msb6gUBTL._AC_UF1000,1000_QL80_.jpg',
+        popular: true,
+        soldCopies: 500000,
+        copiesInStock: 450,
+        price: 14.99,
+        isForSale: true,
+        sale: 10,
+        new: true
+    },
+    {
+        id: uuidv4(),
+        title: 'Becoming',
+        author: 'Michelle Obama',
+        year: 2018,
+        genre: 'Memoir',
+        description: 'In this deeply personal memoir, Michelle Obama reflects on the experiences that shaped her life, from her childhood in Chicago to her years as First Lady of the United States.',
+        img:'https://m.media-amazon.com/images/I/81+QX4VMrmS._AC_UF894,1000_QL80_.jpg',
+        popular: false,
+        soldCopies: 10000000,
+        copiesInStock: 200,
+        price: 18.99,
+        isForSale: true,
+        sale: 10,
+        new: true
     }
 ];
 

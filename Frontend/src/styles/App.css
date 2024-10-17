@@ -8,7 +8,6 @@ body {
 
 .header-container {
   background-color: #f5ecdc;
-  padding: 2em;
 }
 
 #header-param {
@@ -149,6 +148,11 @@ button {
   padding: 10px;
 }
 
+.book-item img:hover {
+  cursor: pointer;
+  box-shadow: 5px 3px 3px #e87d6c;
+}
+
 .book-item img {
   width: 100%;
   height: auto;
@@ -238,6 +242,120 @@ button {
   background-color: #5e2400;
   color: white;
   outline: none;
+}
+
+.swiper-title {
+  text-align: center;
+}
+
+#other-main-content {
+  background-color: #fff7f7;
+  padding: 2em;
+}
+
+.header-container {
+  position: relative;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.bar.open:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.params {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 1em;
+  margin: 0;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+
+@media (max-width: 1000px) {
+  .custom-login-btn {
+    border: 2px solid #e87d6c;
+  }
+  .custom-register-btn {
+    margin-bottom: 1em;
+  }
+  .hamburger-menu {
+    cursor: pointer;
+    display: inline-block;
+    padding: 2em;
+    cursor: pointer;
+  }
+  .nav-link {
+    margin: 0;
+  }
+  .params {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    padding: 1em;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: fit-content;
+    align-self: baseline;
+    left: 0;
+    margin-left: 2em;
+    margin-top: 0.5em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    padding-right: 2.5em;
+  }
+  .params.open {
+    display: flex;
+  }
+  .menuParam {
+    width: 100%;
+    text-align: center;
+  }
+  .menuParam .nav-link {
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+  }
+  .chosen-books {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  .buttons-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  #fill-tab-example {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */

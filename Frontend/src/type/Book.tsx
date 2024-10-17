@@ -14,5 +14,6 @@ export type Book = {
     price: number;
     isForSale: boolean;
     sale: number;
+    new: boolean;
 
 }

@@ -5,24 +5,34 @@ import { Book } from "../type/Book.js";
 import "../styles/App.css";
 import "../styles/mediaQueries.css";
 
-
 const booksDataTyped: Book[] = booksData;
 
 export default function MainPage() {
-  const [books, setBooks] = useState<{ title: string; author: string; img: string; }[]>([]);
+
+  const [popularBooks, setPopularBooks] = useState<{ title: string; author: string; img: string; }[]>([]);
+  const [newBooks, setNewBooks] = useState<{ title: string; author: string; img: string; }[]>([]);
 
   useEffect(() => {
-   
-    const popularBooks = booksDataTyped.filter(book => book.popular);
+    const filteredPopularBooks = booksDataTyped.filter(book => book.popular);
 
-  
-    const formattedBooks = popularBooks.map(book => {
-      const { title, author, img } = book; 
+    
+    const formattedPopularBooks = filteredPopularBooks.map(book => {
+      const { title, author, img } = book;
       return { title, author, img };
     });
 
    
-    setBooks(formattedBooks);
+    const filteredNewBooks = booksDataTyped.filter(book => book.new);
+
+    
+    const formattedNewBooks = filteredNewBooks.map(book => {
+      const { title, author, img } = book;
+      return { title, author, img };
+    });
+
+   
+    setPopularBooks(formattedPopularBooks);
+    setNewBooks(formattedNewBooks);
   }, []);
 
   return (
@@ -37,10 +47,22 @@ export default function MainPage() {
           </div>
         </section>
         <section className="swiperBooks">
-          {/* Pass only popular books to SwiperBooks component */}
-          <SwiperBooks books={books} />
+         
+          <SwiperBooks
+             books={popularBooks}
+             auto={true}
+             title={"Popular Books"} />
         </section>
       </section>
+
+<div id="other-main-content">
+    
+      <SwiperBooks
+             books={newBooks}
+             auto={false} 
+             title={"New Books"} />
+  </div>
     </>
+  
   );
 }

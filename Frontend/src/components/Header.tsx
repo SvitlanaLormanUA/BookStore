@@ -4,8 +4,7 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { useState } from 'react';
 import '../styles/App.css';
-import { FaShoppingCart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
+import { FaShoppingCart, FaHeart } from "react-icons/fa";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,11 +17,13 @@ export default function Header() {
     return (
         <>
         <div className="header-container">
-            <div className="hamburger-menu" onClick={toggleMenu}>
+            {/* Hamburger menu is shown only on smaller screens */}
+            <div className="hamburger-menu " onClick={toggleMenu}>
                 <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
                 <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
                 <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
             </div>
+            
             <ul className={`params ${isMenuOpen ? 'open' : ''}`}>
                 <Tabs className="menuParam mb-3" defaultActiveKey="/main" id="fill-tab-example" fill>
                     <Tab eventKey="books" title={<Link to="/genres" className="nav-link">Books</Link>} />
@@ -31,18 +32,17 @@ export default function Header() {
                     <Tab eventKey="blog" title={<Link to="/blog" className="nav-link">Blog</Link>} />
                     <Tab eventKey="about" title={<Link to="/about" className="nav-link">About us</Link>} />
                 </Tabs>
-                
+
                 <div className="buttons-login">
-                <div className="chosen-books">
-                    <Link to="/basket"> <FaShoppingCart size="2em"/></Link>
-                    <Link to="/favorite">  <FaHeart size="2em" /></Link>
-                </div>
-                    
+                    <div className="chosen-books">
+                        <Link to="/basket"><FaShoppingCart size="2em" /></Link>
+                        <Link to="/favorite"><FaHeart size="2em" /></Link>
+                    </div>
                     <Link to="/login">
                         <Button className="custom-login-btn">Login</Button>
                     </Link>
                     <Link to="/register">
-                    <Button className="custom-register-btn">Sign Up</Button>
+                        <Button className="custom-register-btn">Sign Up</Button>
                     </Link>
                 </div>
             </ul>
