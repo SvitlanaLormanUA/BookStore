@@ -7,6 +7,8 @@ export type Book = {
     description: string;
     img: string;
 
+
+    popular: boolean;
     soldCopies: number;
     copiesInStock: number;
     price: number;
