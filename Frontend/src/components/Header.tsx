@@ -17,6 +17,7 @@ export default function Header() {
     };
 
     return (
+        <>
         <div className="header-container">
             <div className="hamburger-menu" onClick={toggleMenu}>
                 <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
@@ -43,5 +44,8 @@ export default function Header() {
             </ul>
             <Outlet />
         </div>
+       
+        </>
+       
     );
 }

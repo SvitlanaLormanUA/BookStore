@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from "react";
 import SwiperBooks from "./SwiperBooks";
 import booksData from "../books.js"; 
+import { Book } from "../type/Book.js";
+
 
 import "../styles/App.css";
 import '../styles/mediaQueries.css'
 
+
+const booksDataTyped: Book[] = booksData;  
+
+
 export default function MainPage() {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState<{ title: string; author: string; img: string; }[]>([]);
 
   useEffect(() => {
    
-    const formattedBooks = booksData.map(book => {
+    const formattedBooks = booksDataTyped.map(book => {
       const { title, author, img } = book; 
       return { title, author, img };
     });
