@@ -7,7 +7,6 @@ import '../styles/App.css';
 import { FaShoppingCart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 
-
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -35,17 +34,20 @@ export default function Header() {
                 
                 <div className="buttons-login">
                 <div className="chosen-books">
-               <Link to="/basket"> <FaShoppingCart size="2em"/></Link>
-               <Link to="/favorite">  <FaHeart size="2em" /></Link>
+                    <Link to="/basket"> <FaShoppingCart size="2em"/></Link>
+                    <Link to="/favorite">  <FaHeart size="2em" /></Link>
                 </div>
-                    <Button className="custom-login-btn">Login</Button>
+                    
+                    <Link to="/login">
+                        <Button className="custom-login-btn">Login</Button>
+                    </Link>
+                    <Link to="/register">
                     <Button className="custom-register-btn">Sign Up</Button>
+                    </Link>
                 </div>
             </ul>
             <Outlet />
         </div>
-       
         </>
-       
     );
 }

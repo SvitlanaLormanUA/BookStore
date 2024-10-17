@@ -29,7 +29,7 @@ export default function MainPage() {
       <section className="welcomePage">
         <section className="bookstore-name">
           <p>best choice</p>
-          <h1>Bam Book</h1>
+          <h1>BamBook</h1>
           
 
           <div className="books-input-container">
