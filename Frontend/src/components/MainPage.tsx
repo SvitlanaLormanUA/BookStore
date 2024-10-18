@@ -62,7 +62,7 @@ export default function MainPage() {
              auto={false} 
              title={""} 
              placeDiscountIcon={true} />
- </div>
+       </div>
     </>
   
   );
