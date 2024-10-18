@@ -45,8 +45,8 @@ const books = [
         soldCopies: 1500000,
         copiesInStock: 350,
         price: 14.99,
-        isForSale: true,
-        sale: 5,
+        isForSale: false,
+        sale: 0,
         new: true
     },
     {
@@ -61,8 +61,8 @@ const books = [
         soldCopies: 1200000,
         copiesInStock: 400,
         price: 11.99,
-        isForSale: true,
-        sale: 20,
+        isForSale: false,
+        sale: 0,
         new: false
     },
     {
@@ -77,8 +77,8 @@ const books = [
         soldCopies: 900000,
         copiesInStock: 300,
         price: 13.99,
-        isForSale: true,
-        sale: 10,
+        isForSale: false,
+        sale: 0,
         new: true
     },
     {
@@ -141,8 +141,8 @@ const books = [
         soldCopies: 1400000,
         copiesInStock: 120,
         price: 15.99,
-        isForSale: true,
-        sale: 15,
+        isForSale: false,
+        sale: 0,
         new: false
     },
     {
@@ -175,7 +175,7 @@ const books = [
         copiesInStock: 300,
         price: 19.99,
         isForSale: true,
-        sale: 15,
+        sale: 0,
         new: false
     },
     {
@@ -190,8 +190,8 @@ const books = [
         soldCopies: 500000,
         copiesInStock: 450,
         price: 14.99,
-        isForSale: true,
-        sale: 10,
+        isForSale: false,
+        sale: 0,
         new: true
     },
     {
@@ -206,8 +206,8 @@ const books = [
         soldCopies: 10000000,
         copiesInStock: 200,
         price: 18.99,
-        isForSale: true,
-        sale: 10,
+        isForSale: false,
+        sale: 0,
         new: true
     }
 ];

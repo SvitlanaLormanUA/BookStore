@@ -170,7 +170,7 @@ button {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    max-width: 30%;
+    max-width: 10em;
     transition: transform 0.3s ease;
   }
   
@@ -179,12 +179,20 @@ button {
     font-size: 1.2rem;
     color: #333;
   }
+
   
-  .book-item p {
+  .book-item-author {
     font-size: 0.9rem;
     color: #777;
   }
   
+#book-item-price-red {
+  font-size: 1.2rem;
+   color: rgb(218, 26, 26);
+   font-weight: bold;
+   margin: 0;
+}
+
   .swiper-slide-active .book-item {
     transform: scale(1.1);
   }
@@ -299,8 +307,35 @@ button {
   padding-right: 2em;
  
 }
+.ordinary {
+  font-size: 1.2em;
+  color: #333;
+}
+.crossed {
+  text-decoration: line-through;
+  font-size: 1.2em;
+  color: #777777;
+}
+.book-item-sale-price {
+  color: red;
+}
+.book-item-price-red{
+  margin: 0;
+}
+.book-item-price-container {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+.book-item-buy-container {
+  display: flex;
+  flex-direction: column;
 
-
+ 
+}
+.add-to-cart {
+  margin: 0;
+}
 @media (max-width: 1000px) {
   
   .custom-login-btn {

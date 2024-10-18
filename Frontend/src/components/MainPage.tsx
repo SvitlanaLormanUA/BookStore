@@ -8,31 +8,23 @@ import "../styles/mediaQueries.css";
 const booksDataTyped: Book[] = booksData;
 
 export default function MainPage() {
-
-  const [popularBooks, setPopularBooks] = useState<{ title: string; author: string; img: string; }[]>([]);
-  const [newBooks, setNewBooks] = useState<{ title: string; author: string; img: string; }[]>([]);
-
+  
+  const [popularBooks, setPopularBooks] = useState<Book[]>([]);
+  const [newBooks, setNewBooks] = useState<Book[]>([]);
+  const [saleBooks, setSaleBooks] = useState<Book[]>([]);
   useEffect(() => {
     const filteredPopularBooks = booksDataTyped.filter(book => book.popular);
+  
+    setPopularBooks(filteredPopularBooks);
+  
 
-    
-    const formattedPopularBooks = filteredPopularBooks.map(book => {
-      const { title, author, img } = book;
-      return { title, author, img };
-    });
+    const filteredNewBooks = booksDataTyped.filter(book => book.new)
+    setNewBooks(filteredNewBooks);
 
-   
-    const filteredNewBooks = booksDataTyped.filter(book => book.new);
+    const filteredSaleBooks = booksDataTyped.filter(book => book.sale > 0);
 
-    
-    const formattedNewBooks = filteredNewBooks.map(book => {
-      const { title, author, img } = book;
-      return { title, author, img };
-    });
+    setSaleBooks(filteredSaleBooks);
 
-   
-    setPopularBooks(formattedPopularBooks);
-    setNewBooks(formattedNewBooks);
   }, []);
 
   return (
@@ -61,7 +53,13 @@ export default function MainPage() {
              books={newBooks}
              auto={false} 
              title={"New Books"} />
-  </div>
+
+
+      <SwiperBooks
+             books={saleBooks}
+             auto={false} 
+             title={"Fall Pcice Drops 🍁"} />
+ </div>
     </>
   
   );

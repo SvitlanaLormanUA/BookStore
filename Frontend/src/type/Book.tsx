@@ -1,4 +1,5 @@
 export type Book = {
+    calculateSalePrice: () => number;
     id: string;
     title: string;
     author: string;
@@ -6,8 +7,6 @@ export type Book = {
     genre: string;
     description: string;
     img: string;
-
-
     popular: boolean;
     soldCopies: number;
     copiesInStock: number;
@@ -15,5 +14,5 @@ export type Book = {
     isForSale: boolean;
     sale: number;
     new: boolean;
-
 }
+
