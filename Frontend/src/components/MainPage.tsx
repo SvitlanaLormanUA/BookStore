@@ -44,7 +44,8 @@ export default function MainPage() {
           <SwiperBooks
              books={popularBooks}
              auto={true}
-             title={"Popular Books"} />
+             title={"Popular Books"}
+             forLink="popular" />
         </section>
       </section>
 
@@ -53,7 +54,8 @@ export default function MainPage() {
       <SwiperBooks
              books={newBooks}
              auto={false} 
-             title={"New Books"} />
+             title={"New Books"}
+             forLink="new" />
 
       <img src="https://media1.thehungryjpeg.com/thumbs2/ori_3852208_98jcsv1707xmjyh3xorfzb9irp99x77fmjl1tswi_kids-read-books-and-learn-happy-reading-people-girls-and-boys-with-b.jpg" alt="" />
       <DiscountSlider message="Fall Pcice Drops 🍁"/>
@@ -61,7 +63,8 @@ export default function MainPage() {
              books={saleBooks}
              auto={false} 
              title={""} 
-             placeDiscountIcon={true} />
+             placeDiscountIcon={true}
+             forLink="sale" />
        </div>
     </>
   

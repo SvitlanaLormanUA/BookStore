@@ -524,6 +524,7 @@ button {
 footer {
   background-color: #f5ecdc;
   padding: 2em;
+  bottom: 0;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -18,14 +18,26 @@ import '../styles/App.css';
 function calculateSalePrice(price: number, sale: number) {
   return price - (price * sale) / 100;
 }
+function getLinkFromProp(forLink: string) {
+  if (forLink.toLowerCase().includes('new')) {
+    return '/books/new';
+  } else if (forLink.toLowerCase().includes('popular')) {
+    return '/books/popular';
+  } else if (forLink.toLowerCase().includes('sale')) {
+    return '/books/sale';
+  }
+  else {
+    return '/books/all'; 
+  }
+}
 
-export default function SwiperBooks({ books, auto, title, placeDiscountIcon }: SwiperBooksProps) {
+export default function SwiperBooks({ books, auto, title, placeDiscountIcon, forLink }: SwiperBooksProps) {
   return (
     <>
       <div className="swiper-component">
         <h2 className="swiper-title">{title}</h2>
         <div className="seeMoreBooks-container">
-          <Link to="/books">
+         <Link to={getLinkFromProp(forLink)}>
             <div>
               <SeeMoreButton /> 
             </div>

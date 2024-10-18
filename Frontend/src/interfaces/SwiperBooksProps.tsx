@@ -4,5 +4,6 @@ export interface SwiperBooksProps {
     auto: boolean;
     title: string;
     placeDiscountIcon?: boolean | false;
+    forLink: string;
   }
   

@@ -4,6 +4,8 @@ import Header from './components/Header';
 import NotFound from './components/NotFound';
 import './styles/mediaQueries.css'
 import Footer from './components/Footer';
+import GenrePage from './components/GenrePage';
+import Books from './components/Books';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -11,7 +13,6 @@ const router = createBrowserRouter([
             <>
              <Header />
              <Footer />
-     
             </>
             ),
    
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/books',
-                element: <div>Books Page</div>,
+                element: <Books />,
                 errorElement: <NotFound />
             },
             {
@@ -47,7 +48,33 @@ const router = createBrowserRouter([
                 path: '/favorite',
                 element: <div>Favorite Page</div>,
                 errorElement: <NotFound />
+            },
+            {
+                path: '/books/:new',
+                element: <div>New Books Page</div>,
+                errorElement: <NotFound />
+            },
+            {
+                path: '/books/:popular',
+                element: <div>Popular Books Page</div>,
+                errorElement: <NotFound />
+            },
+            {
+                path: '/books/:sales',
+                element: <div>All Books Page</div>,
+                errorElement: <NotFound />
+            },
+            {
+                path: '/books/:genre',
+                element: <GenrePage />,
+                errorElement: <NotFound />
+            },
+            {
+                path: '/books/:genre/:id',
+                element: <div>Book Page</div>,
+                errorElement: <NotFound />
             }
+
         ]
 
     }
