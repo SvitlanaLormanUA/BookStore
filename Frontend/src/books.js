@@ -137,13 +137,13 @@ const books = [
         genre: 'Historical Fiction',
         description: 'A reclusive Hollywood icon recounts her tumultuous life and seven marriages in a compelling, fictional memoir.',
         img: 'https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/7/1/71pievu3eel.jpg',
-        popular: true,
+        popular: false,
         soldCopies: 1400000,
         copiesInStock: 120,
         price: 15.99,
         isForSale: false,
         sale: 0,
-        new: false
+        new: true
     },
     {
         id: uuidv4(),

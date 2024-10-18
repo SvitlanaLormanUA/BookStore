@@ -4,6 +4,7 @@ import booksData from "../books.js";
 import { Book } from "../type/Book.js";
 import "../styles/App.css";
 import "../styles/mediaQueries.css";
+import DiscountSlider from "./DiscountSlider.js";
 
 const booksDataTyped: Book[] = booksData;
 
@@ -55,11 +56,12 @@ export default function MainPage() {
              title={"New Books"} />
 
       <img src="https://media1.thehungryjpeg.com/thumbs2/ori_3852208_98jcsv1707xmjyh3xorfzb9irp99x77fmjl1tswi_kids-read-books-and-learn-happy-reading-people-girls-and-boys-with-b.jpg" alt="" />
-
+      <DiscountSlider message="Fall Pcice Drops 🍁"/>
       <SwiperBooks
              books={saleBooks}
              auto={false} 
-             title={"Fall Pcice Drops 🍁"} />
+             title={""} 
+             placeDiscountIcon={true} />
  </div>
     </>
   

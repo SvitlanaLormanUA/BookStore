@@ -1,4 +1,10 @@
 import React from "react";
+import { Link, Outlet } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import SeeMoreButton from './SeeMoreButton';
+import { FreeMode, Pagination, Autoplay, Navigation } from "swiper/modules";
+import { Book } from "../type/Book";
+import { SwiperBooksProps } from "../interfaces/SwiperBooksProps";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -6,37 +12,31 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation'; 
 import 'swiper/css/free-mode';
 import 'swiper/css/autoplay'; 
-import { Link, Outlet } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
-
 import '../styles/mediaQueries.css';
 import '../styles/App.css';
-
-import { FreeMode, Pagination, Autoplay, Navigation } from "swiper/modules"; // Import navigation module
-import { Book } from "../type/Book";
-
-interface SwiperBooksProps {
-  books: Book[];
-  auto: boolean;
-  title: string;
-}
 
 function calculateSalePrice(price: number, sale: number) {
   return price - (price * sale) / 100;
 }
 
-export default function SwiperBooks({ books, auto, title }: SwiperBooksProps) {
+export default function SwiperBooks({ books, auto, title, placeDiscountIcon }: SwiperBooksProps) {
   return (
     <>
       <div className="swiper-component">
         <h2 className="swiper-title">{title}</h2>
+        <div className="seeMoreBooks-container">
+          <Link to="/books">
+            <div>
+              <SeeMoreButton /> 
+            </div>
+          </Link>
+        </div>
+
         <section className="book-list">
           <Swiper
             spaceBetween={10}
             loop={true}
-            grabCursor={true}
+            grabCursor={false}
             effect="coverflow"
             coverflowEffect={{
               rotate: 50,
@@ -66,7 +66,13 @@ export default function SwiperBooks({ books, auto, title }: SwiperBooksProps) {
                 slideToClickedSlide: true,
                 pagination: false,
               },
-              1014: {
+              1000: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                slideToClickedSlide: true,
+                pagination: false,
+              },
+              1283: {
                 slidesPerView: 3,
                 centeredSlides: true,
                 spaceBetween: 10,
@@ -81,15 +87,17 @@ export default function SwiperBooks({ books, auto, title }: SwiperBooksProps) {
             {books.map((book, index) => (
               <SwiperSlide key={index}>
                 <div className="book-item">
-                  <img
-                    src={book.img}
-                    alt={book.title}
-                  />
+                  {book.sale > 0 && placeDiscountIcon ? (
+                    <div className="dicount-icon-container">
+                      <span className="dicount-icon"> - {book.sale}%</span>
+                    </div>
+                  ) : null}
+                  
+                  <img src={book.img} alt={book.title} />
                   <h3>{book.title}</h3>
                   <p className="book-item-author">{book.author}</p>
 
                   <div className="book-item-buy-container">
-                  
                     {book.sale > 0 ? (
                       <div className="book-item-price-container">
                         <p className="crossed" id="book-item-price">
@@ -106,10 +114,9 @@ export default function SwiperBooks({ books, auto, title }: SwiperBooksProps) {
                     )}
                    
                     <div>
-                        <Button id="buy-button"className="btn btn-danger w-100" >
-                              Add to Cart
-                        </Button>
-                    
+                      <Button id="buy-button" className="btn btn-danger w-100">
+                        Add to Cart
+                      </Button>
                     </div>
                   </div>
                 </div>

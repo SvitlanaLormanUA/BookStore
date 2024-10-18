@@ -22,11 +22,6 @@ const router = createBrowserRouter([
             },
         
             {
-                path: '/shop',
-                element: <div>Shop Page</div>,
-                errorElement: <NotFound />
-            },
-            {
                 path: '/blog',
                 element: <div>Blog Page</div>,
                 errorElement: <NotFound />
@@ -37,8 +32,8 @@ const router = createBrowserRouter([
                 errorElement: <NotFound />
             },
             {
-                path: '/genres',
-                element: <div>Genres Page</div>,
+                path: '/books',
+                element: <div>Books Page</div>,
                 errorElement: <NotFound />
             },
             {

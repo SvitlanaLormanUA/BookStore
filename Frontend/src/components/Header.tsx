@@ -41,9 +41,8 @@ export default function Header() {
             
             <ul className={`params ${isMenuOpen ? 'open' : ''}`} ref={menuRef}>
                 <Tabs className="menuParam mb-3" defaultActiveKey="/main" id="fill-tab-example" fill>
-                    <Tab eventKey="books" title={<Link to="/genres" className="nav-link">Books</Link>} />
+                    <Tab eventKey="books" title={<Link to="/books" className="nav-link">Books</Link>} />
                     <Tab eventKey="main" title={<Link to="/" className="nav-link">Main Page</Link>} />
-                    <Tab eventKey="shop" title={<Link to="/shop" className="nav-link">Shop</Link>} />
                     <Tab eventKey="blog" title={<Link to="/blog" className="nav-link">Blog</Link>} />
                     <Tab eventKey="about" title={<Link to="/about" className="nav-link">About us</Link>} />
                 </Tabs>

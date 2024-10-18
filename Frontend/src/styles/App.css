@@ -173,7 +173,7 @@ button {
 }
 
 #book-item-price-red {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: rgb(218, 26, 26);
   font-weight: bold;
   margin: 0;
@@ -253,6 +253,7 @@ button {
 
 .swiper-title {
   text-align: center;
+  margin-top: 1em;
 }
 
 #other-main-content {
@@ -263,7 +264,6 @@ button {
 #other-main-content img {
   width: 100%;
   margin-top: 2em;
-  margin-bottom: 2em;
 }
 
 .header-container {
@@ -306,18 +306,18 @@ button {
 }
 
 .ordinary {
-  font-size: 1.2em;
+  font-size: 1em;
   color: #333;
 }
 
 .crossed {
   text-decoration: line-through;
-  font-size: 1.2em;
+  font-size: 0.6em;
   color: #777777;
 }
 
 .book-item-sale-price {
-  color: red;
+  color: rgb(219, 7, 7);
 }
 
 .book-item-price-red {
@@ -343,6 +343,7 @@ button {
 #buy-button {
   min-height: 2em;
   max-width: 10em;
+  padding: 2px;
 }
 
 @media (max-width: 1000px) {
@@ -409,6 +410,113 @@ button {
     flex-direction: column;
     align-items: baseline;
   }
+}
+.discount-slider {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #DB8754;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  white-space: nowrap;
+  margin-bottom: 2em;
+}
+
+.discount-slider h2 {
+  display: inline-block;
+  margin-right: 50px;
+  animation: scrollLeftToRight 5s linear infinite;
+}
+
+@keyframes scrollLeftToRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.seeMoreBooks-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2em;
+}
+
+.see-more-button-container {
+  display: inline-block;
+}
+
+.see-more-button {
+  padding: 2px;
+  font-size: 12px;
+  background-color: #97917f;
+  color: white;
+  border: none;
+  border-radius: 2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.see-more-button:hover {
+  background-color: #bab29a;
+}
+
+.book-item {
+  position: relative;
+}
+
+.dicount-icon {
+  background-color: rgb(219, 7, 7);
+  color: white;
+  padding: 1em;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 15px;
+  z-index: 1;
+  position: absolute;
+  right: 10em;
+  top: 3em;
+}
+
+.dicount-icon {
+  background-color: rgb(219, 7, 7);
+  color: white;
+  padding: 1em;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 15px;
+  z-index: 1;
+  position: absolute;
+  right: 10em;
+  top: 3em;
+}
+
+@media (max-width: 660px) {
+  .dicount-icon {
+    right: 10em;
+  }
+}
+@media (min-width: 661px) and (max-width: 900px) {
+  .dicount-icon {
+    right: 17em;
+  }
+}
+@media (min-width: 887px) and (max-width: 1000px) {
+  .dicount-icon {
+    right: 21em;
+  }
+}
+@media (min-width: 1017px) and (max-width: 1556px) {
+  .dicount-icon {
+    right: 5em;
+  }
+}
+.book-item {
+  z-index: 0;
+  margin: 0;
 }
 
 /*# sourceMappingURL=App.css.map */

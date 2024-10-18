@@ -1,5 +1,5 @@
 
-    @media (max-width: 830px) {
+    @media (max-width: 1390px) {
         .welcomePage {
           display: flex;
           flex-direction: column; 
@@ -12,5 +12,13 @@
         .bookstore-name {
           text-align: center;
         }
+        #buy-button {
+          font-size: 12px;
+        }
+        .dicount-icon {
+          display: flex;
+          flex-direction: row;
+        }
+      
       }
  
