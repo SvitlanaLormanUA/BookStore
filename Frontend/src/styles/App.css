@@ -422,12 +422,12 @@ button {
   text-transform: uppercase;
   color: white;
   white-space: nowrap;
-  margin-bottom: 2em;
 }
 
 .discount-slider h2 {
   display: inline-block;
   margin-right: 50px;
+  padding: 1em;
   animation: scrollLeftToRight 5s linear infinite;
 }
 
