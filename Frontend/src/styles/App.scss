@@ -10,6 +10,7 @@ $register-btn-color: #803500;
 $register-btn-color-hover: #5e2400;
 
 $discount-background-color: rgb(219, 7, 7);
+$discount-slider-color: #db9a54;
 
 body {
 
@@ -27,12 +28,18 @@ body {
 }
 
 .params {
+  
     list-style-type: none;
     display: flex;
     justify-content: space-around;
     width: 100%;
     padding: 2em;
     border-radius: 0.5em;
+    background-color: $header-color;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1em;
+    z-index: 999;
+   
 }
 
 #menuParam {
@@ -280,6 +287,7 @@ button {
 
 .hamburger-menu  {
   display: none;
+
 }
 
 .bar {
@@ -306,6 +314,7 @@ button {
 .params {
   display: flex;
   justify-content: space-between;
+  position: fixed;
   align-items: center;
   list-style: none;
   padding: 1em;
@@ -390,6 +399,7 @@ max-width:  10em;
 
   .params.open {
       display: flex;
+    
   }
 
   .menuParam {
@@ -428,7 +438,7 @@ max-width:  10em;
   display: flex;
   align-items: center; 
   justify-content: flex-start;
-  background-color: #DB8754; 
+  background-color: $discount-slider-color; 
   padding: 10px;
   font-size: 30px;
   font-weight: bold;
