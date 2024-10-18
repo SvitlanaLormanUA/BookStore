@@ -139,6 +139,7 @@ button {
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 2em;
+  padding-top: 2em;
 }
 
 .swiper {
@@ -276,6 +277,8 @@ button {
 
 .hamburger-menu {
   display: none;
+  position: fixed;
+  top: 0;
 }
 
 .bar {
@@ -296,18 +299,6 @@ button {
 
 .bar.open:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
-}
-
-.params {
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  align-items: center;
-  list-style: none;
-  padding: 1em;
-  margin: 0;
-  padding-left: 2em;
-  padding-right: 2em;
 }
 
 .ordinary {
@@ -385,9 +376,13 @@ button {
     padding-bottom: 1em;
     padding-left: 2em;
     padding-right: 2.5em;
+    position: fixed;
+    top: 1;
   }
   .params.open {
     display: flex;
+    position: fixed;
+    top: 1;
   }
   .menuParam {
     width: 100%;
