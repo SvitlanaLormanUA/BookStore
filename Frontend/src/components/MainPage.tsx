@@ -54,6 +54,7 @@ export default function MainPage() {
              auto={false} 
              title={"New Books"} />
 
+      <img src="https://media1.thehungryjpeg.com/thumbs2/ori_3852208_98jcsv1707xmjyh3xorfzb9irp99x77fmjl1tswi_kids-read-books-and-learn-happy-reading-people-girls-and-boys-with-b.jpg" alt="" />
 
       <SwiperBooks
              books={saleBooks}

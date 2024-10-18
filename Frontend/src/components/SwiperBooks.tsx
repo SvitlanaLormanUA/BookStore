@@ -6,6 +6,10 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation'; 
 import 'swiper/css/free-mode';
 import 'swiper/css/autoplay'; 
+import { Link, Outlet } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
 import '../styles/mediaQueries.css';
 import '../styles/App.css';
@@ -102,7 +106,10 @@ export default function SwiperBooks({ books, auto, title }: SwiperBooksProps) {
                     )}
                    
                     <div>
-                      <button className="add-to-cart">Add to Cart</button>
+                        <Button id="buy-button"className="btn btn-danger w-100" >
+                              Add to Cart
+                        </Button>
+                    
                     </div>
                   </div>
                 </div>

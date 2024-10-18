@@ -145,7 +145,7 @@ button {
 .book-item {
   text-align: center;
   transition: transform 0.3s ease;
-  padding: 10px;
+  padding: 2em;
 }
 
 .book-item img:hover {
@@ -257,7 +257,13 @@ button {
 
 #other-main-content {
   background-color: #fff7f7;
-  padding: 2em;
+  padding-top: 2em;
+}
+
+#other-main-content img {
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .header-container {
@@ -322,6 +328,7 @@ button {
   display: flex;
   justify-content: center;
   gap: 1em;
+  margin: 0;
 }
 
 .book-item-buy-container {
@@ -331,6 +338,11 @@ button {
 
 .add-to-cart {
   margin: 0;
+}
+
+#buy-button {
+  min-height: 2em;
+  max-width: 10em;
 }
 
 @media (max-width: 1000px) {
