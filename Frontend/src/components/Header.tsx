@@ -21,7 +21,6 @@ export default function Header() {
         }
     };
 
-   
     useEffect(() => {
         document.addEventListener('click', handleClickOutside);
         return () => {
@@ -39,6 +38,11 @@ export default function Header() {
                 <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
             </div>
             
+            {/* Додано назву BamBook в хедері */}
+            <div className="brand-name-fixed">
+                <Link to="/" className="brand-link">BamBook</Link>
+            </div>
+
             <ul className={`params ${isMenuOpen ? 'open' : ''}`} ref={menuRef}>
                 <Tabs className="menuParam mb-3" defaultActiveKey="/main" id="fill-tab-example" fill>
                     <Tab eventKey="books" title={<Link to="/books" className="nav-link">Books</Link>} />

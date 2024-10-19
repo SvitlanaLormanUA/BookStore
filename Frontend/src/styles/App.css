@@ -280,6 +280,10 @@ button {
   position: fixed;
   top: 0;
   z-index: 999;
+  background-color: #f5ecdc;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5em;
 }
 
 .bar {
@@ -410,6 +414,9 @@ button {
     display: flex;
     flex-direction: column;
     align-items: baseline;
+  }
+  .bookstore-name p {
+    margin-top: 4em;
   }
 }
 .discount-slider {
@@ -573,6 +580,31 @@ footer {
 .invalid-feedback {
   color: red;
   font-size: 0.875rem;
+}
+
+button {
+  transition: rgb(219, 7, 7) 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.brand-name-fixed {
+  position: fixed;
+  top: 0.85em;
+  left: 3em;
+  font-size: 1.8em;
+  font-weight: bold;
+  z-index: 999;
+  background-color: #f5ecdc;
+}
+
+.brand-link {
+  color: #000;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .brand-name-fixed {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
