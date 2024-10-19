@@ -86,7 +86,7 @@ export default function Footer() {
           <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">
             <h5 className="text-uppercase mb-4 link-header-in-footer">Sign up to receive updates</h5>
             <form onSubmit={handleSubmit}>
-              <div className="form-outline form-white mb-4">
+              <div className="form-outline form-white ">
                 <input
                   type="email"
                   id="form5Example2"
