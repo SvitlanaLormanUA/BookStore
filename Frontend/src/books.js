@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
+
 const books = [
     {
         id: uuidv4(),
@@ -209,6 +210,86 @@ const books = [
         isForSale: false,
         sale: 0,
         new: true
+    },
+    {
+        id: uuidv4(),
+        title: 'The Invisible Life of Addie LaRue',
+        author: 'V.E. Schwab',
+        year: 2020,
+        genre: 'Fantasy',
+        description: 'A woman makes a pact to live forever, but is cursed to be forgotten by everyone she meets until one day, someone remembers her.',
+        img: "https://d3ddkgxe55ca6c.cloudfront.net/assets/t1669384890/a/c2/67/219279-ml-2162359.jpg",
+        popular: true,
+        soldCopies: 1500000,
+        copiesInStock: 450,
+        price: 17.99,
+        isForSale: true,
+        sale: 10,
+        new: false
+    },
+    {
+        id: uuidv4(),
+        title: 'The Priory of the Orange Tree',
+        author: 'Samantha Shannon',
+        year: 2019,
+        genre: 'Fantasy',
+        description: 'A high fantasy epic featuring dragons, magic, and a world on the brink of destruction.',
+        img:'https://www.bookerycincy.com/cdn/shop/products/9_58c52905-e97f-4b36-8d7a-cf6749849114_700x.jpg?v=1661132293',
+        popular: false,
+        soldCopies: 700000,
+        copiesInStock: 320,
+        price: 24.99,
+        isForSale: true,
+        sale: 20,
+        new: false
+    },
+    {
+        id: uuidv4(),
+        title: 'The House in the Cerulean Sea',
+        author: 'TJ Klune',
+        year: 2020,
+        genre: 'Fantasy',
+        description: 'A heartwarming story about a government worker who is sent to oversee a group of magical children and discovers the power of love and acceptance.',
+        img: 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1569514209i/45047384.jpg',
+        popular: true,
+        soldCopies: 1200000,
+        copiesInStock: 400,
+        price: 16.99,
+        isForSale: true,
+        sale: 5,
+        new: false
+    },
+    {
+        id: uuidv4(),
+        title: 'The Seven Deaths of Evelyn Hardcastle',
+        author: 'Stuart Turton',
+        year: 2018,
+        genre: 'Mystery',
+        description: 'A man must solve the murder of Evelyn Hardcastle, but every time he dies, he wakes up in the body of a different guest at the event.',
+      img:'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1506896221i/36337550.jpg',
+        popular: false,
+        soldCopies: 800000,
+        copiesInStock: 250,
+        price: 14.49,
+        isForSale: true,
+        sale: 15,
+        new: false
+    },
+    {
+        id: uuidv4(),
+        title: 'Red, White & Royal Blue',
+        author: 'Casey McQuiston',
+        year: 2019,
+        genre: 'Romance',
+        description: 'A romantic comedy about the son of the U.S. president and the Prince of Wales who go from rivals to lovers.',
+        img: 'https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/7/1/710bsrzv7kl.jpg',
+        popular: true,
+        soldCopies: 2000000,
+        copiesInStock: 500,
+        price: 13.99,
+        isForSale: true,
+        sale: 10,
+        new: false
     }
 ];
 

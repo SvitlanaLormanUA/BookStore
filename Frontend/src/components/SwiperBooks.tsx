@@ -92,8 +92,6 @@ export default function SwiperBooks({ books, auto, title, placeDiscountIcon, for
               },
             }}
             modules={auto ? [FreeMode, Pagination, Autoplay] : [FreeMode, Pagination, Navigation]}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
             className="swiper-container"
           >
             {books.map((book, index) => (

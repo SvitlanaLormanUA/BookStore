@@ -8,8 +8,8 @@ import { FaShoppingCart, FaHeart } from "react-icons/fa";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const menuRef = useRef(null);  // Reference for the menu container
-    const hamburgerRef = useRef(null);  // Reference for the hamburger icon
+    const menuRef = useRef(null);  
+    const hamburgerRef = useRef(null);  
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
