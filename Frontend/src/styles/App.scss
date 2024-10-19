@@ -2,6 +2,8 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 $header-color: #f5ecdc;
+$footer-color: #363636;
+
 $login-btn-color: #fff7f6;
 $login-btn-color-hover: #e87d6c;
 $body-bg: #fff7f7;
@@ -535,7 +537,7 @@ max-width:  10em;
 }
 @media (min-width: 1017px) and (max-width: 1556px) {
   .dicount-icon {
-    right: 5em;
+    right: 7em;
   }
 }
 
@@ -548,7 +550,48 @@ max-width:  10em;
 /*FOOTER*/
 
 footer {
-  background-color: $header-color;
+  background-color: $footer-color;
   padding: 2em;
   bottom: 0;
+}
+.footer-link {
+  color: $header-color;
+  text-decoration: none;
+}
+.footer-link:hover {
+  color: darkgray;
+  text-decoration: none;
+}
+.footer-link:hover {
+  color:darkgray;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.subscribe-btn  {
+  color: $header-color;
+  border: 1px solid $header-color;
+}
+.subscribe-btn:hover  {
+  border: 1px solid darkgray;
+}
+.link-header-in-footer,
+.form-label {
+  color: darkgray;
+}
+.form-label {
+  margin-top: 1em;
+}
+
+.copywrite-year {
+  border-top: 0.5px solid $header-color;
+  color: $header-color;
+}
+.is-invalid {
+  border-color: red;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.875rem;
 }

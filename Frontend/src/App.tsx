@@ -73,6 +73,11 @@ const router = createBrowserRouter([
                 path: '/books/:genre/:id',
                 element: <div>Book Page</div>,
                 errorElement: <NotFound />
+            },
+            {
+                path: '/jobs',
+                element: <div>Jobs Page</div>,
+                errorElement: <NotFound />
             }
 
         ]

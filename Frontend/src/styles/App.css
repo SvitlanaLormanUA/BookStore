@@ -512,7 +512,7 @@ button {
 }
 @media (min-width: 1017px) and (max-width: 1556px) {
   .dicount-icon {
-    right: 5em;
+    right: 7em;
   }
 }
 .book-item {
@@ -522,9 +522,57 @@ button {
 
 /*FOOTER*/
 footer {
-  background-color: #f5ecdc;
+  background-color: #363636;
   padding: 2em;
   bottom: 0;
+}
+
+.footer-link {
+  color: #f5ecdc;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: darkgray;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: darkgray;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.subscribe-btn {
+  color: #f5ecdc;
+  border: 1px solid #f5ecdc;
+}
+
+.subscribe-btn:hover {
+  border: 1px solid darkgray;
+}
+
+.link-header-in-footer,
+.form-label {
+  color: darkgray;
+}
+
+.form-label {
+  margin-top: 1em;
+}
+
+.copywrite-year {
+  border-top: 0.5px solid #f5ecdc;
+  color: #f5ecdc;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 0.875rem;
 }
 
 /*# sourceMappingURL=App.css.map */
