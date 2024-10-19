@@ -77,7 +77,7 @@ export default function Footer() {
             <h5 className="text-uppercase mb-4 link-header-in-footer">Careers</h5>
             <ul className="list-unstyled">
               <li>
-              <Link to='/jobs'> <a href="#!" className="footer-link">Jobs</a> </Link> 
+              <Link to='/jobs' className="footer-link">  Jobs </Link> 
               </li>
             </ul>
           </div>
@@ -90,12 +90,12 @@ export default function Footer() {
                 <input
                   type="email"
                   id="form5Example2"
-                  className={`form-control ${!isValid ? 'is-invalid' : ''}`} // Додаємо клас для червоного поля, якщо email неправильний
+                  className={`form-control ${!isValid ? 'is-invalid' : ''}`} 
                   value={email}
                   onChange={handleEmailChange}
                 />
                 <label className="form-label" htmlFor="form5Example2">Email address</label>
-                {/* Виведення повідомлення про помилку */}
+            
                 {!isValid && <div className="invalid-feedback">Please enter a valid email.</div>}
               </div>
               <button type="submit" className="subscribe-btn btn btn-block">Subscribe</button>

@@ -43,27 +43,7 @@ const router = createBrowserRouter([
                 path: '/cart',
                 element: <div>Cart Page</div>,
                 errorElement: <NotFound />
-            },
-            {
-                path: '/favorite',
-                element: <div>Favorite Page</div>,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/books/:new',
-                element: <div>New Books Page</div>,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/books/:popular',
-                element: <div>Popular Books Page</div>,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/books/:sales',
-                element: <div>All Books Page</div>,
-                errorElement: <NotFound />
-            },
+            },    
             {
                 path: '/books/:genre',
                 element: <GenrePage />,

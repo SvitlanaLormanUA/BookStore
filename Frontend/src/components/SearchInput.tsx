@@ -8,7 +8,7 @@ export default function SearchInput({ searchIn }: SearchInputProps) {
   const navigate = useNavigate(); // Для переходу до нової сторінки
 
   const handleSearch = () => {
-    // Регулярний вираз для пошуку, нечутливий до регістру
+   
     const regex = new RegExp(searchQuery, 'i');
 
     // Фільтруємо масив книг за введеним запитом
@@ -35,6 +35,13 @@ export default function SearchInput({ searchIn }: SearchInputProps) {
     }
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleSearch(); // Викликаємо пошук при натисканні Enter
+    }
+  };
+
+
   return (
     <>
       <div className="books-input-container">
@@ -44,8 +51,9 @@ export default function SearchInput({ searchIn }: SearchInputProps) {
           placeholder="Find a book..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)} // Оновлюємо стан при введенні
+          onKeyDown={handleKeyDown}  
         />
-        <button onClick={handleSearch}>Search</button> {/* Викликаємо handleSearch при натисканні */}
+        <button onClick={handleSearch}>Search</button> 
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import SeeMoreButton from './SeeMoreButton';
 import { FreeMode, Pagination, Autoplay, Navigation } from "swiper/modules";
@@ -18,18 +18,7 @@ import '../styles/App.css';
 function calculateSalePrice(price: number, sale: number) {
   return price - (price * sale) / 100;
 }
-function getLinkFromProp(forLink: string) {
-  if (forLink.toLowerCase().includes('new')) {
-    return '/books/new';
-  } else if (forLink.toLowerCase().includes('popular')) {
-    return '/books/popular';
-  } else if (forLink.toLowerCase().includes('sale')) {
-    return '/books/sale';
-  }
-  else {
-    return '/books/all'; 
-  }
-}
+
 
 export default function SwiperBooks({ books, auto, title, placeDiscountIcon, forLink }: SwiperBooksProps) {
   return (
@@ -37,11 +26,9 @@ export default function SwiperBooks({ books, auto, title, placeDiscountIcon, for
       <div className="swiper-component">
         <h2 className="swiper-title">{title}</h2>
         <div className="seeMoreBooks-container">
-         <Link to={getLinkFromProp(forLink)}>
-            <div>
-              <SeeMoreButton /> 
-            </div>
-          </Link>
+              <SeeMoreButton forLink={forLink}/> 
+        
+       
         </div>
 
         <section className="book-list">
