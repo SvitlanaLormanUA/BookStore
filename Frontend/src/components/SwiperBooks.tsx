@@ -14,10 +14,8 @@ import 'swiper/css/free-mode';
 import 'swiper/css/autoplay'; 
 import '../styles/mediaQueries.css';
 import '../styles/App.css';
+import BookItem from "./BookItem";
 
-function calculateSalePrice(price: number, sale: number) {
-  return price - (price * sale) / 100;
-}
 
 
 export default function SwiperBooks({ books, auto, title, placeDiscountIcon, forLink }: SwiperBooksProps) {
@@ -27,8 +25,6 @@ export default function SwiperBooks({ books, auto, title, placeDiscountIcon, for
         <h2 className="swiper-title">{title}</h2>
         <div className="seeMoreBooks-container">
               <SeeMoreButton forLink={forLink}/> 
-        
-       
         </div>
 
         <section className="book-list">
@@ -83,40 +79,7 @@ export default function SwiperBooks({ books, auto, title, placeDiscountIcon, for
           >
             {books.map((book, index) => (
               <SwiperSlide key={index}>
-                <div className="book-item">
-                  {book.sale > 0 && placeDiscountIcon ? (
-                    <div className="dicount-icon-container">
-                      <span className="dicount-icon"> - {book.sale}%</span>
-                    </div>
-                  ) : null}
-                  
-                  <img src={book.img} alt={book.title} />
-                  <h3>{book.title}</h3>
-                  <p className="book-item-author">{book.author}</p>
-
-                  <div className="book-item-buy-container">
-                    {book.sale > 0 ? (
-                      <div className="book-item-price-container">
-                        <p className="crossed" id="book-item-price">
-                          {book.price} $
-                        </p>
-                        <p id="book-item-price-red">
-                          {calculateSalePrice(book.price, book.sale).toFixed(2)} $
-                        </p>
-                      </div>
-                    ) : (
-                      <p className="ordinary" id="book-item-price">
-                        {book.price} $
-                      </p>
-                    )}
-                   
-                    <div>
-                      <Button id="buy-button" className="btn btn-danger w-100">
-                        Add to Cart
-                      </Button>
-                    </div>
-                  </div>
-                </div>
+                <BookItem book={book} placeDiscountIcon={placeDiscountIcon}/>
               </SwiperSlide>
             ))}
           </Swiper>

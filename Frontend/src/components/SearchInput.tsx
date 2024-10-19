@@ -19,15 +19,13 @@ export default function SearchInput({ searchIn }: SearchInputProps) {
     );
 
     if (results.length > 0) {
-        {results.map((book, index) => (
-         console.log(book.title, book.author, book.genre)
-          ))}
-        /*<div>
+        <div>
           {results.map((book, index) => (
+             console.log(book.title, book.author, book.genre),
             <p key={index}>{book.title} by {book.author}</p>
           ))}
-        </div>*/
-    // navigate('/books', { state: { books: results } });
+        </div>
+      navigate('/books', { state: { books: results } });
     
      //alert(' found'); 
     } else {
@@ -37,7 +35,8 @@ export default function SearchInput({ searchIn }: SearchInputProps) {
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      handleSearch(); // Викликаємо пошук при натисканні Enter
+      handleSearch(); 
+      
     }
   };
 

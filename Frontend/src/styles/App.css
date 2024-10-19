@@ -15,6 +15,8 @@ body {
 }
 
 .params {
+  top: 0;
+  position: fixed;
   list-style-type: none;
   display: flex;
   justify-content: space-around;
@@ -23,7 +25,7 @@ body {
   border-radius: 0.5em;
   background-color: #f5ecdc;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   z-index: 999;
 }
 
@@ -148,6 +150,7 @@ button {
 }
 
 .book-item {
+  min-height: 392px;
   text-align: center;
   transition: transform 0.3s ease;
   padding: 2em;
@@ -605,6 +608,26 @@ button {
   .brand-name-fixed {
     display: none;
   }
+}
+/*BOOKS PAGE*/
+.books-page {
+  background-color: #fff7f7;
+  padding: 2em;
+  margin-top: 6em;
+}
+
+.book-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 2em;
+}
+
+.book-item {
+  flex: 1 1 30%;
+  min-width: 250px;
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=App.css.map */
