@@ -19,9 +19,11 @@ export default function Books() {
         </div>
             {books.length > 0 ? (
                <div className="book-list">
-                    {books.map((book, index) => (
-                        <BookItem  key={book.id} book={book} />
-                    ))}
+                    {books.map((book, index) => {
+                        console.log(book);
+                        return <BookItem key={book.id} book={book} />;
+                    })}
+                    
                 </div>
             ) : (
                 <p>No books available.</p>

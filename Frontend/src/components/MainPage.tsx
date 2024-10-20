@@ -14,28 +14,66 @@ const booksToBook: Book[] = books;
 function arrangeBooks(books: Book[]): Book[] {
     const bookMap: { [key: string]: number } = {}; 
     
- 
+    const detectLanguage = (title: string): string => {
+     
+      const cyrillicRegex = /[а-яА-ЯіІїЇєЄґҐ]/;
+      if (cyrillicRegex.test(title)) {
+        const crimeanTatarRegex = /[қğışүңә]/;  
+        if (crimeanTatarRegex.test(title)) {
+          return 'Crimean Tatar';
+        }
+        return 'Ukrainian'; 
+      }
+      
+   
+      const latinRegex = /[a-zA-Z]/;
+      if (latinRegex.test(title)) {
+     
+        const frenchRegex = /[éèêëàâçù]/;
+        const germanRegex = /[äöüß]/;    
+        const chineseRegex = /[\u4e00-\u9fa5]/;
+        const japaneseRegex = /[\u3040-\u309F\u30A0-\u30FF\u31F0-\u31FF\u4E00-\u9FFF]/; 
+        
+        if (chineseRegex.test(title)) {
+          return 'Chinese';
+        }
+        if (japaneseRegex.test(title)) {
+          return 'Japanese';
+        }
+        if (frenchRegex.test(title)) {
+          return 'French';
+        }
+        if (germanRegex.test(title)) {
+          return 'German';
+        }
+        return 'English'; 
+      }
+      
+      return 'Unknown'; 
+    }
+  
     for (let i = 0; i < books.length; i++) {
       const book = books[i];
-  
     
+      // Ensure all fields are non-negative
       if (book.soldCopies < 0) book.soldCopies = Math.abs(book.soldCopies);
       if (book.copiesInStock < 0) book.copiesInStock = Math.abs(book.copiesInStock);
       if (book.price < 0) book.price = Math.abs(book.price);
       if (book.year < 0) book.year = Math.abs(book.year);
-  
+    
+      // Detect the language based on the title
+      if (book.language === undefined)
+      book.language = detectLanguage(book.title);
     
       const bookKey = `${book.title}|${book.author}|${book.publisher}`;
-  
+    
       if (bookMap[bookKey] !== undefined) {
-        // Якщо книга вже є в масиві, збільшуємо кількість у наявності
+        // If the book is already in the array, increase stock count
         books[bookMap[bookKey]].copiesInStock += book.copiesInStock;
-        
-
         books.splice(i, 1);
-        i--; 
+        i--;  // Adjust index after removal
       } else {
-        // Якщо книги немає в списку, додаємо її
+        // If the book is not in the list, add it
         bookMap[bookKey] = i; 
       }
     }
@@ -43,6 +81,7 @@ function arrangeBooks(books: Book[]): Book[] {
     return books;
   }
   
+
   
   const booksDataTyped: Book[] = arrangeBooks(booksToBook).sort((a, b) => a.title.localeCompare(b.title));
 export default function MainPage() {

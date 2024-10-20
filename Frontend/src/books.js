@@ -514,7 +514,44 @@ const books = [
         sale: 10,
         new: false,
          publisher: 'Bloomsbury Publishing'
+    },
+    {
+        id: uuidv4(),
+        title: 'Les Trois Mousquetaires',
+        author: 'Alexandre Dumas',
+        year: 1844,
+        genre: 'Historical Fiction',
+        description: "L'histoire suit d'Artagnan, un jeune homme qui se rend à Paris pour rejoindre les mousquetaires du roi et devient impliqué dans des aventures pleines de duels, de conspirations et d'amitié.",
+        img: 'https://images.epagine.fr/843/9782035850843_1_75.jpg',
+        popular: true,
+        soldCopies: 30000000,
+        copiesInStock: 500,
+        price: 15.99,
+        isForSale: true,
+        sale: 5,
+        new: false,
+        publisher: 'Éditions GALLIMARD',
+        language: 'French'
+    },
+    {
+        id: uuidv4(),
+        title: 'Я бачу вас цікавить пітьма',
+        author: 'Illarion Pavlyuk',
+        year: 2020,
+        genre: 'Drama, psychological novel',
+        description: "Роман розповідає історію жінки, яка переживає важливі моменти свого життя, долаючи складні внутрішні конфлікти та шукаючи свій шлях у сучасному світі.",
+        img: 'https://vivat.com.ua/storage/1.d/files/f/6/f669446a_ya-bachu-vas-tsikavyt-pitma.png',
+        popular: true,
+        soldCopies: 20000,
+        copiesInStock: 350,
+        price: 18.99,
+        isForSale: true,
+        sale: 15,
+        new: false,
+        publisher: 'Видавництво Старого Лева'
     }
+    
+    
 ];
 
 export default books;

@@ -20,7 +20,7 @@ export default function SearchInput({ searchIn }: SearchInputProps) {
 
     if (results.length > 0) {
       navigate('/books', { state: { books: results } });
-    
+   
      //alert(' found'); 
     } else {
       alert('No books found'); 

@@ -15,5 +15,6 @@ export type Book = {
     sale: number;
     new: boolean;
     publisher: string;
+    language: string;
 }
 
