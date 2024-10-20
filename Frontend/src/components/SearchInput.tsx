@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function SearchInput({ searchIn }: SearchInputProps) {
   const [searchQuery, setSearchQuery] = useState('');
-  const navigate = useNavigate(); // Для переходу до нової сторінки
+  const navigate = useNavigate(); 
 
   const handleSearch = () => {
    
@@ -19,12 +19,6 @@ export default function SearchInput({ searchIn }: SearchInputProps) {
     );
 
     if (results.length > 0) {
-        <div>
-          {results.map((book, index) => (
-             console.log(book.title, book.author, book.genre),
-            <p key={index}>{book.title} by {book.author}</p>
-          ))}
-        </div>
       navigate('/books', { state: { books: results } });
     
      //alert(' found'); 

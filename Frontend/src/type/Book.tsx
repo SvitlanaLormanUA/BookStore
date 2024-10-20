@@ -14,5 +14,6 @@ export type Book = {
     isForSale: boolean;
     sale: number;
     new: boolean;
+    publisher: string;
 }
 

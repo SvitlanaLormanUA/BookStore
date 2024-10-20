@@ -205,7 +205,7 @@ button {
 }
 
 .swiperBooks {
-  max-width: 40%;
+  max-width: 55%;
   text-align: center;
 }
 
@@ -613,7 +613,7 @@ button {
 .books-page {
   background-color: #fff7f7;
   padding: 2em;
-  margin-top: 6em;
+  margin-top: 10em;
 }
 
 .book-list {
@@ -628,6 +628,11 @@ button {
   flex: 1 1 30%;
   min-width: 250px;
   box-sizing: border-box;
+}
+
+.search-books-page-container {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=App.css.map */

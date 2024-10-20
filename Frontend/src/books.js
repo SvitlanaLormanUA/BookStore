@@ -16,7 +16,8 @@ const books = [
         price: 12.99,
         isForSale: true,
         sale: 10,
-        new: false
+        new: false,
+        publisher: 'Delacorte Press'
     },
     {
         id: uuidv4(),
@@ -32,7 +33,8 @@ const books = [
         price: 9.99,
         isForSale: true,
         sale: 15,
-        new: false
+        new: false,
+        publisher: 'Doubleday'
     },
     {
         id: uuidv4(),
@@ -48,7 +50,8 @@ const books = [
         price: 14.99,
         isForSale: false,
         sale: 0,
-        new: true
+        new: true,
+        publisher: 'Viking'
     },
     {
         id: uuidv4(),
@@ -64,7 +67,8 @@ const books = [
         price: 11.99,
         isForSale: false,
         sale: 0,
-        new: false
+        new: false,
+        publisher: 'Faber & Faber'
     },
     {
         id: uuidv4(),
@@ -80,7 +84,8 @@ const books = [
         price: 13.99,
         isForSale: false,
         sale: 0,
-        new: true
+        new: true,
+        publisher: 'Riverhead Books'
     },
     {
         id: uuidv4(),
@@ -96,7 +101,8 @@ const books = [
         price: 16.99,
         isForSale: true,
         sale: 25,
-        new: false
+        new: false,
+        publisher: 'Random House'
     },
     {
         id: uuidv4(),
@@ -112,7 +118,8 @@ const books = [
         price: 10.99,
         isForSale: true,
         sale: 10,
-        new: false
+        new: false,
+        publisher: 'Celadon Books'
     },
     {
         id: uuidv4(),
@@ -128,7 +135,8 @@ const books = [
         price: 12.49,
         isForSale: true,
         sale: 5,
-        new: false
+        new: false,
+        publisher: 'Little, Brown and Company'
     },
     {
         id: uuidv4(),
@@ -144,7 +152,8 @@ const books = [
         price: 15.99,
         isForSale: false,
         sale: 0,
-        new: true
+        new: true,
+        publisher: 'Atria Books'
     },
     {
         id: uuidv4(),
@@ -160,7 +169,8 @@ const books = [
         price: 9.99,
         isForSale: true,
         sale: 20,
-        new: false
+        new: false,
+         publisher: 'Little, Brown and Company'
     },
 
     {
@@ -177,7 +187,25 @@ const books = [
         price: 19.99,
         isForSale: true,
         sale: 0,
-        new: false
+        new: false,
+         publisher: 'Little, Brown and Company'
+    },
+    {
+        id: uuidv4(),
+        title: 'Dune',
+        author: 'Frank Herbert',
+        year: 1965,
+        genre: 'Science Fiction',
+        description: 'Set on the desert planet Arrakis, this epic tale follows the journey of Paul Atreides as he navigates politics, religion, and the fight for control of the universe’s most valuable resource.',
+        img: 'https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/i/m/img243_1_21.jpg',
+        popular: false,
+        soldCopies: 20000000,
+        copiesInStock: 300,
+        price: 19.99,
+        isForSale: true,
+        sale: 0,
+        new: false,
+        publisher: 'Random House'
     },
     {
         id: uuidv4(),
@@ -193,8 +221,10 @@ const books = [
         price: 14.99,
         isForSale: false,
         sale: 0,
-        new: true
+        new: true,
+         publisher: 'Random House'
     },
+   
     {
         id: uuidv4(),
         title: 'Becoming',
@@ -209,7 +239,25 @@ const books = [
         price: 18.99,
         isForSale: false,
         sale: 0,
-        new: true
+        new: true,
+         publisher: 'Random House'
+    },
+      {
+        id: uuidv4(),
+        title: 'Becoming',
+        author: 'Michelle Obama',
+        year: 2018,
+        genre: 'Memoir',
+        description: 'In this deeply personal memoir, Michelle Obama reflects on the experiences that shaped her life, from her childhood in Chicago to her years as First Lady of the United States.',
+        img:'https://m.media-amazon.com/images/I/81+QX4VMrmS._AC_UF894,1000_QL80_.jpg',
+        popular: false,
+        soldCopies: 10000000,
+        copiesInStock: 200,
+        price: 18.99,
+        isForSale: false,
+        sale: 0,
+        new: true,
+         publisher: 'Random House'
     },
     {
         id: uuidv4(),
@@ -225,7 +273,8 @@ const books = [
         price: 17.99,
         isForSale: true,
         sale: 10,
-        new: false
+        new: false,
+        publisher: 'Tor Books'
     },
     {
         id: uuidv4(),
@@ -241,7 +290,8 @@ const books = [
         price: 24.99,
         isForSale: true,
         sale: 20,
-        new: false
+        new: false,
+        publisher: 'Bloomsbury Publishing'
     },
     {
         id: uuidv4(),
@@ -257,7 +307,8 @@ const books = [
         price: 16.99,
         isForSale: true,
         sale: 5,
-        new: false
+        new: false,
+         publisher: 'Bloomsbury Publishing'
     },
     {
         id: uuidv4(),
@@ -273,7 +324,8 @@ const books = [
         price: 14.49,
         isForSale: true,
         sale: 15,
-        new: false
+        new: false,
+         publisher: 'Bloomsbury Publishing'
     },
     {
         id: uuidv4(),
@@ -289,7 +341,179 @@ const books = [
         price: 13.99,
         isForSale: true,
         sale: 10,
-        new: false
+        new: false,
+         publisher: 'Bloomsbury Publishing'
+    },
+    {
+        id: uuidv4(),
+        title: 'Red, White & Royal Blue',
+        author: 'Casey McQuiston',
+        year: 2019,
+        genre: 'Romance',
+        description: 'A romantic comedy about the son of the U.S. president and the Prince of Wales who go from rivals to lovers.',
+        img: 'https://static.yakaboo.ua/media/cloudflare/product/webp/600x840/7/1/710bsrzv7kl.jpg',
+        popular: true,
+        soldCopies: 2000000,
+        copiesInStock: 500,
+        price: 13.99,
+        isForSale: true,
+        sale: 10,
+        new: false,
+         publisher: 'Bloomsbury Publishing'
+    },
+    {
+        id: uuidv4(),
+        title: 'Pride and Prejudice',
+        author: 'Jane Austen',
+        year: 1813,
+        genre: 'Romance',
+        description: 'The classic story of Elizabeth Bennet and her romantic tension with the wealthy and aloof Mr. Darcy.',
+        img: 'https://static.yakaboo.ua/media/catalog/product/9/7/9781847493699_0.jpg',
+        popular: false,
+        soldCopies: 20000000,
+        copiesInStock: 800,
+        price: 9.99,
+        isForSale: false,
+        sale: 0,
+        new: false,
+        publisher: 'Tor Books'
+    },
+    {
+        id: uuidv4(),
+        title: 'Moby-Dick',
+        author: 'Herman Melville',
+        year: 1851,
+        genre: 'Adventure',
+        description: 'A sailor Ishmael narrates the obsessive quest of Captain Ahab for revenge against Moby Dick, a giant white whale.',
+        img: 'https://images.booksense.com/images/007/839/9781954839007.jpg',
+        popular: false,
+        soldCopies: 15000000,
+        copiesInStock: 600,
+        price: 12.99,
+        isForSale: false,
+        sale: 0,
+        new: false,
+          publisher: 'Tor Books'
+    },
+    {
+        id: uuidv4(),
+        title: 'The Great Gatsby',
+        author: 'F. Scott Fitzgerald',
+        year: 1925,
+        genre: 'Tragedy',
+        description: 'The story of the mysteriously wealthy Jay Gatsby and his obsession with the beautiful Daisy Buchanan.',
+        img: 'https://m.media-amazon.com/images/I/81QuEGw8VPL._AC_UF1000,1000_QL80_.jpg',
+        popular: false,
+        soldCopies: 25000000,
+        copiesInStock: 700,
+        price: 10.99,
+        isForSale: true,
+        sale: 0,
+        new: false,
+          publisher: 'Tor Books'
+    },
+    {
+        id: uuidv4(),
+        title: '1984',
+        author: 'George Orwell',
+        year: 1949,
+        genre: 'Dystopian',
+        description: 'A chilling depiction of a totalitarian state, surveillance, and propaganda in a dystopian future.',
+        img: 'https://m.media-amazon.com/images/I/612ADI+BVlL._AC_UF1000,1000_QL80_.jpg',
+        popular: false,
+        soldCopies: 30000000,
+        copiesInStock: 500,
+        price: 11.99,
+        isForSale: false,
+        sale: 0,
+        new: false,
+          publisher: 'Tor Books'
+    },
+   
+    {
+        id: uuidv4(),
+        title: 'Frankenstein',
+        author: 'Mary Shelley',
+        year: 1818,
+        genre: 'Horror',
+        description: 'The story of a scientist who creates a living being, only to be horrified by the monster he has brought to life.',
+        img: 'https://cdn2.penguin.com.au/covers/400/9780241321645.jpg',
+        popular: true,
+        soldCopies: 18000000,
+        copiesInStock: 550,
+        price: 8.99,
+        isForSale: false,
+        sale: 0,
+        new: false,
+        publisher: 'Bloomsbury Publishing'
+    },
+    {
+        id: uuidv4(),
+        title: 'Jane Eyre',
+        author: 'Charlotte Brontë',
+        year: 1847,
+        genre: 'Romance',
+        description: 'The story of an orphan girl who grows up to become a governess and falls in love with her employer, Mr. Rochester.',
+        img: 'https://images.squarespace-cdn.com/content/v1/5b19552831d4df0c23869b60/1534516312827-LJIUOECDIVGOIV7SJCZ6/JaneEyre.jpg',
+        popular: false,
+        soldCopies: 22000000,
+        copiesInStock: 650,
+        price: 10.49,
+        isForSale: true,
+        sale: 5,
+        new: false,
+         publisher: 'Bloomsbury Publishing'
+    },
+    {
+        id: uuidv4(),
+        title: 'The Odyssey',
+        author: 'Homer',
+        year: -800,
+        genre: 'Epic Poetry',
+        description: 'The story of Odysseus’ long journey home after the Trojan War, facing mythical creatures and divine intervention.',
+        img: 'https://m.media-amazon.com/images/I/71FC1AcWTKL._AC_UF894,1000_QL80_.jpg',
+        popular: false,
+        soldCopies: 12000000,
+        copiesInStock: 450,
+        price: 13.49,
+        isForSale: true,
+        sale: 10,
+        new: false,
+         publisher: 'Bloomsbury Publishing'
+    },
+    {
+        id: uuidv4(),
+        title: 'The Picture of Dorian Gray',
+        author: 'Oscar Wilde',
+        year: 1890,
+        genre: 'Philosophical Fiction',
+        description: 'A young man remains eternally youthful while a portrait of him ages and shows the consequences of his moral corruption.',
+        img: 'https://m.media-amazon.com/images/I/71fm0Ap7JcL._AC_UF894,1000_QL80_.jpg',
+        popular: true,
+        soldCopies: 15000000,
+        copiesInStock: 500,
+        price: 14.99,
+        isForSale: true,
+        sale: 15,
+        new: false,
+        publisher: 'Tor Books'
+    },
+    {
+        id: uuidv4(),
+        title: 'Dracula',
+        author: 'Bram Stoker',
+        year: 1897,
+        genre: 'Gothic Horror',
+        description: 'The story of Count Dracula’s attempt to move from Transylvania to England so he may find new blood and spread the undead curse.',
+        img: 'https://m.media-amazon.com/images/I/71yhG9std-L._AC_UF1000,1000_QL80_.jpg',
+        popular: false,
+        soldCopies: 25000000,
+        copiesInStock: 600,
+        price: 12.99,
+        isForSale: true,
+        sale: 10,
+        new: false,
+         publisher: 'Bloomsbury Publishing'
     }
 ];
 

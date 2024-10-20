@@ -19,6 +19,8 @@ import BookItem from "./BookItem";
 
 
 export default function SwiperBooks({ books, auto, title, placeDiscountIcon, forLink }: SwiperBooksProps) {
+
+
   return (
     <>
       <div className="swiper-component">

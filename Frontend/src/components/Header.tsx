@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 import '../styles/App.css';
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 
+
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const menuRef = useRef(null);  
