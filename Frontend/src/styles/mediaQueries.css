@@ -23,3 +23,22 @@
       
       }
  
+@media (max-width: 1200px) {
+  .filters-genre-unit {
+    flex: 1 calc(33.33% - 10px);
+  }
+}
+
+/* Для екранів менших за 768px: 2 фільтри в рядку */
+@media (max-width: 768px) {
+  .filters-genre-unit {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
+
+/* Для мобільних екранів менших за 480px: 1 фільтр в рядку */
+@media (max-width: 480px) {
+  .filters-genre-unit {
+    flex: 1 1 100%;
+  }
+}

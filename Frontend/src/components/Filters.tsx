@@ -1,4 +1,5 @@
 import books from '../books.js';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 export default function Filters() {
 
@@ -16,14 +17,17 @@ export default function Filters() {
     }
     
     function createGenresComponent() {
-        return genres.map((genre) => <div key={genre} className="fiters-genre-unit">{genre}</div>);
+        return genres.map((genre) => <option key={genre} value={genre}>{genre}</option>);
     }
 
     return (
         <>
-             <div className="filters-genres-container"> 
-                {createGenresComponent()}
-             </div>
+            <div className="filters-genres-container"> 
+                <select className="form-select" aria-label="Select Genre">
+                    <option value="">Select a genre</option> {/* Optional placeholder */}
+                    {createGenresComponent()}
+                </select>
+            </div>
         </>
     );
 }

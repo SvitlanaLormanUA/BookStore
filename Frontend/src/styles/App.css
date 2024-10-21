@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import 'bootstrap/dist/css/bootstrap.min.css';
 body {
@@ -760,43 +759,6 @@ button {
 
 .no-books-avaliable {
   text-align: center;
-}
-
-.filters-genres-container {
-  margin: 4em;
-  display: flex;
-  justify-content: space-around;
-  gap: 3em;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: start;
-}
-
-.fiters-genre-unit {
-  flex: 1 1 calc(25% - 10px);
-  box-sizing: border-box;
-  color: #803500;
-  font-size: 20px;
-  font-weight: 500;
-  text-align: left;
-}
-
-@media (max-width: 1200px) {
-  .filters-genre-unit {
-    flex: 1 calc(33.33% - 10px);
-  }
-}
-/* Для екранів менших за 768px: 2 фільтри в рядку */
-@media (max-width: 768px) {
-  .filters-genre-unit {
-    flex: 1 1 calc(50% - 10px);
-  }
-}
-/* Для мобільних екранів менших за 480px: 1 фільтр в рядку */
-@media (max-width: 480px) {
-  .filters-genre-unit {
-    flex: 1 1 100%;
-  }
 }
 
 /*# sourceMappingURL=App.css.map */

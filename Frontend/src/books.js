@@ -609,7 +609,7 @@ const books = [
         genre: 'Self-help',
         description: 'An insightful guide on how small, incremental habits can lead to remarkable improvements in life. It offers practical strategies for forming good habits and eliminating bad ones.',
         img: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1655988385l/40121378.jpg',
-        popular: true,
+        popular: false,
         soldCopies: 220000,
         copiesInStock: 800,
         price: 21.99,
