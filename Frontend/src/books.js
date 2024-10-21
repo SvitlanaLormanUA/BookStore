@@ -538,7 +538,7 @@ const books = [
         title: 'Я бачу вас цікавить пітьма',
         author: 'Illarion Pavlyuk',
         year: 2020,
-        genre: 'Drama, psychological novel',
+        genre: 'Drama',
         description: "Роман розповідає історію жінки, яка переживає важливі моменти свого життя, долаючи складні внутрішні конфлікти та шукаючи свій шлях у сучасному світі.",
         img: 'https://vivat.com.ua/storage/1.d/files/f/6/f669446a_ya-bachu-vas-tsikavyt-pitma.png',
         popular: true,

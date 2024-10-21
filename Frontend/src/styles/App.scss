@@ -782,3 +782,16 @@ button {
 .no-books-avaliable{
   text-align: center;
 }
+
+.filters-genres-container {
+  margin: 2em;
+  display: flex;
+  justify-content: space-around;
+  gap: 2em;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+.iters-genre-unit {
+  
+}
