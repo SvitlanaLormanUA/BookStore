@@ -49,6 +49,7 @@ export default function SwiperBooks({ books, auto, title, placeDiscountIcon, for
             autoplay={auto ? {
               delay: 1000,
               disableOnInteraction: false,
+              pauseOnMouseEnter: true
             } : false}
             navigation={!auto}
             breakpoints={{

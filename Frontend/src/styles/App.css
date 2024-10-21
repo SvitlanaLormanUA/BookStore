@@ -757,4 +757,8 @@ button {
   cursor: not-allowed;
 }
 
+.no-books-avaliable {
+  text-align: center;
+}
+
 /*# sourceMappingURL=App.css.map */

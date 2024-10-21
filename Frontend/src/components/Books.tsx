@@ -3,6 +3,7 @@ import { useState } from 'react';
 import BookItem from './BookItem';
 import defaultBooks from '../books.js';
 import SearchInput from './SearchInput.js';
+import Filters from './Filters.js';
 
 export default function Books() {
     const location = useLocation();
@@ -18,7 +19,6 @@ export default function Books() {
     const indexOfFirstBook = indexOfLastBook - booksPerPage;
     const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);
 
-    // Calculate the total number of pages
     const totalPages = Math.ceil(books.length / booksPerPage);
 
     // Handle page navigation
@@ -45,6 +45,9 @@ export default function Books() {
                 <div className="search-books-page-container">
                     <SearchInput searchIn={defaultBooks} />
                 </div>
+                <div className="filters-container">
+                    <Filters />
+                </div>
                 {books.length > 0 ? (
                     <>
                         <div className="book-list">
@@ -53,14 +56,14 @@ export default function Books() {
                             })}
                         </div>
 
-                        {/* Pagination Controls */}
+
                         <div className="pagination">
                             <button 
                                 className="pagination-btn" 
                                 onClick={goToPreviousPage} 
                                 disabled={currentPage === 1}
                             >
-                                &lt; Prev
+                                &lt; 
                             </button>
 
                             {/* Page Numbers */}
@@ -81,12 +84,12 @@ export default function Books() {
                                 onClick={goToNextPage} 
                                 disabled={currentPage === totalPages}
                             >
-                                Next &gt;
+                                 &gt;
                             </button>
                         </div>
                     </>
                 ) : (
-                    <p>No books available.</p>
+                    <p className='no-books-avaliable'>No books found </p>
                 )}
             </div>
         </>

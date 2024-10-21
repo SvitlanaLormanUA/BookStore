@@ -22,9 +22,9 @@ export default function SearchInput({ searchIn }: SearchInputProps) {
       navigate('/books', { state: { books: results } });
    
      //alert(' found'); 
-    } else {
+    } /*else {
       alert('No books found'); 
-    }
+    }*/
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
