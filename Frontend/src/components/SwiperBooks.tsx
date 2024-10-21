@@ -31,7 +31,7 @@ export default function SwiperBooks({ books, auto, title, placeDiscountIcon, for
 
         <section className="book-list">
           <Swiper
-            spaceBetween={10}
+            spaceBetween={0}
             loop={true}
             grabCursor={false}
             effect="coverflow"
