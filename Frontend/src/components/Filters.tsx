@@ -1,5 +1,5 @@
 import books from '../books.js';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+
 
 export default function Filters() {
 
