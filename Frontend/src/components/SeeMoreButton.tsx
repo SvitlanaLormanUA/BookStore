@@ -20,8 +20,8 @@ export default function SeeMoreButton({ forLink }: SeeMoreButtonProps) {
     const navigate = useNavigate();
 
     const goToOtherBookPage = () => {
-        console.log(forLink);
-        console.log(results);
+       // console.log(forLink);
+        //console.log(results);
         navigate(`/books`, { state: { books: results } });
     };
 

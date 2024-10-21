@@ -42,12 +42,14 @@ export default function Books() {
         <>
             <div className="book-filters"></div>
             <div className="books-page">
+        
                 <div className="search-books-page-container">
                     <SearchInput searchIn={defaultBooks} />
                 </div>
                 <div className="filters-container">
                     <Filters />
                 </div>
+          
                 {books.length > 0 ? (
                     <>
                         <div className="book-list">

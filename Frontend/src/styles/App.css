@@ -761,4 +761,159 @@ button {
   text-align: center;
 }
 
+/*FILTERS*/
+.genres-navigation {
+  margin: 0 auto;
+  display: block;
+  padding: 25px;
+  min-width: 141px;
+}
+.genres-navigation ul li {
+  list-style: none;
+  margin: 0 auto;
+  display: inline-block;
+  padding: 10px 40px 10px 40px;
+  position: relative;
+  text-align: center;
+  font-family: "Arvo", sans-serif;
+  background-color: #fff7f6;
+  border: 0.5px solid #5e2400;
+  border-radius: 0.5em 0.5em;
+  transition: background-color 0.3s ease;
+}
+.genres-navigation ul li .arrow-down {
+  display: inline-block;
+  margin-left: 10px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  transition: transform 0.3s ease;
+}
+.genres-navigation ul li:hover .arrow-down {
+  transform: rotate(180deg);
+}
+.genres-navigation ul li:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 0.5em 0.5em 0 0;
+}
+.genres-navigation ul li ul {
+  min-width: 141px;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  padding-left: 0;
+  left: 0;
+  display: none;
+  background: white;
+  box-shadow: 0px 3px 5px -1px #ccc;
+  min-width: 150px;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #803500 transparent;
+  z-index: 1000;
+  background-color: #f9f9f9;
+  border: 0.5px solid #803500;
+  border-top: none;
+}
+.genres-navigation ul li ul li {
+  clear: both;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+  padding-top: 0.8em;
+  padding-bottom: 1em;
+  border-style: none;
+  border-radius: 0 0 0.5em 0.5em;
+  border: 0.5px solid #e87d6c;
+}
+.genres-navigation ul li ul li:hover {
+  background-color: #f0f0f0;
+}
+.genres-navigation ul li ul li a {
+  transition: all 0.5s ease;
+}
+.genres-navigation ul li ul li a:hover {
+  padding-left: 10px;
+  border-left: 2px solid #3ca0e7;
+  transition: all 0.3s ease;
+}
+.genres-navigation ul li ul::-webkit-scrollbar {
+  width: 8px;
+}
+.genres-navigation ul li ul::-webkit-scrollbar-thumb {
+  background-color: #3ca0e7;
+  border-radius: 10px;
+}
+.genres-navigation ul li:hover > ul,
+.genres-navigation ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+  padding-top: 10px;
+  margin-top: 12px;
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li ul li a {
+  transition: all 0.5s ease;
+}
+
+.filters-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2em;
+  font-size: 18px;
+}
+
+.filters-checkbox-container {
+  display: flex;
+  height: fit-content;
+  gap: 6em;
+  margin-top: 1.2em;
+  border-left: 2px solid #5e2400;
+  padding: 0.5em;
+  padding-left: 1em;
+}
+
+.onSale-checkbox,
+.popular-checkbox {
+  display: flex;
+  gap: 8px;
+}
+
+.onSale-checkbox input,
+.popular-checkbox input {
+  margin-top: 10px;
+}
+
+.popular-checkbox {
+  margin-bottom: 5px;
+}
+
+.onSale-checkbox input:hover,
+.popular-checkbox input:hover {
+  cursor: pointer;
+}
+
+.apply-filters-btn {
+  background-color: #007bff;
+  border: none;
+  color: #fff7f6;
+  font-size: 16px;
+  border-radius: 0.5em;
+}
+
+.apply-filters-btn:hover {
+  background-color: #67a7ea;
+}
+
 /*# sourceMappingURL=App.css.map */
