@@ -32,3 +32,8 @@
  gap: 3em;
 }
 }
+@media (max-width: 1404px) {
+  .img-main-page {
+    display: none;
+  }
+}

@@ -8,11 +8,10 @@ export default function Filters() {
     const [selectedGenres, setSelectedGenres] = useState<string[]>([]); 
     const [onSale, setOnSale] = useState(false);
     const [popular, setPopular] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState(false); 
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Стан для бокового меню
+    const [dropdownOpen, setDropdownOpen] = useState(true); 
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false); 
     const navigate = useNavigate();
 
-    // Отримуємо унікальні жанри
     function getBooksGenres() {
         const genres = books.map(book => book.genre);
         let uniqueGenres = genres.filter((value, index) => genres.indexOf(value) === index);
@@ -24,7 +23,7 @@ export default function Filters() {
         return uniqueGenres;
     }
 
-    // Фільтруємо книги за жанрами та додатковими фільтрами
+    
     function filterBooksByGenre() {
         let filteredBooks: Book[] = books;
 
@@ -43,7 +42,7 @@ export default function Filters() {
         navigate(`/books`, { state: { books: filteredBooks } });
     }
 
-    // Обробка зміни жанрів при виборі/знятті чекбоксів
+   
     function handleGenreChange(genre: string) {
         setSelectedGenres(prevGenres => {
             if (prevGenres.includes(genre)) {
@@ -54,12 +53,12 @@ export default function Filters() {
         });
     }
 
-    // Обробка зміни чекбокса "On Sale"
+    // "On Sale"
     function handleOnSaleChange(event: React.ChangeEvent<HTMLInputElement>) {
         setOnSale(event.target.checked);
     }
 
-    // Обробка зміни чекбокса "Popular"
+    //  "Popular"
     function handlePopularChange(event: React.ChangeEvent<HTMLInputElement>) {
         setPopular(event.target.checked);
     }
@@ -69,7 +68,6 @@ export default function Filters() {
         filterBooksByGenre();
     }, [selectedGenres, onSale, popular]);
 
-    // Створюємо компоненти для жанрів із чекбоксами
     function createGenresComponent() {
         return genres.map((genre) => (
             <div key={genre} className="filters-genres-item">

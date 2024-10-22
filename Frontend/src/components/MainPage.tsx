@@ -55,7 +55,7 @@ function arrangeBooks(books: Book[]): Book[] {
     for (let i = 0; i < books.length; i++) {
       const book = books[i];
     
-      // Ensure all fields are non-negative
+
       if (book.soldCopies < 0) book.soldCopies = Math.abs(book.soldCopies);
       if (book.copiesInStock < 0) book.copiesInStock = Math.abs(book.copiesInStock);
       if (book.price < 0) book.price = Math.abs(book.price);
@@ -63,7 +63,7 @@ function arrangeBooks(books: Book[]): Book[] {
       if (book.stars < 0) book.stars = Math.abs(book.stars);
       if (book.stars > 5) book.stars = 5;
     
-      // Detect the language based on the title
+   
       if (book.language === undefined)
       book.language = detectLanguage(book.title);
     
@@ -73,7 +73,7 @@ function arrangeBooks(books: Book[]): Book[] {
         // If the book is already in the array, increase stock count
         books[bookMap[bookKey]].copiesInStock += book.copiesInStock;
         books.splice(i, 1);
-        i--;  // Adjust index after removal
+        i--;  
       } else {
         // If the book is not in the list, add it
         bookMap[bookKey] = i; 
@@ -113,7 +113,9 @@ export default function MainPage() {
           <p>best choice</p>
           <h1>BamBook</h1>
          <SearchInput searchIn={booksDataTyped} />
+         <img src="src/assets/images/cat-on-books 1.png" alt="" className="img-main-page"/>
         </section>
+        
         <section className="swiperBooks">
          
           <SwiperBooks
