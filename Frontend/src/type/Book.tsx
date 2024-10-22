@@ -16,5 +16,6 @@ export type Book = {
     new: boolean;
     publisher: string;
     language: string;
+    stars: number;
 }
 

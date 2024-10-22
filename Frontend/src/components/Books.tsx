@@ -40,7 +40,7 @@ export default function Books() {
 
     return (
         <>
-            <div className="book-filters"></div>
+         
             <div className="books-page">
         
                 <div className="search-books-page-container">

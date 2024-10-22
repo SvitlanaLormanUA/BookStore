@@ -60,6 +60,8 @@ function arrangeBooks(books: Book[]): Book[] {
       if (book.copiesInStock < 0) book.copiesInStock = Math.abs(book.copiesInStock);
       if (book.price < 0) book.price = Math.abs(book.price);
       if (book.year < 0) book.year = Math.abs(book.year);
+      if (book.stars < 0) book.stars = Math.abs(book.stars);
+      if (book.stars > 5) book.stars = 5;
     
       // Detect the language based on the title
       if (book.language === undefined)

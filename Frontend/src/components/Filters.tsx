@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import books from '../books.js';
 import { Book } from '../type/Book.js';
@@ -22,7 +22,7 @@ export default function Filters() {
     }
 
     function filterBooksByGenre() {
-        let filteredBooks: Book[] = books.filter(book => book.genre === selectedGenre);
+        let filteredBooks: Book[] = books.filter(book => book.genre === selectedGenre || selectedGenre === 'Select a genre');
 
         if (onSale) {
             filteredBooks = filteredBooks.filter(book => book.isForSale);
@@ -37,7 +37,6 @@ export default function Filters() {
 
     function handleGenreClick(genre: string) {
         setSelectedGenre(genre);
-        filterBooksByGenre();
     }
 
     function handleOnSaleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -47,6 +46,11 @@ export default function Filters() {
     function handlePopularChange(event: React.ChangeEvent<HTMLInputElement>) {
         setPopular(event.target.checked);
     }
+
+    // Використовуємо useEffect для автоматичного застосування фільтрів при зміні чекбоксів або жанру
+    useEffect(() => {
+        filterBooksByGenre();
+    }, [selectedGenre, onSale, popular]);
 
     function createGenresComponent() {
         return genres.map((genre) => (
@@ -59,7 +63,6 @@ export default function Filters() {
     return (
     <>
     <div className="filters-container">
-      
         <div className="genres-navigation">
             <ul className="filters-genres-dropdown">
                 <li className='filters-genres-trigger'>
@@ -71,37 +74,28 @@ export default function Filters() {
             </ul>
         </div>
 
-            {/* Checkboxes for On Sale and Popular filters */}
-          <div className="filters-checkbox-container">
+        {/* Checkboxes for On Sale and Popular filters */}
+        <div className="filters-checkbox-container">
             <div className="onSale-checkbox">
-                    <input
-                        type="checkbox"
-                        checked={onSale}
-                        onChange={handleOnSaleChange}
-                         name='onSale-checkbox-input'
-                    />
-                  
-                    <label htmlFor="onSale-checkbox-input">
-                    On Sale
-                     </label>
-                </div>
+                <input
+                    type="checkbox"
+                    checked={onSale}
+                    onChange={handleOnSaleChange}
+                    name='onSale-checkbox-input'
+                />
+                <label htmlFor="onSale-checkbox-input">On Sale</label>
+            </div>
             <div className="popular-checkbox">
-                                <input
-                                    type="checkbox"
-                                    checked={popular}
-                                    onChange={handlePopularChange}
-                                    name='popular-checkbox-input'
-                                />
-                            <label htmlFor="popular-checkbox-input">
-                                 Popular
-                            </label>
-
-            
+                <input
+                    type="checkbox"
+                    checked={popular}
+                    onChange={handlePopularChange}
+                    name='popular-checkbox-input'
+                />
+                <label htmlFor="popular-checkbox-input">Popular</label>
             </div>
-            </div>  
-            </div>
-            <button onClick={filterBooksByGenre} className="apply-filters-btn">Apply Filters</button>
-            
-            </>
+        </div>  
+    </div>
+    </>
     );
 }

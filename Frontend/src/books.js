@@ -17,7 +17,8 @@ const books = [
         isForSale: true,
         sale: 10,
         new: false,
-        publisher: 'Delacorte Press'
+        publisher: 'Delacorte Press',
+        stars: 3.2,
     },
     {
         id: uuidv4(),
@@ -34,7 +35,8 @@ const books = [
         isForSale: true,
         sale: 15,
         new: false,
-        publisher: 'Doubleday'
+        publisher: 'Doubleday',
+        stars: 4.8,
     },
     {
         id: uuidv4(),
@@ -51,7 +53,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: true,
-        publisher: 'Viking'
+        publisher: 'Viking',
+        stars: 3.9,
     },
     {
         id: uuidv4(),
@@ -68,7 +71,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: false,
-        publisher: 'Faber & Faber'
+        publisher: 'Faber & Faber',
+        stars: 4.2,
     },
     {
         id: uuidv4(),
@@ -85,7 +89,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: true,
-        publisher: 'Riverhead Books'
+        publisher: 'Riverhead Books',
+        stars: 4,
     },
     {
         id: uuidv4(),
@@ -102,7 +107,8 @@ const books = [
         isForSale: true,
         sale: 25,
         new: false,
-        publisher: 'Random House'
+        publisher: 'Random House',
+        stars: 4.3,
     },
     {
         id: uuidv4(),
@@ -119,7 +125,8 @@ const books = [
         isForSale: true,
         sale: 10,
         new: false,
-        publisher: 'Celadon Books'
+        publisher: 'Celadon Books',
+        stars: 4,
     },
     {
         id: uuidv4(),
@@ -136,7 +143,8 @@ const books = [
         isForSale: true,
         sale: 5,
         new: false,
-        publisher: 'Little, Brown and Company'
+        publisher: 'Little, Brown and Company',
+        stars: 4.7,
     },
     {
         id: uuidv4(),
@@ -153,7 +161,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: true,
-        publisher: 'Atria Books'
+        publisher: 'Atria Books',
+        stars: 4.8,
     },
     {
         id: uuidv4(),
@@ -188,7 +197,8 @@ const books = [
         isForSale: true,
         sale: 0,
         new: false,
-         publisher: 'Little, Brown and Company'
+        publisher: 'Little, Brown and Company',
+        stars: 4.8,
     },
     {
         id: uuidv4(),
@@ -205,7 +215,8 @@ const books = [
         isForSale: true,
         sale: 0,
         new: false,
-        publisher: 'Random House'
+        publisher: 'Random House',
+        stars: 4.8,
     },
     {
         id: uuidv4(),
@@ -222,7 +233,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: true,
-         publisher: 'Random House'
+         publisher: 'Random House',
+         stars: 4.2,
     },
    
     {
@@ -240,7 +252,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: true,
-         publisher: 'Random House'
+         publisher: 'Random House',
+         stars: 3.2,
     },
       {
         id: uuidv4(),
@@ -257,7 +270,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: true,
-         publisher: 'Random House'
+         publisher: 'Random House',
+         stars: 3.5,
     },
     {
         id: uuidv4(),
@@ -274,7 +288,8 @@ const books = [
         isForSale: true,
         sale: 10,
         new: false,
-        publisher: 'Tor Books'
+        publisher: 'Tor Books',
+        stars: 4.8,
     },
     {
         id: uuidv4(),
@@ -291,7 +306,8 @@ const books = [
         isForSale: true,
         sale: 20,
         new: false,
-        publisher: 'Bloomsbury Publishing'
+        publisher: 'Bloomsbury Publishing',
+        stars: 3.6,
     },
     {
         id: uuidv4(),
@@ -393,7 +409,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: false,
-          publisher: 'Tor Books'
+        publisher: 'Tor Books',
+        stars: 3.85,
     },
     {
         id: uuidv4(),
@@ -427,7 +444,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: false,
-          publisher: 'Tor Books'
+        publisher: 'Tor Books',
+        stars: 4.5,
     },
    
     {
@@ -445,7 +463,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: false,
-        publisher: 'Bloomsbury Publishing'
+        publisher: 'Bloomsbury Publishing',
+        stars: 4.5,
     },
     {
         id: uuidv4(),
@@ -462,7 +481,8 @@ const books = [
         isForSale: true,
         sale: 5,
         new: false,
-         publisher: 'Bloomsbury Publishing'
+         publisher: 'Bloomsbury Publishing',
+         stars: 4.8,
     },
     {
         id: uuidv4(),
@@ -479,7 +499,8 @@ const books = [
         isForSale: true,
         sale: 10,
         new: false,
-         publisher: 'Bloomsbury Publishing'
+         publisher: 'Bloomsbury Publishing',
+         stars: 3.1,
     },
     {
         id: uuidv4(),
@@ -496,7 +517,8 @@ const books = [
         isForSale: true,
         sale: 15,
         new: false,
-        publisher: 'Tor Books'
+        publisher: 'Tor Books',
+        stars: 4.7,
     },
     {
         id: uuidv4(),
@@ -513,7 +535,8 @@ const books = [
         isForSale: true,
         sale: 10,
         new: false,
-         publisher: 'Bloomsbury Publishing'
+         publisher: 'Bloomsbury Publishing',
+         stars: 4.8,
     },
     {
         id: uuidv4(),
@@ -531,7 +554,8 @@ const books = [
         sale: 5,
         new: false,
         publisher: 'Éditions GALLIMARD',
-        language: 'French'
+        language: 'French',
+        stars: 4,
     },
     {
         id: uuidv4(),
@@ -548,7 +572,8 @@ const books = [
         isForSale: true,
         sale: 15,
         new: false,
-        publisher: 'Видавництво Старого Лева'
+        publisher: 'Видавництво Старого Лева',
+        stars: 4.8,
     },
     {
         id: uuidv4(),
@@ -565,7 +590,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: false,
-        publisher: 'Prentice Hall'
+        publisher: 'Prentice Hall',
+        stars: 3.75,
     },
     {
         id: uuidv4(),
@@ -582,7 +608,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: false,
-        publisher: 'Addison-Wesley'
+        publisher: 'Addison-Wesley',
+        stars: 4,
     },
     {
         id: uuidv4(),
@@ -599,7 +626,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: false,
-        publisher: 'Farrar, Straus and Giroux'
+        publisher: 'Farrar, Straus and Giroux',
+        stars: 3,
     },
     {
         id: uuidv4(),
@@ -616,7 +644,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: true,
-        publisher: 'Avery'
+        publisher: 'Avery',
+        stars: 3.3,
     },
     {
         id: uuidv4(),
@@ -633,7 +662,8 @@ const books = [
         isForSale: true,
         sale: 10,
         new: false,
-        publisher: 'Addison-Wesley'
+        publisher: 'Addison-Wesley',
+        stars: 4,
     },
     {
         id: uuidv4(),
@@ -650,7 +680,8 @@ const books = [
         isForSale: true,
         sale: 5,
         new: false,
-        publisher: 'Scribner'
+        publisher: 'Scribner',
+        stars: 2.9,
     },
     {
         id: uuidv4(),
@@ -667,7 +698,8 @@ const books = [
         isForSale: false,
         sale: 0,
         new: true,
-        publisher: 'Simon & Schuster'
+        publisher: 'Simon & Schuster',
+        stars: 4.8,
     }
     
     
