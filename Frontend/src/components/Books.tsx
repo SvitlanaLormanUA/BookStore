@@ -27,7 +27,7 @@ export default function Books() {
 
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1);
-    const booksPerPage = isMobile ? 3 : 9; // Для мобільних пристроїв показуємо 3 книги
+    const booksPerPage = isMobile ? 5 : 9; // Для мобільних пристроїв показуємо 3 книги
 
     // Calculate the starting and ending index for the books to display
     const indexOfLastBook = currentPage * booksPerPage;
@@ -51,47 +51,6 @@ export default function Books() {
 
     const goToPage = (page) => {
         setCurrentPage(page);
-    };
-
-    const renderPageNumbers = () => {
-        const pageNumbers = [];
-
-        
-        if (currentPage > 3) {
-            pageNumbers.push(
-                <button key={1} onClick={() => goToPage(1)} className={`pagination-number ${currentPage === 1 ? 'active' : ''}`}>
-                    1
-                </button>
-            );
-
-            if (currentPage > 4) {
-                pageNumbers.push(<span key="ellipsis-start" className='pagination-number'> ... </span>);
-            }
-        }
-
-        // Додаємо поточну сторінку і сусідні
-        for (let i = Math.max(1, currentPage - 2); i <= Math.min(totalPages, currentPage + 2); i++) {
-            pageNumbers.push(
-                <button key={i} onClick={() => goToPage(i)} className={`pagination-number ${currentPage === i ? 'active' : ''}`}>
-                    {i}
-                </button>
-            );
-        }
-
-        // Додаємо останню сторінку
-        if (currentPage < totalPages - 2) {
-            if (currentPage < totalPages - 3) {
-                pageNumbers.push(<span key="ellipsis-end">...</span>);
-            }
-
-            pageNumbers.push(
-                <button key={totalPages} onClick={() => goToPage(totalPages)} className={`pagination-number ${currentPage === totalPages ? 'active' : ''}`}>
-                    {totalPages}
-                </button>
-            );
-        }
-
-        return pageNumbers;
     };
 
     return (
@@ -120,9 +79,17 @@ export default function Books() {
                                     &lt; 
                                 </button>
 
-                                {/* Скорочена пагінація */}
+                                {/* Page Numbers */}
                                 <div className="pagination-numbers">
-                                    {renderPageNumbers()}
+                                    {[...Array(totalPages)].map((_, index) => (
+                                        <button 
+                                            key={index + 1} 
+                                            className={`pagination-number ${currentPage === index + 1 ? 'active' : ''}`}
+                                            onClick={() => goToPage(index + 1)}
+                                        >
+                                            {index + 1}
+                                        </button>
+                                    ))}
                                 </div>
 
                                 <button 

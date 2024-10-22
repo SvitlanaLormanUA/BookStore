@@ -607,56 +607,6 @@ footer {
     font-family: Arial, sans-serif;
 }
 
-.pagination-btn {
-    padding: 8px 16px;
-    margin: 0 10px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.pagination-btn:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-.pagination-btn:hover {
-    background-color: #0056b3;
-}
-
-.pagination-numbers {
-    display: flex;
-    gap: 5px;
-}
-
-.pagination-number {
-    padding: 0.5em;
-    cursor: pointer;
-    background: none;
-    border: 1px solid #ccc;
-    border-radius: 1em;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
-}
-
-.pagination-number:hover {
-    background-color: #ddd;
-}
-
-.pagination-number.active {
-    background-color: $register-btn-color-hover;
-    color: #fff;
-}
-
-.pagination-number:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
 }
 .form-label {
   margin-top: 1em;
@@ -733,11 +683,9 @@ button {
   position:absolute;
   align-self: center;
 
-
 }
 
 .pagination-btn {
-
   padding: 8px 16px;
   margin: 0 10px;
   margin-top: 1em;
@@ -765,15 +713,16 @@ button {
 .pagination-numbers {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 5px;
 }
 
 .pagination-number {
-  padding: 8px 12px;
+
   cursor: pointer;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10em;
   font-size: 14px;
   transition: background-color 0.3s ease;
 }
@@ -960,12 +909,11 @@ font-size: 16px;
   display: flex;
   justify-content: space-between;
   gap: 7em;
-  margin-bottom: 1em;
   margin-top: 1em;
 }
 .label-mobile-filters-cont h3{
   margin: 0.5em;
-;
+  margin-bottom: 0;
 }
 .close-sidebar {
   background: none;
@@ -978,7 +926,10 @@ font-size: 16px;
   cursor: pointer;
  
 }
-
+.mobile{
+  margin-bottom: 1em;
+  margin-left: 0.6em;
+}
 /* Сховати бокове меню на великих екранах */
 @media (min-width: 1076px) {
   .sidebar {

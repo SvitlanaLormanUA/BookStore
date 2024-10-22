@@ -86,14 +86,13 @@ export default function Filters() {
         ));
     }
 
-    // Скидання всіх фільтрів
     function resetGenres() {
         setSelectedGenres([]);
         setOnSale(false);
         setPopular(false);
     }
 
-    // Відкриття/закриття бокового меню
+    
     function toggleSidebar() {
         setIsSidebarOpen(!isSidebarOpen);
     }
@@ -147,7 +146,7 @@ export default function Filters() {
             </div>  
         </div>
 
-        {/* Кнопка для мобільних пристроїв */}
+        {/* Mobile */}
         <div className='mobile-filters'>
             <button className='filters-button' onClick={toggleSidebar}>
                 Filters
@@ -159,8 +158,10 @@ export default function Filters() {
                     <div className="label-mobile-filters-cont">
                     <h3>Filters</h3>
                     <button className='close-sidebar' onClick={toggleSidebar}>✖</button>
-                  
                     </div>
+                    <button className='reset-filters-btn mobile' onClick={resetGenres}>
+                        Reset Filters
+                    </button>
                     {createGenresComponent()}
                     <div className="filters-checkbox-container">
                         <div className="checkbox-container-sale-and-popular">
