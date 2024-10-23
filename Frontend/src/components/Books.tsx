@@ -1,11 +1,12 @@
 import { useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import BookItem from './BookItem';
-import defaultBooks from '../books.js';
+import { BooksContext } from './BooksContext';
 import SearchInput from './SearchInput.js';
 import Filters from './Filters.js';
 
 export default function Books() {
+    const defaultBooks = useContext(BooksContext); // Access the context
     const location = useLocation();
     const books = location.state?.books || defaultBooks;
 

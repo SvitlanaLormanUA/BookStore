@@ -1,6 +1,6 @@
 import{ useState } from 'react';
 import { SearchInputProps } from '../interfaces/SearchInputProps';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function SearchInput({ searchIn }: SearchInputProps) {

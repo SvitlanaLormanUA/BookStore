@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import books from '../books.js';
+import { useContext } from 'react';
+import { BooksContext } from './BooksContext';
 import { Book } from '../type/Book.js';
 
 export default function Filters() {
+
+    const books = useContext(BooksContext); // Access the context
     const genres = getBooksGenres();
     const [selectedGenres, setSelectedGenres] = useState<string[]>([]); 
     const [onSale, setOnSale] = useState(false);
     const [popular, setPopular] = useState(false);
+    const [newBooks, setNewBooks] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(true); 
     const [isSidebarOpen, setIsSidebarOpen] = useState(false); 
     const navigate = useNavigate();
@@ -38,6 +42,9 @@ export default function Filters() {
         if (popular) {
             filteredBooks = filteredBooks.filter(book => book.popular);
         }
+        if (newBooks) {
+            filteredBooks = filteredBooks.filter(book => book.new);
+        }
 
         navigate(`/books`, { state: { books: filteredBooks } });
     }
@@ -63,10 +70,15 @@ export default function Filters() {
         setPopular(event.target.checked);
     }
 
+    //  "Popular"
+    function handleNewChange(event: React.ChangeEvent<HTMLInputElement>) {
+        setNewBooks(event.target.checked);
+    }
+
     // Автоматичне застосування фільтрів
     useEffect(() => {
         filterBooksByGenre();
-    }, [selectedGenres, onSale, popular]);
+    }, [selectedGenres, onSale, popular, newBooks]);
 
     function createGenresComponent() {
         return genres.map((genre) => (
@@ -88,6 +100,7 @@ export default function Filters() {
         setSelectedGenres([]);
         setOnSale(false);
         setPopular(false);
+        setNewBooks(false);
     }
 
     
@@ -141,6 +154,16 @@ export default function Filters() {
                     />
                     <label htmlFor="popular-checkbox-input" className='checkbox-input-label'>Popular</label>
                 </div>
+                <div className="checkbox-container-sale-and-popular">
+                    <input
+                        type="checkbox"
+                        checked={newBooks}
+                        onChange={handleNewChange}
+                        name='popular-checkbox-input'
+                        className='checkbox-input '
+                    />
+                    <label htmlFor="popular-checkbox-input" className='checkbox-input-label'>New</label>
+                </div>
             </div>  
         </div>
 
@@ -181,7 +204,19 @@ export default function Filters() {
                                 className='checkbox-input '
                             />
                             <label htmlFor="popular-checkbox-input" className='checkbox-input-label'>Popular</label>
+        
                         </div>
+
+                        <div className="checkbox-container-sale-and-popular">
+                    <input
+                        type="checkbox"
+                        checked={newBooks}
+                        onChange={handleNewChange}
+                        name='popular-checkbox-input'
+                        className='checkbox-input '
+                    />
+                    <label htmlFor="popular-checkbox-input" className='checkbox-input-label'>New</label>
+                </div>
                     </div>
                 </div>
             </div>

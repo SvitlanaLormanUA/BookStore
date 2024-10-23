@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import { SeeMoreButtonProps } from "../interfaces/SeeMoreButtonProps";
-import books from '../books.js';
+
 import { Book } from "../type/Book";
+import { useContext } from "react";
+import { BooksContext } from "./BooksContext";
 
 export default function SeeMoreButton({ forLink }: SeeMoreButtonProps) {
+    
+    const books = useContext(BooksContext); // Access the context
     let results ;
     // Фільтруємо книги на основі властивості forLink
     if(forLink==='sale') {
