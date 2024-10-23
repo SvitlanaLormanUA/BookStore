@@ -9,6 +9,13 @@ import Books from './components/Books';
 import { useEffect, useState } from 'react';
 import { Book } from './type/Book';
 import { BooksContext } from './components/BooksContext';
+import  DashboardLayout  from './dashboard/DashboardLayout';
+import Dashboard from './dashboard/Dashboard';
+import  UploadBook  from './dashboard/UploadBook';
+import  ManageBooks  from './dashboard/ManageBooks';
+import  EditBooks from './dashboard/ManageBooks';
+
+
 
 function App() {
     const [arrangedBooks, setArrangedBooks] = useState<Book[]>([]);
@@ -76,7 +83,7 @@ function App() {
             }
         }
     
-        return uniqueBooks;
+        return uniqueBooks.sort((a, b) => a.title.localeCompare(b.title));
     }
 
     return (
@@ -135,12 +142,37 @@ const router = createBrowserRouter([
             {
                 path: '/books/:genre/:id',
                 element: <div>Book Page</div>,
-                errorElement: <NotFound />
+                errorElement: <NotFound />,
+                loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
             },
             {
                 path: '/jobs',
                 element: <div>Jobs Page</div>,
                 errorElement: <NotFound />
+            },
+            {
+                path: "/admin/",
+                element: <DashboardLayout />,
+                errorElement: <NotFound />,
+                children: [
+                    {
+                        path: "dashboard",
+                        element: <Dashboard />,
+                    },
+                    {
+                        path: "upload",
+                        element: <UploadBook />,
+                    },
+                    {
+                        path: "manage",
+                        element: <ManageBooks />,
+                    },
+                    {
+                        path: "edit-book/:id",
+                        element: <EditBooks />,
+                        loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
+                    }
+                ]
             }
         ]
     }

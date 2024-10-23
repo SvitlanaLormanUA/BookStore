@@ -7,13 +7,17 @@ import Filters from './Filters.js';
 
 export default function Books() {
     const defaultBooks = useContext(BooksContext); // Access the context
-    const location = useLocation();
-    const books = location.state?.books || defaultBooks;
 
-    // Стан для визначення мобільного режиму
+    // Sort the default books. Modify the sorting criteria as needed.
+    const sortedBooks = [...defaultBooks].sort((a, b) => a.title.localeCompare(b.title)); // Sorting by title
+
+    const location = useLocation();
+    const books = location.state?.books || sortedBooks;
+
+    // State for determining mobile mode
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     
-    // Відстеження зміни розміру екрану для адаптації
+    // Track screen size changes for adaptation
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768);
@@ -28,7 +32,7 @@ export default function Books() {
 
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1);
-    const booksPerPage = isMobile ? 5 : 9; // Для мобільних пристроїв показуємо 3 книги
+    const booksPerPage = isMobile ? 5 : 9; // For mobile devices, show 5 books
 
     // Calculate the starting and ending index for the books to display
     const indexOfLastBook = currentPage * booksPerPage;
@@ -67,9 +71,9 @@ export default function Books() {
                     {books.length > 0 ? (
                         <div className="all-book-list-container">
                             <div className="book-list">
-                                {currentBooks.map((book) => {
-                                    return <BookItem key={book.id} book={book} />;
-                                })}
+                                {currentBooks.map((book) => (
+                                    <BookItem key={book._id} book={book} />
+                                ))}
                             </div>
                             <div className="pagination">
                                 <button 
