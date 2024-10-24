@@ -68,9 +68,17 @@ export default function Books() {
                     <div className="filters-container">
                         <Filters />
                     </div>
+                 
                     {books.length > 0 ? (
                         <div className="all-book-list-container">
+                            <div className="sorted-books-container">
+                                
+                               <SortByBooksPanel
+                                message={'Found'} 
+                                items={books}/>
+                               </div>
                             <div className="book-list">
+
                                 {currentBooks.map((book) => (
                                     <BookItem key={book._id} book={book} />
                                 ))}

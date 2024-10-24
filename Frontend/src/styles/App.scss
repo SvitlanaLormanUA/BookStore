@@ -670,6 +670,11 @@ button {
   justify-content: space-between; 
   flex-wrap: wrap; 
   margin: 2em;
+
+}
+.sorted-books-container {
+  margin: 2em;
+  margin-left: 6em;
 }
 
 .book-item {
@@ -1157,3 +1162,9 @@ font-size: 16px;
   right: 0;
 
 }
+.sorting-prop {
+  display: flex;
+  gap: 10px;
+  color: $register-btn-color-hover;
+  font-size: 20px;
+  }
