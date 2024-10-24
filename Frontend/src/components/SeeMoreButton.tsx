@@ -3,7 +3,7 @@ import { SeeMoreButtonProps } from "../interfaces/SeeMoreButtonProps";
 
 import { Book } from "../type/Book";
 import { useContext } from "react";
-import { BooksContext } from "./BooksContext";
+import { BooksContext } from "../context/BooksContext.js";
 
 export default function SeeMoreButton({ forLink }: SeeMoreButtonProps) {
     

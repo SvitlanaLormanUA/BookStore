@@ -45,7 +45,7 @@
     font-size: 12px;
   }
   footer {
-    margin-top: 48em;
+    margin-top: 45em;
   }
   .book-cart{
     padding-top: 17em;
@@ -63,6 +63,8 @@
  
  
 }
+
+
 @media (max-width: 626px) {
   .book-details {
     text-align: center;
@@ -83,8 +85,32 @@
     text-align: center;
     justify-self: center;
   }
-  footer {
-    margin-top: 52em;
-  }
   
 } 
+@media (max-width: 1460px) {
+  footer {
+    margin-top: 65em;
+  }
+  
+}
+
+
+@media (max-width: 1200px) {
+  .book-details {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .book-details-image {
+    position: relative;
+  }
+
+  .liked-book {
+    position: absolute;
+    top: -10em;
+    font-size: 24px;
+    right: 0;
+    margin-top: 1.5em;
+    
+  }
+}

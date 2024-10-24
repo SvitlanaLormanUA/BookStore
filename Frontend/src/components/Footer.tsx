@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import '../styles/mediaQueries.css'
+import '../styles/App.css'
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -27,7 +29,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="text-center text-lg-start border border-white mt-xl-5 pt-4">
+    <footer className="text-center text-lg-start border border-white mt-xl-5 pt-4 ">
       <div className="container p-4">
         <div className="row">
           {/* OUR WORLD */}

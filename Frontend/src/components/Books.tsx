@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect, useContext } from 'react';
 import BookItem from './BookItem';
-import { BooksContext } from './BooksContext';
+import { BooksContext } from "../context/BooksContext.js";
 import SearchInput from './SearchInput.js';
 import Filters from './Filters.js';
 import SortByBooksPanel from './SortByBooksPanel.js';
@@ -13,10 +13,10 @@ export default function Books() {
     const location = useLocation();
     const books = location.state?.books || defaultBooks;
 
-    // State for determining mobile mode
+ 
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
     
-    // Track screen size changes for adaptation
+    
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768);
@@ -33,7 +33,6 @@ export default function Books() {
     const [currentPage, setCurrentPage] = useState(1);
     const booksPerPage = isMobile ? 5 : 9; // For mobile devices, show 5 books
 
-    // Calculate the starting and ending index for the books to display
     const indexOfLastBook = currentPage * booksPerPage;
     const indexOfFirstBook = indexOfLastBook - booksPerPage;
     const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);

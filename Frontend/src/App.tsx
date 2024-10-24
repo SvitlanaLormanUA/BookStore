@@ -8,14 +8,15 @@ import GenrePage from './components/GenrePage';
 import Books from './components/Books';
 import { useEffect, useState } from 'react';
 import { Book } from './type/Book';
-import { BooksContext } from './components/BooksContext';
+import { BooksContext } from './context/BooksContext';
 import  DashboardLayout  from './dashboard/DashboardLayout';
 import Dashboard from './dashboard/Dashboard';
 import  UploadBook  from './dashboard/UploadBook';
 import  ManageBooks  from './dashboard/ManageBooks';
 import  EditBooks from './dashboard/ManageBooks';
 import BookCart from './components/BookCart';
-
+import { LikedBooksProvider } from './context/LikedBooksContext';
+import FavouritePage from './components/FavouritePage';
 
 
 function App() {
@@ -88,9 +89,12 @@ function App() {
     }
 
     return (
+
+        <LikedBooksProvider>
         <BooksContext.Provider value={arrangedBooks}>
             <RouterProvider router={router} />
         </BooksContext.Provider>
+        </LikedBooksProvider>
     );
 }
 
@@ -132,7 +136,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/favorite',
-                element: <div>Favorite</div>,
+                element: <FavouritePage />,
                 errorElement: <NotFound />
             },
             {

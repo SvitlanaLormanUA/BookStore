@@ -5,7 +5,7 @@ import "../styles/App.css";
 import "../styles/mediaQueries.css";
 import DiscountSlider from "./DiscountSlider.js";
 import SearchInput from "./SearchInput.js";
-import { BooksContext } from "./BooksContext.js";
+import { BooksContext } from "../context/BooksContext.js";
 
 // MainPage component
 export default function MainPage() {
