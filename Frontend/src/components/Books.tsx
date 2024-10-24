@@ -4,7 +4,7 @@ import BookItem from './BookItem';
 import { BooksContext } from "../context/BooksContext.js";
 import SearchInput from './SearchInput.js';
 import Filters from './Filters.js';
-import SortByBooksPanel from './SortByBooksPanel.js';
+import SortByBooksPanel from './AmountOfFoundBooks.js';
 
 export default function Books() {
     const defaultBooks = useContext(BooksContext); 

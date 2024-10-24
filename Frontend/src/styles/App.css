@@ -1153,4 +1153,31 @@ ul {
   font-size: 20px;
 }
 
+.fav-books-found-cont {
+  margin-left: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sort-button {
+  display: flex;
+  background: none;
+  border: 1px solid #803500;
+  font-size: 16px;
+  border-radius: 0.5em;
+  margin-right: 1em;
+  text-align: end;
+  padding-left: 1em;
+}
+
+.sort-button:hover {
+  background-color: #f5ecdc;
+  border: 1px solid #5e2400;
+}
+
+.amountOfBooks {
+  margin-top: 2em;
+}
+
 /*# sourceMappingURL=App.css.map */

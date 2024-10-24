@@ -1168,3 +1168,27 @@ font-size: 16px;
   color: $register-btn-color-hover;
   font-size: 20px;
   }
+
+  .fav-books-found-cont {
+    margin-left: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sort-button {
+    display: flex;
+    background: none;
+    border: 1px solid $register-btn-color;
+    font-size: 16px;
+    border-radius: 0.5em;
+    margin-right: 1em;
+    text-align: end;
+    padding-left: 1em;
+  }
+  .sort-button:hover{
+    background-color: $header-color;
+    border: 1px solid $register-btn-color-hover;
+  }
+  .amountOfBooks{
+    margin-top: 2em;
+  }

@@ -1,6 +1,6 @@
 import { Book } from "../type/Book";
 
-export interface SortByBooksPanelProps {
+export interface AmountOfFoundBooksProps {
     message: string;
     items: Book[];
 }
