@@ -2,10 +2,13 @@
 import { useLikedBooks } from '../context/LikedBooksContext';
 import { Book } from '../types/Book';
 import AddToCartButton from './AddToCartButton';
-import BookCard from './BookCard'; // Corrected import
 
 export default function FavouritePage() {
-    const { likedBooks } = useLikedBooks();
+    const { likedBooks, removeLikedBook } = useLikedBooks(); // Include removeLikedBook
+
+    const handleRemove = (bookId: string) => {
+        removeLikedBook(bookId); // Call the remove function
+    };
 
     return (
         <div className="favouritePage-container">
@@ -18,19 +21,30 @@ export default function FavouritePage() {
                             <li key={book._id} className="liked-book-item">
                                 <img src={book.img} alt="Book Cover" />
                                 <div className="text-info-liked-book">
-                                <p className='book-title'>{book.title}</p>
-                                <p className='book-author'>{book.author}</p>
-                                <div className="rating-container">
-                                    <div className="stars">
-                                        {Array.from({ length: Math.floor(book.stars) }, (_, i) => (
-                                            <span key={i}>⭐️</span> 
-                                        ))}
+                                    <p>{book.title}</p>
+                                    <p>{book.author}</p>
+                                    <div className="rating-container">
+                                        <div className="stars">
+                                            {Array.from({ length: Math.floor(book.stars) }, (_, i) => (
+                                                <span key={i}>⭐️</span>
+                                            ))}
+                                        </div>
+                                        <p>{book.stars}</p>
                                     </div>
-                                    <p>{book.stars}</p> 
-                                    
+                                    <div className="button-container">
+                                        <div className="add-to-cart-btn-container">
+                                            <AddToCartButton />
+                                        </div>
+                                      
+                                    </div>
                                 </div>
-                                < AddToCartButton />
-                                </div>
+                                <p 
+                                            className="remove-book-btn" 
+                                            onClick={() => handleRemove(book._id)} 
+                                            aria-label="Remove from favorites"
+                                        >
+                                            🗑️
+                                        </p>
                             </li>
                         ))}
                     </ul>

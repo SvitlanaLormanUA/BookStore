@@ -1,27 +1,39 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Book } from '../types/Book';
 
 interface LikedBooksContextType {
     likedBooks: Book[];
     toggleLikedBook: (book: Book) => void;
     isBookLiked: (book: Book) => boolean;
+    removeLikedBook: (bookId: string) => void;
 }
 
 const LikedBooksContext = createContext<LikedBooksContextType | undefined>(undefined);
 
 export const LikedBooksProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const [likedBooks, setLikedBooks] = useState<Book[]>([]);
+ 
+    const [likedBooks, setLikedBooks] = useState<Book[]>(() => {
+        const savedBooks = localStorage.getItem('likedBooks');
+        return savedBooks ? JSON.parse(savedBooks) : [];
+    });
+
+  
+    useEffect(() => {
+        localStorage.setItem('likedBooks', JSON.stringify(likedBooks));
+    }, [likedBooks]);
 
     const toggleLikedBook = (book: Book) => {
         setLikedBooks(prev => {
             if (isBookLiked(book)) {
-                // If it's already liked, remove it from the likedBooks
                 return prev.filter(b => b._id !== book._id);
             } else {
-                // Otherwise, add it to the likedBooks
                 return [...prev, book];
             }
         });
+    };
+
+    const removeLikedBook = (bookId: string) => {
+        setLikedBooks(prevBooks => prevBooks.filter(book => book._id !== bookId));
     };
 
     const isBookLiked = (book: Book) => {
@@ -29,7 +41,7 @@ export const LikedBooksProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     };
 
     return (
-        <LikedBooksContext.Provider value={{ likedBooks, toggleLikedBook, isBookLiked }}>
+        <LikedBooksContext.Provider value={{ likedBooks, toggleLikedBook, isBookLiked, removeLikedBook }}>
             {children}
         </LikedBooksContext.Provider>
     );

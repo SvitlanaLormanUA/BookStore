@@ -1016,13 +1016,22 @@ font-size: 16px;
   border-radius: 10px;
 }
 
-.book-title {
+.book-title{
   font-size: 24px;
   margin-bottom: 10px;
   color: $register-btn-color-hover;
 
 }
+.text-info-liked-book {
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: $register-btn-color-hover;
 
+}
+.text-info-liked-book{
+  max-width: 20em;
+}
 .book-author {
   font-size: 20px;
   margin: 5px 0;
@@ -1070,11 +1079,17 @@ font-size: 16px;
   display: flex;
   gap: 5px;
   font-size: 18px;
+  width: 100%;
+  left: 0;
 }
-.stars {
+.stars,
+.stars-2 {
   display: flex;
+  justify-content: baseline;
 }
-
+.rating-container {
+  left: 0;
+}
 
 .favourite-page {
   background-color: $body-bg;
@@ -1097,14 +1112,48 @@ font-size: 16px;
   height: 100%;
 }
 /*FAV PAGE*/
-.liked-book-item {
-  margin: 3em;
-  padding-top: 10em;
-  flex-wrap: wrap;
- 
+.favouritePage-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10em;
+  padding: 2em;
+  gap: 4em;
+  background-color: $body-bg;
 }
+
+.favourite-page {
+ 
+  max-width: 1200px;
+}
+
+
+.liked-book-item {
+  margin: 1em;
+  padding: 1em; 
+  border: 1px solid #c99c9c;
+  border-radius: 1em;
+  display: flex; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
 .liked-book-item img {
-  max-width: 300px;
+  max-width: 200px;
   height: auto;
   border-radius: 1em;
+}
+
+
+
+.rating-container {
+  display: flex;
+
+}
+
+.add-to-cart-btn-container {
+  margin-top: 1em; 
+}
+.remove-book-btn {
+  cursor: pointer;
+  right: 0;
+
 }

@@ -79,16 +79,18 @@
   .book-card {
     margin-top: 10em;
   }
-  .liked-book-item {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
+  .text-info-liked-book {
+    font-size: 14px;
+   
   }
   .liked-book-item img{
     align-items: center;
-    max-width: 250px;
+    width: 200px;
+    height: auto;
+    margin: 0;
   }
+ 
+
   
 }
 
@@ -121,4 +123,16 @@
   }
   
 }
-
+@media (max-width: 822px) {
+  .text-info-liked-book{
+    width: 10em;
+  }
+}
+@media (min-width: 1300px) {
+  .favourite-page {
+    width: 800px;
+  }
+  .remove-book-btn {
+    margin-left: 10em;
+  }
+}

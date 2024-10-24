@@ -2,8 +2,13 @@ import { useLocation } from 'react-router-dom';
 import { Book } from '../types/Book';
 import AddToCartButton from './AddToCartButton';
 import { useLikedBooks } from '../context/LikedBooksContext';
+import SwiperBooks from './SwiperBooks';
+import { useContext } from 'react';
+import { BooksContext } from '../context/BooksContext';
 
 export default function BookCart({ book: initialBook }: { book: Book }) {
+    const defaultBooks = useContext(BooksContext); 
+
     const location = useLocation();
     const book = location.state as Book || initialBook;
     const rating: number = book.stars;
@@ -65,6 +70,7 @@ export default function BookCart({ book: initialBook }: { book: Book }) {
             ) : (
                 <p className="no-book-message">No book information available.</p>
             )}
+        
         </div>
     );
 }
