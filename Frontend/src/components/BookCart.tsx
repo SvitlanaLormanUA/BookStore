@@ -3,10 +3,10 @@ import { Book } from '../types/Book';
 import AddToCartButton from './AddToCartButton';
 import { useLikedBooks } from '../context/LikedBooksContext';
 
-export default function BookCart() {
+export default function BookCart({ book: initialBook }: { book: Book }) {
     const location = useLocation();
-    const book = location.state as Book;
-
+    const book = location.state as Book || initialBook;
+    const rating: number = book.stars;
     const { toggleLikedBook, isBookLiked } = useLikedBooks();
     const liked = isBookLiked(book);
 
@@ -24,6 +24,14 @@ export default function BookCart() {
                     <div className="book-details-text">
                         <h2 className="book-title">{book.title}</h2>
                         <p className="book-author">{book.author}</p>
+                        <div className="rating-container">
+                            <div className="stars">
+                            {Array.from({ length: rating }, (_, i) => (
+                                <p key={i}>⭐️</p>
+                            ))}
+                            </div>
+                            <p> {rating}</p>
+                        </div>
                         <div className="description-und-price">
                             <p className="book-description">{book.description}</p>
 
@@ -46,7 +54,7 @@ export default function BookCart() {
                     <div 
                         className="liked-book" 
                         onClick={(e) => {
-                            e.stopPropagation(); // Prevent triggering the book detail click
+                            e.stopPropagation(); 
                             toggleLikedBook(book); 
                         }} 
                         style={{ cursor: 'pointer', fontSize: '24px' }}

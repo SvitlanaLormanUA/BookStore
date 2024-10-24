@@ -42,6 +42,7 @@
   .book-details {
     display: flex;
     flex-direction: column  ;
+    align-items: center; 
     font-size: 12px;
   }
   footer {
@@ -59,9 +60,36 @@
     text-align: center;
     justify-self: center;
   }
+  .rating-container{
+    justify-content: center;
+  } 
 
- 
- 
+  .book-details-image {
+    position: relative;
+  }
+
+  .liked-book {
+    position: absolute;
+    top: -10em;
+    font-size: 24px;
+    right: 0;
+    margin-top: 1.5em;
+    
+  }
+  .book-card {
+    margin-top: 10em;
+  }
+  .liked-book-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .liked-book-item img{
+    align-items: center;
+    max-width: 250px;
+  }
+  
 }
 
 
@@ -94,23 +122,3 @@
   
 }
 
-
-@media (max-width: 1200px) {
-  .book-details {
-    flex-direction: column;
-    align-items: center; 
-  }
-
-  .book-details-image {
-    position: relative;
-  }
-
-  .liked-book {
-    position: absolute;
-    top: -10em;
-    font-size: 24px;
-    right: 0;
-    margin-top: 1.5em;
-    
-  }
-}
