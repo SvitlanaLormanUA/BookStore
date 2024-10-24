@@ -14,6 +14,7 @@ import Dashboard from './dashboard/Dashboard';
 import  UploadBook  from './dashboard/UploadBook';
 import  ManageBooks  from './dashboard/ManageBooks';
 import  EditBooks from './dashboard/ManageBooks';
+import BookCart from './components/BookCart';
 
 
 
@@ -140,8 +141,8 @@ const router = createBrowserRouter([
                 errorElement: <NotFound />
             },
             {
-                path: '/books/:genre/:id',
-                element: <div>Book Page</div>,
+                path: '/book/:id',
+                element: <BookCart />,
                 errorElement: <NotFound />,
                 loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
             },

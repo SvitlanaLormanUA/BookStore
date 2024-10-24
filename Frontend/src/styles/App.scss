@@ -343,7 +343,7 @@ button {
 }
 .crossed {
   text-decoration: line-through;
-  font-size: 0.6em;
+  font-size: 18px;
   color: #777777;
 }
 .book-item-sale-price {
@@ -372,7 +372,8 @@ button {
   padding: 2px;
   bottom: 0;
   position: static;
- 
+  font-size: 16px;
+
 }
 @media (max-width: 1000px) {
   
@@ -958,4 +959,98 @@ font-size: 16px;
   .pagination-numbers{
     flex-direction: column;
   }
+}
+/*BOOK CART*/
+.book-cart {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  margin-top: 10em;
+  background-color: $body-bg;
+  width: 100%;
+  height: max-content;
+  margin-top: 20em;
+  margin-bottom: 10em;
+
+  max-height: 350px;
+}
+
+.book-details {
+  display: flex;
+  gap: 2em;
+  margin: 2em;
+  max-height: 800px;
+}
+
+.book-details-text {
+  flex-grow: 1;
+  background-color: $body-bg;
+}
+
+.description-und-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  gap: 2em;
+  max-height: 350px;
+  height: 100%; 
+  background-color: $body-bg;
+}
+
+.book-price {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  left: 0;
+}
+
+.book-details img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.book-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: $register-btn-color-hover;
+
+}
+
+.book-author {
+  font-size: 20px;
+  margin: 5px 0;
+  color: $register-btn-color-hover;
+}
+
+.book-price,
+.book-stock {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #555;
+}
+
+.book-description {
+  font-size: 18px;
+  color: #333;
+
+  text-align: justify;
+}
+
+.no-book-message {
+  color: #e74c3c;
+  font-style: italic;
+  text-align: center;
+}
+.price-book-cart  {
+  display: flex;
+  gap: 2em;
+  bottom: 0;
+}
+
+.price-and-button {
+  display: flex;
+  flex-direction: column;
 }

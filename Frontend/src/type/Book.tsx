@@ -1,6 +1,6 @@
 export type Book = {
     calculateSalePrice?: () => number;
-    id: string;
+    _id: string | number;
     title: string;
     author: string;
     year: number;

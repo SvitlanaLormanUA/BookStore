@@ -4,15 +4,14 @@ import BookItem from './BookItem';
 import { BooksContext } from './BooksContext';
 import SearchInput from './SearchInput.js';
 import Filters from './Filters.js';
+import SortByBooksPanel from './SortByBooksPanel.js';
 
 export default function Books() {
-    const defaultBooks = useContext(BooksContext); // Access the context
+    const defaultBooks = useContext(BooksContext); 
 
-    // Sort the default books. Modify the sorting criteria as needed.
-    const sortedBooks = [...defaultBooks].sort((a, b) => a.title.localeCompare(b.title)); // Sorting by title
-
+    
     const location = useLocation();
-    const books = location.state?.books || sortedBooks;
+    const books = location.state?.books || defaultBooks;
 
     // State for determining mobile mode
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -64,6 +63,8 @@ export default function Books() {
                 <div className="search-books-page-container">
                     <SearchInput searchIn={defaultBooks} />
                 </div>
+              
+             
                 <div className="filters-and-books"> 
                     <div className="filters-container">
                         <Filters />

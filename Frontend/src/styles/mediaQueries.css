@@ -37,3 +37,54 @@
     display: none;
   }
 }
+
+@media (max-width: 1200px) {
+  .book-details {
+    display: flex;
+    flex-direction: column  ;
+    font-size: 12px;
+  }
+  footer {
+    margin-top: 48em;
+  }
+  .book-cart{
+    padding-top: 17em;
+    
+  }
+  h2,
+  .book-details-image,
+  .book-title,
+  .book-author {
+    align-self: center;
+    text-align: center;
+    justify-self: center;
+  }
+
+ 
+ 
+}
+@media (max-width: 626px) {
+  .book-details {
+    text-align: center;
+    align-self: center;
+  }
+  .book-cart{
+    padding-top: 20em;
+    padding-bottom: 15em;
+  }
+  img{
+    margin-top: 1.7em;
+  }
+  h2,
+  .book-details-image,
+  .book-title,
+  .book-author {
+    align-self: center;
+    text-align: center;
+    justify-self: center;
+  }
+  footer {
+    margin-top: 52em;
+  }
+  
+} 
