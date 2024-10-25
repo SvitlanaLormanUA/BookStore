@@ -1104,6 +1104,10 @@ ul {
   height: 100%;
 }
 
+.liked-book-item:hover {
+  cursor: pointer;
+}
+
 /*FAV PAGE*/
 .favouritePage-container {
   display: flex;
@@ -1178,6 +1182,11 @@ ul {
 
 .amountOfBooks {
   margin-top: 2em;
+}
+
+.input-fav-container {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=App.css.map */

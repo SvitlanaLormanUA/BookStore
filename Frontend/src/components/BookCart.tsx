@@ -6,7 +6,7 @@ import SwiperBooks from './SwiperBooks';
 import { useContext } from 'react';
 import { BooksContext } from '../context/BooksContext';
 
-export default function BookCart({ book: initialBook }: { book: Book }) {
+export default function BookCart() {
     const defaultBooks = useContext(BooksContext); 
 
     const location = useLocation();

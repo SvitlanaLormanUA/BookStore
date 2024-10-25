@@ -1116,6 +1116,9 @@ font-size: 16px;
   margin-bottom: 5em;
   height: 100%;
 }
+.liked-book-item:hover{
+  cursor: pointer;
+}
 /*FAV PAGE*/
 .favouritePage-container {
   display: flex;
@@ -1191,4 +1194,8 @@ font-size: 16px;
   }
   .amountOfBooks{
     margin-top: 2em;
+  }
+  .input-fav-container {
+    display: flex;;
+    justify-content: center;
   }

@@ -60,7 +60,9 @@ export default function Books() {
         <>
             <div className="books-page">
                 <div className="search-books-page-container">
-                    <SearchInput searchIn={defaultBooks} />
+                    <SearchInput 
+                    searchIn={defaultBooks} 
+                    navigateTo="/books"/>
                 </div>
               
              

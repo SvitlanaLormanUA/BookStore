@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { SearchInputProps } from '../interfaces/SearchInputProps';
 import { useNavigate } from 'react-router-dom';
 
-export default function SearchInput({ searchIn }: SearchInputProps) {
+export default function SearchInput({ searchIn, navigateTo }: SearchInputProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate(); 
 
   const handleSearch = () => {
     const regex = new RegExp(searchQuery, 'i');
 
-    // Filter the array of books based on the search query
+    
     const results = searchIn.filter(book => 
       regex.test(book.title) || 
       regex.test(book.author) || 
@@ -17,7 +17,7 @@ export default function SearchInput({ searchIn }: SearchInputProps) {
     );
 
     if (results.length > 0) {
-      navigate('/books', { state: { books: results } });
+      navigate(navigateTo, { state: { books: results } });
     } else {
       // Optional: Uncomment to alert user when no books found
       // alert('No books found'); 

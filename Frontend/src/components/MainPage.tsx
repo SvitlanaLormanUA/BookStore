@@ -7,7 +7,7 @@ import DiscountSlider from "./DiscountSlider.js";
 import SearchInput from "./SearchInput.js";
 import { BooksContext } from "../context/BooksContext.js";
 
-// MainPage component
+
 export default function MainPage() {
   const booksToBook = useContext(BooksContext); // Access the context
 
@@ -36,7 +36,9 @@ export default function MainPage() {
         <section className="bookstore-name">
           <p>best choice</p>
           <h1>BamBook</h1>
-          <SearchInput searchIn={booksToBook} />
+          <SearchInput 
+          searchIn={booksToBook}
+          navigateTo="/books" />
           <img src="src/assets/images/cat-on-books 1.png" alt="" className="img-main-page" />
         </section>
 
