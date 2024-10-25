@@ -1,12 +1,8 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Book } from '../types/Book';
+import { LikedBooksContextType } from '../type/LikedBooksContextType';
 
-interface LikedBooksContextType {
-    likedBooks: Book[];
-    toggleLikedBook: (book: Book) => void;
-    isBookLiked: (book: Book) => boolean;
-    removeLikedBook: (bookId: string) => void;
-}
+
 
 const LikedBooksContext = createContext<LikedBooksContextType | undefined>(undefined);
 

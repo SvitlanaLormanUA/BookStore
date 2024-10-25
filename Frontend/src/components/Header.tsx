@@ -5,10 +5,12 @@ import Tabs from 'react-bootstrap/Tabs';
 import { useState, useEffect, useRef } from 'react';
 import '../styles/App.css';
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
+import { useLikedBooks } from '../context/LikedBooksContext';
 
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { likedBooks, removeLikedBook } = useLikedBooks(); 
     const menuRef = useRef(null);  
     const hamburgerRef = useRef(null);  
 
@@ -39,7 +41,6 @@ export default function Header() {
                 <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
             </div>
             
-            {/* Додано назву BamBook в хедері */}
             <div className="brand-name-fixed">
                 <Link to="/" className="brand-link">BamBook</Link>
             </div>
@@ -54,8 +55,16 @@ export default function Header() {
 
                 <div className="buttons-login">
                     <div className="chosen-books">
-                        <Link to="/cart"><FaShoppingCart size="2em" /></Link>
-                        <Link to="/favorite"><FaHeart size="2em" /></Link>
+                    
+                        <Link to="/cart"><FaShoppingCart size="2em" /> </Link>
+                      
+                       
+                        <div className="favheart-icon">
+                            <Link to="/favorite"><FaHeart size="2em" /></Link>
+                            <span className='circle-count'>{likedBooks.length}</span>
+                        </div> 
+                       
+
                     </div>
                     <Link to="/login">
                         <Button className="custom-login-btn">Login</Button>
