@@ -6,11 +6,13 @@ import { useState, useEffect, useRef } from 'react';
 import '../styles/App.css';
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { useLikedBooks } from '../context/LikedBooksContext';
+import { useBooksInCart } from '../context/BooksInCartContext';
 
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { likedBooks, removeLikedBook } = useLikedBooks(); 
+    const { likedBooks } = useLikedBooks(); 
+    const { booksInCart } = useBooksInCart(); 
     const menuRef = useRef(null);  
     const hamburgerRef = useRef(null);  
 
@@ -55,9 +57,11 @@ export default function Header() {
 
                 <div className="buttons-login">
                     <div className="chosen-books">
-                    
-                        <Link to="/cart"><FaShoppingCart size="2em" /> </Link>
-                      
+                                       
+                    <div className="favheart-icon">
+                            <Link to="/cart"><FaShoppingCart size="2em" /> </Link>
+                            <span className='circle-count'>{booksInCart.length}</span>
+                            </div> 
                        
                         <div className="favheart-icon">
                             <Link to="/favorite"><FaHeart size="2em" /></Link>

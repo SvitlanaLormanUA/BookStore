@@ -97,6 +97,9 @@ export default function FavouritePage() {
                                         </div>
                                         <p>{book.stars}</p>
                                     </div>
+                                    <div className="price-container">
+                                        <p className="book-price">{book.price} $</p>
+                                    </div>
                                     <div className="button-container">
                                         <div className="add-to-cart-btn-container">
                                         <AddToCartButton book={book}/>

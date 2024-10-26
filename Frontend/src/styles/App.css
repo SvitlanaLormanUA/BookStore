@@ -1210,4 +1210,10 @@ ul {
   align-items: center;
 }
 
+.cart-to-buy-books-container {
+  margin-top: 10em;
+  background-color: #fff7f7;
+  padding: 2em;
+}
+
 /*# sourceMappingURL=App.css.map */
