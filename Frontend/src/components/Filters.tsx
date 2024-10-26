@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 import { BooksContext } from "../context/BooksContext.js";
-import { Book } from '../type/Book.js';
+import { Book } from '../interfaces/Book.js';
 
 export default function Filters() {
 

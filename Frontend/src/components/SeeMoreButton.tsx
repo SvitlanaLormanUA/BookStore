@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { SeeMoreButtonProps } from "../interfaces/SeeMoreButtonProps";
 
-import { Book } from "../type/Book";
+import { Book } from "../interfaces/Book.js";
 import { useContext } from "react";
 import { BooksContext } from "../context/BooksContext.js";
 

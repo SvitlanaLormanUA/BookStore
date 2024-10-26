@@ -46,13 +46,6 @@ export default function FavouritePage() {
         setIsAscending(!isAscending); 
     };
 
-    const handleSearch = (term: string) => {
-        setSearchTerm(term);
-        const filteredBooks = likedBooks.filter((book) =>
-            book.title.toLowerCase().includes(term.toLowerCase())
-        );
-        setSortedBooks(filteredBooks);
-    };
 
     return (
         <div className="favouritePage-container">
@@ -65,7 +58,7 @@ export default function FavouritePage() {
                         </button>
                     </div>
                 ) : sortedBooks.length === 0 ? (
-                    <p>You have no favourite books.</p>
+                    <p className='smth-empty'>You have no favourite books.</p>
                 ) : (
                     <>
                     <div className="input-fav-container">
@@ -89,14 +82,15 @@ export default function FavouritePage() {
                                 <div className="text-info-liked-book">
                                     <p>{book.title}</p>
                                     <p>{book.author}</p>
-                                    <div className="rating-container">
+                                 
                                         <div className="stars">
                                             {Array.from({ length: Math.floor(book.stars) }, (_, i) => (
                                                 <span key={i}>⭐️</span>
                                             ))}
+                                              <p>{book.stars}</p>
                                         </div>
-                                        <p>{book.stars}</p>
-                                    </div>
+                                      
+                               
                                     <div className="price-container">
                                         <p className="book-price">{book.price} $</p>
                                     </div>

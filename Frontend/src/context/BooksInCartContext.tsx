@@ -1,18 +1,19 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import { BooksInCardContextType } from "../type/BooksInCardContextType";
-import { Book } from "../type/Book";
+import { Book } from '../interfaces/Book';
 
 
 const BooksInCartContext = createContext<BooksInCardContextType | undefined>(undefined);
 
 export const BooksInCartContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  
   const [booksInCart, setBooksInCart] = useState<Book[]>(() => {
     const savedBooks = localStorage.getItem("booksInCart");
     return savedBooks ? JSON.parse(savedBooks) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('booksInCart', JSON.stringify(booksInCart));
+    localStorage.setItem('booksInCart', JSON.stringify(booksInCart ));
 
 }, [booksInCart]);
 
@@ -26,8 +27,9 @@ const toggleBookInCart = (book: Book) => {
   });
 };
 
-const removeBookFromCart = (bookId: string) => {
+const removeBookFromCart = (bookId: string | number) => {
   setBooksInCart(prevBooks => prevBooks.filter(book => book._id !== bookId));
+  
 };
 
 const isBookInCart= (book: Book) => {

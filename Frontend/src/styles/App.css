@@ -1072,10 +1072,10 @@ ul {
   left: 0;
 }
 
-.stars,
-.stars-2 {
+.stars {
   display: flex;
   justify-content: baseline;
+  gap: 4px;
 }
 
 .rating-container {
@@ -1093,6 +1093,7 @@ ul {
 .liked-book-img {
   margin-bottom: 1em;
   align-self: center;
+  cursor: pointer;
 }
 
 .liked-book-item {
@@ -1104,7 +1105,7 @@ ul {
   height: 100%;
 }
 
-.liked-book-item:hover {
+.liked-book-item img {
   cursor: pointer;
 }
 
@@ -1148,6 +1149,7 @@ ul {
 .remove-book-btn {
   cursor: pointer;
   right: 0;
+  height: min-content;
 }
 
 .sorting-prop {
@@ -1214,6 +1216,74 @@ ul {
   margin-top: 10em;
   background-color: #fff7f7;
   padding: 2em;
+}
+
+.this-book-amount {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+  font-size: 18px;
+}
+
+.this-book-in-cart {
+  margin-top: 1.7em;
+}
+
+.this-book-amount button {
+  width: 2em;
+  height: 2em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #fff7f7;
+}
+
+.this-book-amount button:hover {
+  background-color: #ccc;
+  cursor: pointer;
+  color: white;
+}
+
+.smth-empty {
+  text-align: center;
+}
+
+.cart-btn-sort {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.total-books {
+  margin-top: 4em;
+  background-color: #fff7f7;
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+}
+
+.total-books p {
+  font-size: 20px;
+  color: #5e2400;
+}
+
+.finally-order {
+  margin-left: 2em;
+}
+
+.order-btn {
+  background-color: rgb(25, 135, 84);
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.order-btn:hover {
+  background-color: rgb(39, 177, 113);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=App.css.map */

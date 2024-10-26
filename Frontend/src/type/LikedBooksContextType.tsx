@@ -1,4 +1,4 @@
-import { Book } from "../type/Book";
+import { Book } from "../interfaces/Book";
 
 export type LikedBooksContextType  = {
     likedBooks: Book[];

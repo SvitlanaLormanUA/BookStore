@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import GenrePage from './components/GenrePage';
 import Books from './components/Books';
 import { useEffect, useState } from 'react';
-import { Book } from './type/Book';
+import { Book } from './interfaces/Book';
 import { BooksContext } from './context/BooksContext';
 import  DashboardLayout  from './dashboard/DashboardLayout';
 import Dashboard from './dashboard/Dashboard';

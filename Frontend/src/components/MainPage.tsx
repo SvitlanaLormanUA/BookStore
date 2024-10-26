@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import SwiperBooks from "./SwiperBooks";
-import { Book } from "../type/Book.js";
+import { Book } from "../interfaces/Book.js";
 import "../styles/App.css";
 import "../styles/mediaQueries.css";
 import DiscountSlider from "./DiscountSlider.js";

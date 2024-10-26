@@ -1,4 +1,4 @@
-import { Book } from "./Book";
+import { Book } from "../interfaces/Book";
 
 export type BooksInCardContextType = {
     booksInCart: Book[];

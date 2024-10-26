@@ -2,7 +2,7 @@ import { FaCheck } from "react-icons/fa";
 import { useBooksInCart } from "../context/BooksInCartContext";
 import Button from "react-bootstrap/esm/Button";
 import { useNavigate } from "react-router-dom"; 
-import { Book } from "../type/Book";
+import { Book } from "../interfaces/Book";
 
 export default function AddToCartButton({ book }: { book: Book }) {
   const { toggleBookInCart, isBookInCart } = useBooksInCart();

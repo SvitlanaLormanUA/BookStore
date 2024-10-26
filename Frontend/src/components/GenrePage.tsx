@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import booksData from "../books.js"; 
-import { Book } from '../type/Book.js';
+import { Book } from '../interfaces/Book.js';
 
 export default function GenrePage() {
   

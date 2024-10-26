@@ -3,7 +3,7 @@ import { Link, Outlet, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import SeeMoreButton from './SeeMoreButton';
 import { FreeMode, Pagination, Autoplay, Navigation } from "swiper/modules";
-import { Book } from "../type/Book";
+import { Book } from "../interfaces/Book";
 import { SwiperBooksProps } from "../interfaces/SwiperBooksProps";
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
