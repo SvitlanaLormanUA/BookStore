@@ -18,14 +18,14 @@ export default function BookItem({ book, placeDiscountIcon }: BookItemProps) {
   }
   
   return (
-    <div className="book-item" onClick={handleClick}>
+    <div className="book-item">
       {book.sale > 0 && placeDiscountIcon ? (
         <div className="dicount-icon-container">
           <span className="dicount-icon"> - {book.sale}%</span>
         </div>
       ) : null}
       
-      <img src={book.img} alt={book.title} />
+      <img src={book.img} alt={book.title} onClick={handleClick} />
       <h3>{book.title}</h3>
       <p className="book-item-author">{book.author}</p>
 
@@ -46,7 +46,7 @@ export default function BookItem({ book, placeDiscountIcon }: BookItemProps) {
         )}
        
         <div>
-          <AddToCartButton />
+          <AddToCartButton book={book}/>
         </div>
       </div>
     </div>

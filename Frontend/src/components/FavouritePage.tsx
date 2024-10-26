@@ -99,7 +99,7 @@ export default function FavouritePage() {
                                     </div>
                                     <div className="button-container">
                                         <div className="add-to-cart-btn-container">
-                                            <AddToCartButton />
+                                        <AddToCartButton book={book}/>
                                         </div>
                                     </div>
                                 </div>

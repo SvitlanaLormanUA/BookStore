@@ -14,9 +14,11 @@ import Dashboard from './dashboard/Dashboard';
 import  UploadBook  from './dashboard/UploadBook';
 import  ManageBooks  from './dashboard/ManageBooks';
 import  EditBooks from './dashboard/ManageBooks';
-import BookCart from './components/BookCart';
+import BookCart from './components/BookCard';
 import { LikedBooksProvider } from './context/LikedBooksContext';
 import FavouritePage from './components/FavouritePage';
+import { BooksInCartContextProvider } from './context/BooksInCartContext';
+import BooksCart from './components/BooksCart';
 
 
 function App() {
@@ -89,12 +91,13 @@ function App() {
     }
 
     return (
-
+        <BooksInCartContextProvider>
         <LikedBooksProvider>
         <BooksContext.Provider value={arrangedBooks}>
             <RouterProvider router={router} />
         </BooksContext.Provider>
         </LikedBooksProvider>
+        </BooksInCartContextProvider>
     );
 }
 
@@ -131,7 +134,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/cart',
-                element: <div>Cart Page</div>,
+                element: <BooksCart />,
                 errorElement: <NotFound />
             },
             {

@@ -52,7 +52,7 @@ export default function BookCart() {
                                         </p>
                                     ) : null}
                                 </div>
-                                <AddToCartButton />
+                                <AddToCartButton book={book}/>
                             </div>
                         </div>
                     </div>
