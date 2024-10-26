@@ -8,14 +8,10 @@ import SortByBooksPanel from './AmountOfFoundBooks.js';
 
 export default function Books() {
     const defaultBooks = useContext(BooksContext); 
-
-    
     const location = useLocation();
     const books = location.state?.books || defaultBooks;
 
- 
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-    
     
     useEffect(() => {
         const handleResize = () => {
@@ -56,16 +52,21 @@ export default function Books() {
         setCurrentPage(page);
     };
 
+    // Effect to reset current page to 1 when books change
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [books]); // Reset page to 1 whenever books change
+
     return (
         <>
             <div className="books-page">
                 <div className="search-books-page-container">
                     <SearchInput 
-                    searchIn={defaultBooks} 
-                    navigateTo="/books"/>
+                        searchIn={defaultBooks} 
+                        navigateTo="/books"
+                    />
                 </div>
               
-             
                 <div className="filters-and-books"> 
                     <div className="filters-container">
                         <Filters />
@@ -74,13 +75,9 @@ export default function Books() {
                     {books.length > 0 ? (
                         <div className="all-book-list-container">
                             <div className="sorted-books-container">
-                                
-                               <SortByBooksPanel
-                                message={'Found'} 
-                                items={books}/>
-                               </div>
+                                <SortByBooksPanel message={'Found'} items={books} />
+                            </div>
                             <div className="book-list">
-
                                 {currentBooks.map((book) => (
                                     <BookItem key={book._id} book={book} />
                                 ))}
@@ -91,7 +88,7 @@ export default function Books() {
                                     onClick={goToPreviousPage} 
                                     disabled={currentPage === 1}
                                 >
-                                    &lt; 
+                                    &lt;
                                 </button>
 
                                 {/* Page Numbers */}

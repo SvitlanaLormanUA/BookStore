@@ -17,10 +17,11 @@ export default function SearchInput({ searchIn, navigateTo }: SearchInputProps) 
     );
 
     if (results.length > 0) {
+      //setSearchQuery('');
       navigate(navigateTo, { state: { books: results } });
     } else {
-      // Optional: Uncomment to alert user when no books found
-      // alert('No books found'); 
+     
+       alert('No books matches your description. Try again!'); 
     }
   };
 

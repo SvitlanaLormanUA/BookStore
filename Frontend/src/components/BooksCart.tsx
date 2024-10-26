@@ -103,7 +103,7 @@ export default function BooksCart() {
                 <div className="finally-order">
                         <div className="total-books">
                                 {/*} <p>У кошику: {totalBooks}</p>*/}
-                                <p>Разом: </p>
+                                <p>In total: </p>
                                 <div className="price-book-cart">
                                     <p className={totalSaleAmount > 0 ? 'price-book-cart crossed' : 'book-price'}>{totalAmount.toFixed(2)} $</p>
                                     {totalSaleAmount > 0 ? (
