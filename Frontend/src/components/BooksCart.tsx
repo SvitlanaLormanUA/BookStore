@@ -147,6 +147,7 @@ export default function BooksCart() {
                                                 ))}
                                                 <p>{book.stars}</p>
                                             </div>
+                                            <div className="amount-and-price">
                                             <div className="this-book-amount">
                                                 <button className="decrease" onClick={() => handleChange("decrease", book._id)}>-</button>
                                                 <p className="this-book-in-cart">{bookAmounts[book._id]}</p>
@@ -163,6 +164,7 @@ export default function BooksCart() {
                                                         {calculateSalePrice(book.price, book.sale).toFixed(2)} $
                                                     </p>
                                                 ) : null}
+                                            </div>
                                             </div>
                                         </div>
                                  
