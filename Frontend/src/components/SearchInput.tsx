@@ -17,7 +17,7 @@ export default function SearchInput({ searchIn, navigateTo }: SearchInputProps) 
     );
 
     if (results.length > 0) {
-      //setSearchQuery('');
+      setSearchQuery('');
       navigate(navigateTo, { state: { books: results } });
     } else {
      
