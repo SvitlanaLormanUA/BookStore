@@ -1286,16 +1286,70 @@ ul {
   cursor: pointer;
 }
 
+/*DASHBOARD*/
 .dashboard-layout-container {
   background-color: #fff7f7;
   padding-top: 12em;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /*SIDEBAR ON Admin PANEL*/
-.sidebar-comtainer {
-  background-color: #ccc;
-  max-width: min-content;
-  color: darkgray;
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background-color: #f5ecdc;
+  color: #5e2400;
+  transition: left 0.3s ease-in-out;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  margin-right: 3em;
+}
+
+.sidebar-container.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-header {
+  margin-left: 0.5em;
+  margin-top: 1em;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.nav-item {
+  margin: 10px 0;
+}
+
+.nav-link {
+  font-size: 20px;
+  color: #5e2400;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #dacfbb;
+  color: #e87d6c;
+}
+
+.authentication-container {
+  margin-top: 2em;
 }
 
 /*# sourceMappingURL=App.css.map */

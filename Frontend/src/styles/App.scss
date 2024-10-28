@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-$header-color: #f5ecdc;
+$header-color: #f5ecdc; 
 $footer-color: #363636;
 
 $login-btn-color: #fff7f6;
@@ -1289,13 +1289,67 @@ font-size: 16px;
   background-color: rgb(39, 177, 113);
   cursor: pointer;
 }
+
+/*DASHBOARD*/
 .dashboard-layout-container {
   background-color: $body-bg;
   padding-top: 12em;
+  display: flex;
+  justify-content: space-evenly;
 }
 /*SIDEBAR ON Admin PANEL*/
-.sidebar-comtainer {
-  background-color: #ccc;
-  max-width: min-content;
-  color: darkgray;
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background-color: $header-color;
+  color: $register-btn-color-hover;
+  transition: left 0.3s ease-in-out;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  margin-right: 3em;
+}
+
+.sidebar-container.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.sidebar-header {
+  margin-left: 0.5em;
+  margin-top: 1em;
+}
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.nav-item {
+  margin: 10px 0;
+}
+
+.nav-link {
+  font-size: 20px;
+  color: $register-btn-color-hover;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #dacfbb;
+  color: $login-btn-color-hover;
+}
+.authentication-container {
+  margin-top: 2em;
 }

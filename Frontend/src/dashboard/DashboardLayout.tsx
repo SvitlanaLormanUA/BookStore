@@ -4,7 +4,8 @@ import SideBar from "./SideBar";
 export default function DashboardLayout() {
     return (
         <div className="dashboard-layout-container">
-          <SideBar />
+             <SideBar />
+             
             <Outlet />
         </div>
     );

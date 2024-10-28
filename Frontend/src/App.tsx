@@ -160,28 +160,39 @@ const router = createBrowserRouter([
                 errorElement: <NotFound />
             },
             {
+                path: '/login',
+                element: <div>Login Page</div>,
+                errorElement: <NotFound />
+            },
+            {
+                path: '/register',
+                element: <div>Login Page</div>,
+                errorElement: <NotFound />
+            }
+           
+        ]
+    },
+    {
+        path: "/admin/dashboard",
+        element: <DashboardLayout />,
+        errorElement: <NotFound />,
+        children: [
+            {
                 path: "/admin/dashboard",
-                element: <DashboardLayout />,
-                errorElement: <NotFound />,
-                children: [
-                    {
-                        path: "/admin/dashboard",
-                        element: <Dashboard />,
-                    },
-                    {
-                        path: "/admin/dashboard/upload",
-                        element: <UploadBook />,
-                    },
-                    {
-                        path: "/admin/dashboard/manage",
-                        element: <ManageBooks />,
-                    },
-                    {
-                        path: "/admin/dashboard/edit-book/:id",
-                        element: <EditBooks />,
-                        loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
-                    }
-                ]
+                element: <Dashboard />,
+            },
+            {
+                path: "/admin/dashboard/upload",
+                element: <UploadBook />,
+            },
+            {
+                path: "/admin/dashboard/manage",
+                element: <ManageBooks />,
+            },
+            {
+                path: "/admin/dashboard/edit-book/:id",
+                element: <EditBooks />,
+                loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
             }
         ]
     }
