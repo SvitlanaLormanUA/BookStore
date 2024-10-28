@@ -1286,4 +1286,16 @@ ul {
   cursor: pointer;
 }
 
+.dashboard-layout-container {
+  background-color: #fff7f7;
+  padding-top: 12em;
+}
+
+/*SIDEBAR ON Admin PANEL*/
+.sidebar-comtainer {
+  background-color: #ccc;
+  max-width: min-content;
+  color: darkgray;
+}
+
 /*# sourceMappingURL=App.css.map */

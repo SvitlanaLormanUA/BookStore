@@ -1289,3 +1289,13 @@ font-size: 16px;
   background-color: rgb(39, 177, 113);
   cursor: pointer;
 }
+.dashboard-layout-container {
+  background-color: $body-bg;
+  padding-top: 12em;
+}
+/*SIDEBAR ON Admin PANEL*/
+.sidebar-comtainer {
+  background-color: #ccc;
+  max-width: min-content;
+  color: darkgray;
+}

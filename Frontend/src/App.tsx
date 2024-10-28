@@ -3,6 +3,7 @@ import MainPage from './components/MainPage';
 import Header from './components/Header';
 import NotFound from './components/NotFound';
 import './styles/mediaQueries.css'
+
 import Footer from './components/Footer';
 import GenrePage from './components/GenrePage';
 import Books from './components/Books';
@@ -159,24 +160,24 @@ const router = createBrowserRouter([
                 errorElement: <NotFound />
             },
             {
-                path: "/admin/",
+                path: "/admin/dashboard",
                 element: <DashboardLayout />,
                 errorElement: <NotFound />,
                 children: [
                     {
-                        path: "dashboard",
+                        path: "/admin/dashboard",
                         element: <Dashboard />,
                     },
                     {
-                        path: "upload",
+                        path: "/admin/dashboard/upload",
                         element: <UploadBook />,
                     },
                     {
-                        path: "manage",
+                        path: "/admin/dashboard/manage",
                         element: <ManageBooks />,
                     },
                     {
-                        path: "edit-book/:id",
+                        path: "/admin/dashboard/edit-book/:id",
                         element: <EditBooks />,
                         loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
                     }
