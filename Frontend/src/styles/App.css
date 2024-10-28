@@ -1289,22 +1289,20 @@ ul {
 /*DASHBOARD*/
 .dashboard-layout-container {
   background-color: #fff7f7;
-  padding-top: 12em;
   display: flex;
   justify-content: space-evenly;
 }
 
 /*SIDEBAR ON Admin PANEL*/
 .sidebar-container {
-  position: fixed;
-  top: 0;
-  left: -250px; /* Initially hidden */
-  width: 250px;
   height: 100%;
+  width: fit-content;
+  position: absolute;
   background-color: #f5ecdc;
   color: #5e2400;
   transition: left 0.3s ease-in-out;
-  padding: 20px;
+  padding: 3em;
+  padding-left: 1em;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   margin-right: 3em;
 }
@@ -1350,6 +1348,96 @@ ul {
 
 .authentication-container {
   margin-top: 2em;
+}
+
+/*UPLOAD BOOK*/
+.form-container {
+  margin: 0;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 3em;
+  font-size: 18px;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.custom-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 4em;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 0 0 calc(50% - 10px);
+  display: flex;
+  flex-direction: column;
+}
+
+.full-width {
+  flex: 0 0 100%;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input, textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input:invalid, textarea:invalid {
+  border-color: red;
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+button {
+  font-size: 20px;
+  padding: 10px;
+  background-color: #007bff;
+  width: max-content;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.star-rating {
+  display: flex;
+  margin-top: 5px;
+}
+
+.star {
+  font-size: 24px; /* Adjust size as needed */
+  cursor: pointer;
+  margin-right: 5px;
 }
 
 /*# sourceMappingURL=App.css.map */
