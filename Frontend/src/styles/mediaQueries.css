@@ -121,22 +121,6 @@
   footer {
     margin-top: 65em;
   }
-}
-@media (max-width: 822px) {
-  .text-info-liked-book{
-    width: 10em;
-  }
-}
-@media (min-width: 1300px) {
-  .favourite-page {
-    width: 800px;
-  }
-  .remove-book-btn {
-    margin-left: 10em;
-  }
-  
-}
-@media (max-width: 1350px) {
   .form-group input {
     max-width: fit-content;
   }
@@ -154,6 +138,20 @@
 
   .sidebar-container{
     display: none;
+  }
+  
+}
+@media (max-width: 822px) {
+  .text-info-liked-book{
+    width: 10em;
+  }
+}
+@media (min-width: 1300px) {
+  .favourite-page {
+    width: 800px;
+  }
+  .remove-book-btn {
+    margin-left: 10em;
   }
   
 }

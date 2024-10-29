@@ -71,9 +71,7 @@ export default function FavouritePage() {
                         <div className="amountOfBooks">
                             <AmountOfFoundBooks message={'Found in favourite books'} items={sortedBooks} />
                         </div>
-                        <button onClick={handleSort} className="sort-button">
-                            Sort By {isAscending ? '↓' : '↑'}
-                        </button>
+                       
                     </div>
                     <ul className="liked-books-list">
                         {sortedBooks.map((book: Book) => (

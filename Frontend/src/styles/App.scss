@@ -21,10 +21,11 @@ body {
   background-color: $body-bg;
   color: #331500;
   font-family: 'Mulish', sans-serif;
- 
+  
 }
 .header-container {
  background-color:  $header-color;
+ padding-top: 3em;
 }
 img {
   border-radius: 1em;
@@ -71,7 +72,8 @@ img {
     font-weight: 600;
     transition: color 0.3s ease; 
     padding: 10px 15px;
-    padding-bottom: 3em;
+    padding-bottom: 3em;  
+    font-size: 18px;
 }
 
 .nav-link:hover {
@@ -675,6 +677,8 @@ button {
 .sorted-books-container {
   margin: 2em;
   margin-left: 6em;
+  display: flex;
+  justify-content: space-between;
 }
 
 .book-item {
@@ -1180,7 +1184,8 @@ font-size: 16px;
     justify-content: space-between;
     align-items: center;
   }
-  .sort-button {
+  .sort-button,
+  .sort-button-2 {
     display: flex;
     background: none;
     border: 1px solid $register-btn-color;
@@ -1189,10 +1194,16 @@ font-size: 16px;
     margin-right: 1em;
     text-align: end;
     padding-left: 1em;
+    color: $register-btn-color;
   }
-  .sort-button:hover{
+  .sort-button:hover,
+  .sort-button-2:hover{
     background-color: $header-color;
     border: 1px solid $register-btn-color-hover;
+  }
+  .sort-button-2 {
+    margin: 0;
+    padding-top: 0.5em;
   }
   .amountOfBooks{
     margin-top: 2em;
@@ -1336,7 +1347,7 @@ font-size: 16px;
   margin: 10px 0;
 }
 
-.nav-link {
+.nav-link-upload-book {
   font-size: 20px;
   color: $register-btn-color-hover;
   text-decoration: none;
@@ -1345,7 +1356,7 @@ font-size: 16px;
   transition: background-color 0.3s;
 }
 
-.nav-link:hover {
+.nav-link-upload-book:hover {
   background-color: #dacfbb;
   color: $login-btn-color-hover;
 }
@@ -1409,7 +1420,7 @@ input:invalid, textarea:invalid {
   font-size: 12px;
   margin-top: 5px;
 }
-button {
+.upload-book-btn {
   font-size: 20px;
   padding: 10px;
   background-color: #007bff;
@@ -1419,7 +1430,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
 }
-button:hover {
+.upload-book-btn:hover {
   background-color: #0056b3;
 }
 

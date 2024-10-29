@@ -11,14 +11,14 @@ export default function SideBar() {
                     <h2>BamBook</h2>
                 </div>
                 <ul className="nav-list">
-                    <li className="nav-item"><Link to='/' className="nav-link">Home</Link></li>
-                    <li className="nav-item"><Link to='/admin/dashboard' className="nav-link">Dashboard</Link></li>
-                    <li className="nav-item"><Link to='/admin/dashboard/upload' className="nav-link">Upload Books</Link></li>
-                    <li className="nav-item"><Link to='/admin/dashboard/manage' className="nav-link">Manage Books</Link></li>
-                    <li className="nav-item"><Link to='/admin/dashboard/upload' className="nav-link">Upload Books</Link></li>
+                    <li className="nav-item"><Link to='/' className="nav-link-upload-book">Home</Link></li>
+                    <li className="nav-item"><Link to='/admin/dashboard' className="nav-link-upload-book">Dashboard</Link></li>
+                    <li className="nav-item"><Link to='/admin/dashboard/upload' className="nav-link-upload-book">Upload Books</Link></li>
+                    <li className="nav-item"><Link to='/admin/dashboard/manage' className="nav-link-upload-book">Manage Books</Link></li>
+                    <li className="nav-item"><Link to='/admin/dashboard/upload' className="nav-link-upload-book">Upload Books</Link></li>
                     <div className="authentication-container">
-                        <li className="nav-item"><Link to='/admin/dashboard/login' className="nav-link">Sing In</Link></li>
-                        <li className="nav-item"><Link to='/admin/dashboard' className="nav-link">Log Out</Link></li>
+                        <li className="nav-item"><Link to='/admin/dashboard/login' className="nav-link-upload-book">Sing In</Link></li>
+                        <li className="nav-item"><Link to='/admin/dashboard' className="nav-link-upload-book">Log Out</Link></li>
                     </div>
                 </ul>
             </div>

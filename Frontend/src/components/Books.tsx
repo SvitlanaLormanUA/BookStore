@@ -4,7 +4,7 @@ import BookItem from './BookItem';
 import { BooksContext } from "../context/BooksContext.js";
 import SearchInput from './SearchInput.js';
 import Filters from './Filters.js';
-import SortByBooksPanel from './AmountOfFoundBooks.js';
+import AmountOfFoundBooks from './AmountOfFoundBooks.js';
 
 export default function Books() {
     const defaultBooks = useContext(BooksContext); 
@@ -12,7 +12,9 @@ export default function Books() {
     const books = location.state?.books || defaultBooks;
 
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-    
+    const [sortedBooks, setSortedBooks] = useState(books); // Для відсортованих книг
+    const [isAscending, setIsAscending] = useState(true); // Стан для порядку сортування
+
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768);
@@ -27,13 +29,13 @@ export default function Books() {
 
     // Pagination state
     const [currentPage, setCurrentPage] = useState(1);
-    const booksPerPage = isMobile ? 5 : 9; // For mobile devices, show 5 books
+    const booksPerPage = isMobile ? 5 : 9;
 
     const indexOfLastBook = currentPage * booksPerPage;
     const indexOfFirstBook = indexOfLastBook - booksPerPage;
-    const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);
+    const currentBooks = sortedBooks.slice(indexOfFirstBook, indexOfLastBook);
 
-    const totalPages = Math.ceil(books.length / booksPerPage);
+    const totalPages = Math.ceil(sortedBooks.length / booksPerPage);
 
     // Handle page navigation
     const goToNextPage = () => {
@@ -52,10 +54,26 @@ export default function Books() {
         setCurrentPage(page);
     };
 
+    // Сортування книг
+    const handleSort = () => {
+        const sorted = [...sortedBooks].sort((a, b) => {
+            if (isAscending) {
+                return a.title.localeCompare(b.title); // Зростання
+            } else {
+                return b.title.localeCompare(a.title); // Спадання
+            }
+        });
+
+        setIsAscending(!isAscending); // Змінюємо порядок сортування
+        setSortedBooks(sorted); // Оновлюємо відсортовані книги
+        setCurrentPage(1); // Повертаємо на першу сторінку
+    };
+
     // Effect to reset current page to 1 when books change
     useEffect(() => {
+        setSortedBooks(books); // Оновлюємо список книг при зміні
         setCurrentPage(1);
-    }, [books]); // Reset page to 1 whenever books change
+    }, [books]); 
 
     return (
         <>
@@ -72,11 +90,15 @@ export default function Books() {
                         <Filters />
                     </div>
                  
-                    {books.length > 0 ? (
+                    {sortedBooks.length > 0 ? (
                         <div className="all-book-list-container">
                             <div className="sorted-books-container">
-                                <SortByBooksPanel message={'Found'} items={books} />
+                                <AmountOfFoundBooks message={'Found'} items={sortedBooks} />
+                                <button onClick={handleSort} className="sort-button-2">
+                                    Sort By {isAscending ? '↓' : '↑'}
+                                </button>
                             </div>
+
                             <div className="book-list">
                                 {currentBooks.map((book) => (
                                     <BookItem key={book._id} book={book} />
@@ -114,7 +136,7 @@ export default function Books() {
                             </div>
                         </div>
                     ) : (
-                        <p className='no-books-avaliable'>No books found </p>
+                        <p className='no-books-avaliable'>No books found</p>
                     )}
                 </div>
             </div> 

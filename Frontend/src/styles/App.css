@@ -9,6 +9,7 @@ body {
 
 .header-container {
   background-color: #f5ecdc;
+  padding-top: 3em;
 }
 
 img {
@@ -57,6 +58,7 @@ img {
   transition: color 0.3s ease;
   padding: 10px 15px;
   padding-bottom: 3em;
+  font-size: 18px;
 }
 
 .nav-link:hover {
@@ -653,6 +655,8 @@ button {
 .sorted-books-container {
   margin: 2em;
   margin-left: 6em;
+  display: flex;
+  justify-content: space-between;
 }
 
 .book-item {
@@ -1167,7 +1171,8 @@ ul {
   align-items: center;
 }
 
-.sort-button {
+.sort-button,
+.sort-button-2 {
   display: flex;
   background: none;
   border: 1px solid #803500;
@@ -1176,11 +1181,18 @@ ul {
   margin-right: 1em;
   text-align: end;
   padding-left: 1em;
+  color: #803500;
 }
 
-.sort-button:hover {
+.sort-button:hover,
+.sort-button-2:hover {
   background-color: #f5ecdc;
   border: 1px solid #5e2400;
+}
+
+.sort-button-2 {
+  margin: 0;
+  padding-top: 0.5em;
 }
 
 .amountOfBooks {
@@ -1332,7 +1344,7 @@ ul {
   margin: 10px 0;
 }
 
-.nav-link {
+.nav-link-upload-book {
   font-size: 20px;
   color: #5e2400;
   text-decoration: none;
@@ -1341,7 +1353,7 @@ ul {
   transition: background-color 0.3s;
 }
 
-.nav-link:hover {
+.nav-link-upload-book:hover {
   background-color: #dacfbb;
   color: #e87d6c;
 }
@@ -1414,7 +1426,7 @@ input:invalid, textarea:invalid {
   margin-top: 5px;
 }
 
-button {
+.upload-book-btn {
   font-size: 20px;
   padding: 10px;
   background-color: #007bff;
@@ -1425,7 +1437,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.upload-book-btn:hover {
   background-color: #0056b3;
 }
 
