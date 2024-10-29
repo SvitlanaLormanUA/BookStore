@@ -15,5 +15,5 @@ export interface BookForPosting {
     publisher: string;
     language: string;
     stars: number;
-    dateAdded: Date;
+    dateAdded: number;
 }

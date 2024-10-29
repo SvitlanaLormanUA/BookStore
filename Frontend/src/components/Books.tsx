@@ -12,8 +12,8 @@ export default function Books() {
     const books = location.state?.books || defaultBooks;
 
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-    const [sortedBooks, setSortedBooks] = useState(books); // Для відсортованих книг
-    const [isAscending, setIsAscending] = useState(true); // Стан для порядку сортування
+    const [sortedBooks, setSortedBooks] = useState(books); 
+    const [isAscending, setIsAscending] = useState(true); 
 
     useEffect(() => {
         const handleResize = () => {

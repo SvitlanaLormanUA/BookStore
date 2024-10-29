@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { Book } from '../types/Book';
+import { Book } from '../interfaces/Book';
 import AddToCartButton from './AddToCartButton';
 import { useLikedBooks } from '../context/LikedBooksContext';
 import SwiperBooks from './SwiperBooks';
@@ -10,7 +10,7 @@ export default function BookCart() {
     const defaultBooks = useContext(BooksContext); 
 
     const location = useLocation();
-    const book = location.state as Book || initialBook;
+    const book = location.state as Book || defaultBooks;
     const rating: number = book.stars;
     const { toggleLikedBook, isBookLiked } = useLikedBooks();
     const liked = isBookLiked(book);

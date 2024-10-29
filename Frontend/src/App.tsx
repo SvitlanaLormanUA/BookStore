@@ -20,6 +20,7 @@ import { LikedBooksProvider } from './context/LikedBooksContext';
 import FavouritePage from './components/FavouritePage';
 import { BooksInCartContextProvider } from './context/BooksInCartContext';
 import BooksCart from './components/BooksCart';
+import BooksDatabaseManagement from './dashboard/BooksDatabaseManagement';
 
 
 function App() {
@@ -157,7 +158,8 @@ const router = createBrowserRouter([
             {
                 path: '/jobs',
                 element: <div>Jobs Page</div>,
-                errorElement: <NotFound />
+                errorElement: <NotFound />,
+                
             },
             {
                 path: '/login',
@@ -168,7 +170,8 @@ const router = createBrowserRouter([
                 path: '/register',
                 element: <div>Login Page</div>,
                 errorElement: <NotFound />
-            }
+            },
+           
            
         ]
     },
@@ -178,24 +181,31 @@ const router = createBrowserRouter([
         errorElement: <NotFound />,
         children: [
             {
-                path: "/admin/dashboard",
+                index: true,
                 element: <Dashboard />,
             },
             {
-                path: "/admin/dashboard/upload",
+                path: "upload",
                 element: <UploadBook />,
+              
             },
             {
-                path: "/admin/dashboard/manage",
+                path: "manage",
                 element: <ManageBooks />,
             },
             {
-                path: "/admin/dashboard/edit-book/:id",
+                path: "edit-book/:id",
                 element: <EditBooks />,
                 loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
+              
+            },
+            {
+                path: "book-db",
+                element: <BooksDatabaseManagement />
             }
         ]
     }
+    
 ]);
 
 export default App;

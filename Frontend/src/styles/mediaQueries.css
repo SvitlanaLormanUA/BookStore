@@ -132,14 +132,23 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
  
 
   .sidebar-container{
     display: none;
   }
+  .manage-books-container {
+    margin-left: 0em;
+    padding: 0;
+  }
   
+}
+@media (min-width: 1460px) {
+  .manage-books-container {
+    margin-left: 15em;
+    padding: 0;
+  }
 }
 @media (max-width: 822px) {
   .text-info-liked-book{

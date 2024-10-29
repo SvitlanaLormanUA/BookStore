@@ -16,6 +16,7 @@ export default function SideBar() {
                     <li className="nav-item"><Link to='/admin/dashboard/upload' className="nav-link-upload-book">Upload Books</Link></li>
                     <li className="nav-item"><Link to='/admin/dashboard/manage' className="nav-link-upload-book">Manage Books</Link></li>
                     <li className="nav-item"><Link to='/admin/dashboard/upload' className="nav-link-upload-book">Upload Books</Link></li>
+                    <li className="nav-item"><Link to='/admin/dashboard/book-db' className="nav-link-upload-book">Books Database</Link></li>
                     <div className="authentication-container">
                         <li className="nav-item"><Link to='/admin/dashboard/login' className="nav-link-upload-book">Sing In</Link></li>
                         <li className="nav-item"><Link to='/admin/dashboard' className="nav-link-upload-book">Log Out</Link></li>

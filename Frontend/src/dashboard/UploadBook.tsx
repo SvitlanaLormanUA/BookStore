@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { BookForPosting } from "../interfaces/BookForPosting";
 
+
 export default function UploadBook() {
     const [rating, setRating] = useState(0);
+
 
     const getFormData = (): BookForPosting => {
         const bookTitle = (document.getElementById('bookTitle') as HTMLInputElement).value;
@@ -16,8 +18,7 @@ export default function UploadBook() {
         const description = (document.getElementById('description') as HTMLTextAreaElement).value;
         const publisher = (document.getElementById('publisher') as HTMLInputElement).value;
         const language = (document.getElementById('language') as HTMLInputElement).value;
-        const dateAdded: Date = new Date();
-
+        const localDate = new Date().getFullYear()
         const bookData: BookForPosting = {
             title: bookTitle,
             author: authorName,
@@ -28,14 +29,14 @@ export default function UploadBook() {
             sale: sale,
             copiesInStock: copiesInStock,
             description: description,
-            publisher: publisher,  
-            language: language,   
-            popular: false, 
-            soldCopies: 0, 
+            publisher: publisher,
+            language: language,
+            popular: false,
+            soldCopies: 0,
             isForSale: sale > 0,
-            new: (new Date().getFullYear() - dateAdded.getFullYear()) < 30,
+            new: year === new Date().getFullYear(),
             stars: rating,
-            dateAdded: dateAdded // Додано дату
+            dateAdded: localDate,
         };
 
         return bookData;
@@ -48,34 +49,22 @@ export default function UploadBook() {
             event.stopPropagation();
         } else {
             const bookData = getFormData();
-
-            // Перевірка на існування книги перед додаванням
-            fetch(`http://localhost:3000/check-book?title=${bookData.title}&author=${bookData.author}`)
+          
+            //send data to db
+            fetch('http://localhost:3000/upload-book', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bookData)
+            })
             .then(res => res.json())
-            .then(existingBook => {
-                if (existingBook) {
-                    // Якщо книга вже існує, вивести повідомлення
-                    alert('This book already exists in the database.');
-                } else {
-                    // Якщо книга не існує, додати її в базу
-                    fetch('http://localhost:3000/upload-book', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(bookData)
-                    })
-                    .then(res => res.json())
-                    .then(data => {
-                        alert('Book uploaded successfully');
-                    })
-                    .catch(error => {
-                        console.error('Error uploading book:', error);
-                    });
-                }
+            .then(data => {
+                alert('Book uploaded successfully');
+                form.reset();
             })
             .catch(error => {
-                console.error('Error checking book existence:', error);
+                console.error('Error uploading book:', error);
             });
         }
     };
@@ -131,17 +120,19 @@ export default function UploadBook() {
                 </div>
 
                {/* Fourth Row */}
-                <div className="form-row">
-                    <div className="form-group">
-                        <label htmlFor="bookSale">Sale ($)</label>
-                        <input type="number" step="1" id="bookSale" placeholder="Sale" min="0" required />
-                        <div className="invalid-feedback">Sale must be at least 1.</div>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="copiesInStock">Copies In Stock</label>
-                        <input type="number" step="1" id="copiesInStock" placeholder="Copies in Stock" min="0" required />
-                    </div>
+            <div className="form-row">
+                <div className="form-group">
+                    <label htmlFor="bookSale">Sale ($)</label>
+                    <input type="number" step="1" id="bookSale" placeholder="Sale" min="0" required />
+                    <div className="invalid-feedback">Sale must be at least 1.</div>
                 </div>
+                <div className="form-group">
+                    <label htmlFor="copiesInStock">Copies In Stock</label>
+                    <input type="number" step="1" id="copiesInStock" placeholder="Copies in Stock" min="0" required />
+                  
+                </div>
+            </div>
+
 
                 {/* Publisher and Language */}
                 <div className="form-row">
