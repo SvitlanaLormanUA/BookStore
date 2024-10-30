@@ -117,7 +117,7 @@
   }
   
 } 
-@media (max-width: 1460px) {
+@media screen and (max-width: 1460px) {
   footer {
     margin-top: 65em;
   }
@@ -137,6 +137,9 @@
 
   .sidebar-container{
     display: none;
+  }
+  .sidebar-container-mobile {
+    display: inline;
   }
   .manage-books-container {
     margin-left: 0em;
@@ -163,4 +166,7 @@
     margin-left: 10em;
   }
   
+}
+.profile-link {
+  display: flex;
 }

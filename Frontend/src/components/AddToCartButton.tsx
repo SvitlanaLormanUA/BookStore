@@ -6,7 +6,6 @@ import { Book } from "../interfaces/Book";
 
 export default function AddToCartButton({ book }: { book: Book }) {
   const { toggleBookInCart, isBookInCart } = useBooksInCart();
-  const navigate = useNavigate(); // Для навігації
 
   const inCart = isBookInCart(book);
 

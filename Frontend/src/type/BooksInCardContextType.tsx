@@ -1,8 +1,10 @@
-import { Book } from "../interfaces/Book";
+import { Book } from '../interfaces/Book';
 
-export type BooksInCardContextType = {
-    booksInCart: Book[];
-    toggleBookInCart: (book: Book) => void;
-    isBookInCart: (book: Book) => boolean;
-    removeBookFromCart: (bookId: string | number) => void;
-};
+export interface BooksInCardContextType {
+  booksInCart: Book[];
+  toggleBookInCart: (book: Book) => void;
+  isBookInCart: (book: Book) => boolean;
+  removeBookFromCart: (bookId: string | number) => void;
+  purchaseBooks: (books: Book[], fullName: string, email: string, country: string, city: string, post: string) => void;
+
+}

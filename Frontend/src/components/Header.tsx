@@ -7,21 +7,21 @@ import '../styles/App.css';
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { useLikedBooks } from '../context/LikedBooksContext';
 import { useBooksInCart } from '../context/BooksInCartContext';
-import { AuthContext } from '../contects/AuthProvider';
-
+import { AuthContext } from '../contects/AuthProvider'; 
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { likedBooks } = useLikedBooks(); 
     const { booksInCart } = useBooksInCart(); 
 
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext)!; 
     const menuRef = useRef(null);  
     const hamburgerRef = useRef(null);  
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
     const handleClickOutside = (event) => {
         if (menuRef.current && !menuRef.current.contains(event.target) && 
             hamburgerRef.current && !hamburgerRef.current.contains(event.target)) {
@@ -60,22 +60,25 @@ export default function Header() {
 
                 <div className="buttons-login">
                     <div className="chosen-books">
-                                       
-                    <div className="favheart-icon">
-                            <Link to="/cart"><FaShoppingCart size="2em" /> </Link>
+                        <div className="favheart-icon">
+                            <Link to="/cart"><FaShoppingCart size="2em" /></Link>
                             <span className='circle-count'>{booksInCart.length}</span>
-                            </div> 
+                        </div> 
                        
                         <div className="favheart-icon">
                             <Link to="/favorite"><FaHeart size="2em" /></Link>
                             <span className='circle-count'>{likedBooks.length}</span>
                         </div> 
-                       
-
                     </div>
+                    
                     <div className="login-and-sign-up-btn">
-                        {user ? 
-                            <Link to="/profile" className="profile-link">Profile</Link> :
+                        {user ? (
+                            user.email === "svlormanua@gmail.com" ? ( 
+                                <Link to="/admin/dashboard" className="profile-link">  <div className="profile-circle"></div> <p>Profile</p></Link>
+                            ) : (
+                                <Link to="/profile" className="profile-link">Profile</Link>
+                            )
+                        ) : (
                             <>
                                 <a href="/login" target="_blank" rel="noopener noreferrer">
                                     <Button className="custom-login-btn">Login</Button>
@@ -84,9 +87,8 @@ export default function Header() {
                                     <Button className="custom-register-btn">Sign Up</Button>
                                 </a>
                             </>
-                        }
-                       
-                        </div>
+                        )}
+                    </div>
                 </div>
             </ul>
             <Outlet />

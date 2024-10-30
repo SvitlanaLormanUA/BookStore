@@ -36,8 +36,22 @@ const isBookInCart= (book: Book) => {
   return booksInCart.some(b => b._id === book._id);
 };
 
+const purchaseBooks = (books: Book[], fullName: string, email: string, country: string, city: string, post: string, ) => {
+  const purchaseObj = {
+      books: books,
+      buyerInfo: {
+          fullName,
+          email,
+          country,
+          city,
+          post
+      }
+  }
+localStorage.setItem('purchasedBooks', JSON.stringify(purchaseObj));
+}
+
 return (
-  <BooksInCartContext.Provider value={{ booksInCart, toggleBookInCart, isBookInCart, removeBookFromCart }}>
+  <BooksInCartContext.Provider value={{ booksInCart, toggleBookInCart, isBookInCart, removeBookFromCart, purchaseBooks }}>
       {children}
   </BooksInCartContext.Provider>
 );

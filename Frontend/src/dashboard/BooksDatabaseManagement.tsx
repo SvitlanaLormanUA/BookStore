@@ -26,7 +26,7 @@ export default function BooksDatabaseManagement() {
     fetchData();
   }, []);
 
-  // Перевірка, чи є дані
+
   if (error) {
     return <div>Error: {error}</div>;
   }
@@ -35,7 +35,7 @@ export default function BooksDatabaseManagement() {
     return <div>Loading data...</div>;
   }
 
-  // Конфігурація Flexmonster
+
   const pivotConfig = {
     dataSource: {
       data: data,

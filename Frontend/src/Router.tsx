@@ -17,6 +17,8 @@ import EditBooks from "./dashboard/EditBooks";
 import ManageBooks from "./dashboard/ManageBooks";
 import UploadBook from "./dashboard/UploadBook";
 import exp from "constants";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
+
 
 const router = createBrowserRouter([
     {
@@ -82,16 +84,16 @@ const router = createBrowserRouter([
     },
     {
         path: "/admin/dashboard",
-        element: <DashboardLayout />,
+        element:<PrivateRoute> <DashboardLayout /> </PrivateRoute>,
         errorElement: <NotFound />,
         children: [
             {
                 index: true,
-                element: <Dashboard />,
+                element:   <Dashboard />,
             },
             {
                 path: "upload",
-                element: <UploadBook />,
+                element:<UploadBook /> ,
               
             },
             {
@@ -118,7 +120,8 @@ const router = createBrowserRouter([
         path: 'login',
         element: <Login/>,
         errorElement: <NotFound />,
-    }
+    },
+
 
     
 ]);

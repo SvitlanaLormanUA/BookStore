@@ -33,6 +33,10 @@ img {
 #header-param {
     color: #803500;
 }
+.login-and-sign-up-btn {
+  display: flex;
+  gap: 2em;
+}
 
 .params {
     top:0;
@@ -49,6 +53,7 @@ img {
     z-index: 999;
    
 }
+
 
 #menuParam {
     display: flex;
@@ -1555,8 +1560,121 @@ height: calc(100% - 73px);
 height: 100%;
 }
 }
-.login-page,
-.register-page {
-  padding: 5em;
-  padding-top: 2em;
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.popup-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.sidebar-container-mobile {
+  display: none;
+}
+.mobile {
+  display: flex;
+  justify-content: space-evenly;
+ 
+}
+@media screen and (max-width: 1460px) {
+  .sidebar-container-mobile {
+      display: block;
+      position: absolute;
+      background-color: $header-color;
+      width: 100%;
+      padding: 0;
+  }
+  .container,
+  .manage-books-container {
+    margin-top: 5em;
+  }
+  .manage-books-container {
+    margin-top: 7em;
+  }
+ 
+}
+.overlay-form {
+  background-color: $header-color;
+  padding: 2em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column ;
+  gap: 1em;
+  font-size: 18px;
+  border-radius: 5px;
+  margin: 4em;
+  margin-top: 10em;
+}
+.overlay-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  margin:0;
+  padding: 0;
+  margin-left: 8em;
+  right: 0;
+}
+.spinner-border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10em;
+  margin-left: 20em;
+}
+.user-profile {
+  display: flex;
+  align-items: center; 
+}
+
+.profile-circle {
+  width: 40px; 
+  height: 40px;
+  background-color: gray; 
+  border-radius: 50%; 
+  margin-right: 10px; 
+  margin-top: 1em;
+}
+.profile-link {
+  text-decoration: none;
+  font-size: 18px;
+}
+.profile-link p {
+  margin-top: 1.2em;
+  text-decoration: none;
+  color: $register-btn-color;
+  margin-left: 0.5em;
+}
+.profile-link:hover {
+  color: $login-btn-color-hover;
+  text-decoration: underline;
 }

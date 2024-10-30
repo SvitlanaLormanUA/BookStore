@@ -142,23 +142,7 @@ export default function Login() {
                     </div>
                 </div>
 
-                <div className="footer-login-page d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 ">
-                    {/* Social Media Icons */}
-                    <div>
-                        <a href="#!" className="text-white me-4">
-                            <i className="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#!" className="text-white me-4">
-                            <i className="fab fa-twitter"></i>
-                        </a>
-                        <a href="#!" className="text-white me-4">
-                            <i className="fab fa-google"></i>
-                        </a>
-                        <a href="#!" className="text-white">
-                            <i className="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
+               
             </section>
         </>
     );

@@ -3,10 +3,15 @@ import { useBooksInCart } from "../context/BooksInCartContext";
 import AmountOfFoundBooks from "./AmountOfFoundBooks";
 import { Book } from "../type/Book";
 import SearchInput from "./SearchInput";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../contects/AuthProvider";
 
 export default function BooksCart() {
-    const { booksInCart, removeBookFromCart } = useBooksInCart();
+    const { user } = useContext(AuthContext);
+
+
+    const [showPurchaseForm, setShowPurchaseForm] = useState(false);
+    const { booksInCart, removeBookFromCart, purchaseBooks } = useBooksInCart();
     const [sortedBooks, setSortedBooks] = useState<Book[]>(booksInCart);
     const location = useLocation();
     const navigate = useNavigate();
@@ -20,7 +25,7 @@ export default function BooksCart() {
     // Track book amounts using a map of book IDs to amounts
     const [bookAmounts, setBookAmounts] = useState<{ [id: string]: number }>(() =>
         booksInCart.reduce((acc, book) => {
-            acc[book._id] = 1; // Set default amount to 1 for each book
+            acc[book._id] = 1; // Set default amount to 1 htmlFor each book
             return acc;
         }, {} as { [id: string]: number })
     );
@@ -29,6 +34,21 @@ export default function BooksCart() {
         return price - (price * sale) / 100;
     }
 
+
+    function handlePurchase() {
+
+        const fullName = (document.getElementById("fullName") as HTMLInputElement).value;
+        const country = (document.getElementById("country") as HTMLInputElement).value;
+        const city = (document.getElementById("city") as HTMLInputElement).value;
+        const branchNumber = (document.getElementById("branchNumber") as HTMLInputElement).value;
+        const email = (document.getElementById("email") as HTMLInputElement).value;
+
+        purchaseBooks(booksInCart, fullName, country, city, branchNumber, email );
+        console.log({ fullName, country, city, branchNumber });
+    }
+    function handleBuy() {
+            setShowPurchaseForm(true);
+    }
     useEffect(() => {
         if (location.state?.books) {
             setSortedBooks(location.state.books);
@@ -111,7 +131,7 @@ export default function BooksCart() {
                                     : null}
                                 </div>
                             </div>
-                            <button className="order-btn">Buy</button>
+                            <button className="order-btn" onClick={handleBuy}>Buy</button>
         </div>
                 <div className="booksInCart-container">
                     {filteredBooks.length === 0 && searchTerm ? (
@@ -185,6 +205,68 @@ export default function BooksCart() {
             </div>
         </div>
       
+        {showPurchaseForm && (
+    <div className="popup-overlay">
+     
+        <form onSubmit={handleBuy} className="overlay-form">
+        <p className="close-button" onClick={() => setShowPurchaseForm(false)}>✖️</p> 
+            <div className="form-group">
+                <label htmlFor="fullName">Full Name</label>
+                <input 
+                    type="text" 
+                    className="form-control" 
+                    id="fullName" 
+                    placeholder="Enter your full name" 
+                    required 
+                />
+            </div>
+            <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input 
+                    type="text" 
+                    className="form-control" 
+                    id="email" 
+                    placeholder="Enter your email" 
+                    required 
+                />
+            </div>
+            <div className="form-group">
+                <label htmlFor="country">Country</label>
+                <input 
+                    type="text" 
+                    className="form-control" 
+                    id="country" 
+                    placeholder="Enter your country" 
+                    required 
+                />
+            </div>
+            <div className="form-group">
+                <label htmlFor="city">City</label>
+                <input 
+                    type="text" 
+                    className="form-control" 
+                    id="city" 
+                    placeholder="Enter the city you live in" 
+                    required 
+                />
+            </div>
+           
+            <div className="form-group">
+                <label htmlFor="branchNumber">Post</label>
+                <input 
+                    type="text" 
+                    className="form-control" 
+                    id="branchNumber" 
+                    placeholder="Post number" 
+                    required 
+                />
+            </div>
+            <button type="submit" className="btn btn-primary"
+            onClick={handlePurchase}>Purchase</button>
+        </form>
+    </div>
+)}
+
        
 
         </>
