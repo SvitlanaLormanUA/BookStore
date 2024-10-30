@@ -62,7 +62,7 @@ export default function BooksDatabaseManagement() {
 
   return (
     <div className='container'>
-      <h1>Books Database Management</h1>
+      <h1>Books Database Statistics</h1>
       <p>Default setting are for the genres of books in database. </p>
       <p>However, if you click on 'fields' you will be able to get statistics based on other fields.</p>
       <FlexmonsterReact.Pivot

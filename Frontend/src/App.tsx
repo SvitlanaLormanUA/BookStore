@@ -14,13 +14,17 @@ import  DashboardLayout  from './dashboard/DashboardLayout';
 import Dashboard from './dashboard/Dashboard';
 import  UploadBook  from './dashboard/UploadBook';
 import  ManageBooks  from './dashboard/ManageBooks';
-import  EditBooks from './dashboard/ManageBooks';
+import EditBooks from './dashboard/EditBooks';
 import BookCart from './components/BookCard';
 import { LikedBooksProvider } from './context/LikedBooksContext';
 import FavouritePage from './components/FavouritePage';
 import { BooksInCartContextProvider } from './context/BooksInCartContext';
 import BooksCart from './components/BooksCart';
 import BooksDatabaseManagement from './dashboard/BooksDatabaseManagement';
+import { AuthProvider } from './contects/AuthProvider';
+import SignUp from './components/SignUp';
+import Login from './components/Login';
+import router from './Router';
 
 
 function App() {
@@ -96,116 +100,15 @@ function App() {
         <BooksInCartContextProvider>
         <LikedBooksProvider>
         <BooksContext.Provider value={arrangedBooks}>
-            <RouterProvider router={router} />
+            <AuthProvider>
+                 <RouterProvider router={router} />
+          </AuthProvider>
         </BooksContext.Provider>
         </LikedBooksProvider>
         </BooksInCartContextProvider>
     );
 }
 
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: (
-            <>
-                <Header />
-                <Footer />
-            </>
-        ),
-        errorElement: <NotFound />,
-        children: [
-            {
-                index: true,
-                element: <MainPage />,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/blog',
-                element: <div>Blog Page</div>,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/about',
-                element: <div>About Us Page</div>,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/books',
-                element: <Books />,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/cart',
-                element: <BooksCart />,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/favorite',
-                element: <FavouritePage />,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/books/:genre',
-                element: <GenrePage />,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/book/:id',
-                element: <BookCart />,
-                errorElement: <NotFound />,
-                loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
-            },
-            {
-                path: '/jobs',
-                element: <div>Jobs Page</div>,
-                errorElement: <NotFound />,
-                
-            },
-            {
-                path: '/login',
-                element: <div>Login Page</div>,
-                errorElement: <NotFound />
-            },
-            {
-                path: '/register',
-                element: <div>Login Page</div>,
-                errorElement: <NotFound />
-            },
-           
-           
-        ]
-    },
-    {
-        path: "/admin/dashboard",
-        element: <DashboardLayout />,
-        errorElement: <NotFound />,
-        children: [
-            {
-                index: true,
-                element: <Dashboard />,
-            },
-            {
-                path: "upload",
-                element: <UploadBook />,
-              
-            },
-            {
-                path: "manage",
-                element: <ManageBooks />,
-            },
-            {
-                path: "edit-book/:id",
-                element: <EditBooks />,
-                loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
-              
-            },
-            {
-                path: "book-db",
-                element: <BooksDatabaseManagement />
-            }
-        ]
-    }
-    
-]);
+
 
 export default App;

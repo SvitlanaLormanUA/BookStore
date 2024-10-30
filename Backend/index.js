@@ -54,7 +54,19 @@ async function run() {
         res.status(500).send({ message: 'Failed to fetch books', error });
       }
     });
-
+    app.get('/books/:id', async (req, res) => {
+      try {
+        const id = req.params.id;
+        const book = await bookCollections.findOne({ _id: new ObjectId(id) });
+        if (!book) {
+          return res.status(404).send({ message: 'Book not found' });
+        }
+        res.send(book);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to fetch the book', error });
+      }
+    });
+    
     // Update book data
     app.patch('/book/:id', async (req, res) => {
       try {

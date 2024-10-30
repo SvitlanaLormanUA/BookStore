@@ -1456,8 +1456,28 @@ input:invalid, textarea:invalid {
   margin-top: 2em;
   padding: 2em;
   margin: 5em;
-  margin-left: 15em;
- 
+
+}
+.manage-books-btn {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+
+}
+.edit-link{
+  color: $register-btn-color;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 1.5em;
+}
+.edit-link:hover {
+  color: $login-btn-color-hover;
+  text-decoration: underline;
+}
+@media screen and (min-width: 1460px) {
+  .manage-books-container {
+    margin-left: 20em;
+  }
 }
 
 table {
@@ -1519,4 +1539,24 @@ table {
 }
 .btn-danger {
   margin-bottom: 1em;
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+.login-page,
+.register-page {
+  padding: 5em;
+  padding-top: 2em;
 }

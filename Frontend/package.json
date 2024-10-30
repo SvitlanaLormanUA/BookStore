@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "firebase": "^11.0.1",
     "flexmonster": "^2.9.89",
     "flowbite": "^2.5.2",
     "flowbite-react": "^0.10.2",

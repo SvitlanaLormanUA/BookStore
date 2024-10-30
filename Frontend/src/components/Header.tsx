@@ -2,17 +2,20 @@ import { Link, Outlet } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import '../styles/App.css';
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { useLikedBooks } from '../context/LikedBooksContext';
 import { useBooksInCart } from '../context/BooksInCartContext';
+import { AuthContext } from '../contects/AuthProvider';
 
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { likedBooks } = useLikedBooks(); 
     const { booksInCart } = useBooksInCart(); 
+
+    const {user} = useContext(AuthContext);
     const menuRef = useRef(null);  
     const hamburgerRef = useRef(null);  
 
@@ -70,12 +73,20 @@ export default function Header() {
                        
 
                     </div>
-                    <Link to="/login">
-                        <Button className="custom-login-btn">Login</Button>
-                    </Link>
-                    <Link to="/register">
-                        <Button className="custom-register-btn">Sign Up</Button>
-                    </Link>
+                    <div className="login-and-sign-up-btn">
+                        {user ? 
+                            <Link to="/profile" className="profile-link">Profile</Link> :
+                            <>
+                                <a href="/login" target="_blank" rel="noopener noreferrer">
+                                    <Button className="custom-login-btn">Login</Button>
+                                </a>
+                                <a href="/sign-up" target="_blank" rel="noopener noreferrer">
+                                    <Button className="custom-register-btn">Sign Up</Button>
+                                </a>
+                            </>
+                        }
+                       
+                        </div>
                 </div>
             </ul>
             <Outlet />

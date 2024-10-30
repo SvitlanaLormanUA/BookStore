@@ -1,28 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Book } from "../interfaces/Book";
+import { Link } from "react-router-dom";
 import '../styles/mediaQueries.css';
+import { BooksContext } from "../context/BooksContext";
 
 export default function ManageBooks() {
     const [allBooks, setAllBooks] = useState<Book[]>([]);
+    const booksContext = useContext(BooksContext);
     useEffect(() => {
-        // Fetch books from the server when the component mounts
-        const fetchBooks = async () => {
-            try {
-                const response = await fetch('http://localhost:3000/books');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch books');
-                }
-                const books = await response.json();
-                // Sort books by title before setting state
-                const sortedBooks = books.sort((a: Book, b: Book) => a.title.localeCompare(b.title));
-                setAllBooks(sortedBooks);
-            } catch (error) {
-                console.error('Error fetching books:', error);
-            }
-        };
-
-        fetchBooks();
-    }, []);
+        setAllBooks(booksContext);
+    }, [booksContext]);
 
     const handleDelete = (id: string | number) => {
         fetch(`http://localhost:3000/book/${id}`, {
@@ -67,7 +54,7 @@ export default function ManageBooks() {
                                 <td>{book.genre}</td>
                                 <td>{book.price}</td>
                                 <td className="manage-books-btn">
-                                  
+                                    <Link to={`/admin/dashboard/edit-book/${book._id}`} className="edit-link">Edit</Link>
                                     <button className="btn btn-danger" onClick={() => handleDelete(book._id)}>Delete</button>
                                 </td>
                             </tr>
