@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BlogPost } from "../interfaces/BlogPost";
 import { Link } from "react-router-dom";
 import { FaTrash, FaEdit } from 'react-icons/fa'; // Importing icons from react-icons
+import { marked } from "marked";
 
 export default function ManageBlogPost() {
     const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
@@ -62,7 +63,7 @@ export default function ManageBlogPost() {
   
 
     return (
-        <div className="manage-blog-container">
+        <div  className="manage-blog-container">
             <h2>Manage Blog Posts</h2>
             
                 <Link to="/admin/dashboard/create-blog-post" className="add-new-blog-post">
@@ -78,7 +79,7 @@ export default function ManageBlogPost() {
                             <Link to={`/blog-post/${post._id}`} target="_blank" rel="noopener noreferrer">
                             <div className="post-obj-details">
                               
-                                <h3 className="post-title">{post.title}</h3>
+                                <h3  className="post-title">{post.title}</h3>
                                 <p className="description">{post.content.slice(0, 50)}...</p>
                                 <p className="date-para-blog">{post.date.slice(0, 10)}</p>
                                 </div>
@@ -90,7 +91,7 @@ export default function ManageBlogPost() {
                                 <FaEdit />
                             </button>
                             </Link>
-                            <button onClick={() => handleOpenPopup(post._id)} className="action-btn delete-btn">
+                            <button onClick={() => handleOpenPopup(post._id.toString())} className="action-btn delete-btn">
                                 <FaTrash />
                             </button>
                         </div>

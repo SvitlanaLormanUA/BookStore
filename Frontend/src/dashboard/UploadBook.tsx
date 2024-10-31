@@ -74,7 +74,7 @@ export default function UploadBook() {
     };
 
     return (
-        <div className='container'>
+        <div className='upload-book-container container'>
             <h2 className="title">Upload a Book</h2>
             <form className="custom-form" noValidate onSubmit={handleSubmit}>
                 {/* First Row */}

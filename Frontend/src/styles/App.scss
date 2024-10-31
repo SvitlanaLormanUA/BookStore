@@ -1406,7 +1406,7 @@ font-size: 16px;
   justify-content: space-between;
   gap: 4em;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 
 }
 .form-group {
@@ -1438,6 +1438,7 @@ input:invalid, textarea:invalid {
 .upload-book-btn {
   font-size: 20px;
   padding: 10px;
+  margin-top: 0;
   background-color: #007bff;
   width: max-content;
   color: white;
@@ -1969,4 +1970,19 @@ h3{
   font-size: 24px;
   margin-bottom: 10px;
   color: $register-btn-color-hover;
+}
+.edit-blog-post {
+  padding: 3em;
+  margin-top: 6em;
+}
+.upload-book-container {
+  padding: 3em;
+  padding-top: 3em;
+}
+@media screen and (min-width: 1500px) {
+  .upload-book-container {
+    padding: 3em;
+    padding-top: 1em;
+  
+  }
 }

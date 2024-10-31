@@ -124,7 +124,7 @@ const router = createBrowserRouter([
             {
                 path: 'edit-blog-post/:id',
                 element: <EditBlogPost />,
-                loader: ({params}) => fetch(`http://localhost:3000/blog-posts/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:3000/blog-post/${params.id}`)
             }
         ]
     }, {

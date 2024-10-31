@@ -1,19 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { BlogPost } from "../interfaces/BlogPost";
 
 export default function EditBlogPost() {
+    const { id } = useParams();
+    const blogPostData = useLoaderData() as BlogPost;
+
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [image, setImage] = useState('');
     const [imagePreview, setImagePreview] = useState('');
     const [link, setLink] = useState('');
 
+    // Заповнюємо поля значеннями з blogPostData після завантаження даних
+    useEffect(() => {
+        if (blogPostData) {
+            setTitle(blogPostData.title || '');
+            setContent(blogPostData.content || '');
+            setImage(blogPostData.image || '');
+        }
+    }, [blogPostData]);
 
-    const { id } = useParams();
-    const blogPostData = useLoaderData() as BlogPost ; // Assuming loader fetches a single book
     const updateBlogPost = async () => {
-            fetch(`http://localhost:3000/blog-posts/${id}`, {
+        try {
+            const response = await fetch(`http://localhost:3000/blog-post/${id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -24,27 +34,23 @@ export default function EditBlogPost() {
                     image,
                     date: new Date().toISOString(),
                 }),
-            })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Failed to create blog post');
-                }
-                alert('Blog post created successfully');
-                setTitle('');
-                setContent('');
-                setImage('');
-                setImagePreview('');
-                setLink('');
-            })
+            });
 
-    }
+            if (!response.ok) {
+                throw new Error('Failed to update blog post');
+            }
+            else {
+              alert('Blog post updated successfully');
+            }
+        } catch (error) {
+            console.error('Error updating blog post:', error);
+        }
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add logic to handle form submission, e.g., API call to create a blog post
-        console.log('Title:', title);
-        console.log('Content:', content);
-        // Handle the image upload if necessary
-        console.log('Image:', image);
+        updateBlogPost();
+        
     };
 
     const handleImageChange = (e) => {
@@ -61,21 +67,14 @@ export default function EditBlogPost() {
         }
     };
 
-    const insertImage = () => {
-        if (imagePreview) {
-            setContent((prevContent) => prevContent + `![Image](${imagePreview})\n`);
-            setImagePreview(''); // Clear the preview after inserting
+    const insertLink = () => {
+        if (link) {
+            setImage(link);
         }
     };
 
-    const insertLink = () => {
-        if (link) {
-           setImage(link);
-        }
-    };
-  
     return (
-        <div className="create-blog-post">
+        <div className="edit-blog-post">
             <h1>Edit Blog Post</h1>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -86,7 +85,6 @@ export default function EditBlogPost() {
                         className='input-blog-post'
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
-                        placeholder={blogPostData.title}
                         required
                     />
                 </div>
@@ -97,31 +95,28 @@ export default function EditBlogPost() {
                         value={content}
                         className='input-blog-post'
                         onChange={(e) => setContent(e.target.value)}
-                        placeholder={blogPostData.content}
                         rows={10}
                         required
                     />
                 </div>
-    
-                <div className="form-group ">
-
+                <div className="form-group">
                     <label htmlFor="link">Insert Link</label>
                     <div className="insert-link-container">
-                    <input
-                        type="url"
-                        id="link"
-                        value={link}
-                        onChange={(e) => setLink(e.target.value)}
-                        placeholder={blogPostData.image}
-                    />
-                    <button type="button" onClick={insertLink} className="btn btn-success btn-insert-link">
-                        Insert Link
-                    </button>
+                        <input
+                            type="url"
+                            id="link"
+                            value={link}
+                            onChange={(e) => setLink(e.target.value)}
+                            placeholder="Insert image link"
+                        />
+                        <button type="button" onClick={insertLink} className="btn btn-success btn-insert-link">
+                            Insert Link
+                        </button>
                     </div>
                 </div>
-                <button type="submit" className="btn btn-danger btn-submit" onClick={updateBlogPost
-            
-                }>Update</button>
+                <button type="submit" className="btn btn-danger btn-submit">
+                    Update
+                </button>
             </form>
         </div>
     );

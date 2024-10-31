@@ -49,7 +49,7 @@ export default function SideBar() {
                     <li className={`nav-item ${isActive('/admin/dashboard/upload')}`}><Link to='/admin/dashboard/upload' className="nav-link-upload-book">Upload Books</Link></li>
                     <li className={`nav-item ${isActive('/admin/dashboard/manage')}`}><Link to='/admin/dashboard/manage' className="nav-link-upload-book">Manage Books</Link></li>
                     <li className={`nav-item ${isActive('/admin/dashboard/book-db')}`}><Link to='/admin/dashboard/book-db' className="nav-link-upload-book">Database Statistics</Link></li>
-                    <li className={`nav-item ${isActive('/admin/dashboard/manage-blog')}`}><Link to='/admin/dashboard/manage-blog' className="nav-link-upload-book">Create Blog Post</Link></li>
+                    <li className={`nav-item ${isActive('/admin/dashboard/manage-blog')}`}><Link to='/admin/dashboard/manage-blog' className="nav-link-upload-book">Manage Blog </Link></li>
                     <div className="authentication-container">
                         <li className={`nav-item ${isActive('/admin/dashboard/login')}`}><Link to='/admin/dashboard/login' className="nav-link-upload-book"><FontAwesomeIcon icon={faSignInAlt} className='icon'/> Sign In</Link></li>
                         <li className="nav-item">
