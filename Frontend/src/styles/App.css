@@ -1880,7 +1880,7 @@ table {
 
 /*BLOG POSTS*/
 .manage-blog-container {
-  margin-top: 10em;
+  margin-top: 5em;
   padding: 4em;
   background-color: #fff7f7;
 }
@@ -1957,7 +1957,7 @@ h3 {
 }
 
 .new-post-btn {
-  margin-left: 0.7em;
+  margin-left: 0.4em;
 }
 
 .blog-post-item-read {
