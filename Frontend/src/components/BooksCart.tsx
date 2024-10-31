@@ -47,6 +47,10 @@ export default function BooksCart() {
    
         purchaseBooks(booksInCart, bookAmounts, fullName, country, city, branchNumber, email, Number(totalSaleAmount.toFixed(2)));
         setShowPurchaseForm(false);
+        booksInCart.forEach((book) => {
+            book.copiesInStock -= bookAmounts[book._id];
+         });  
+
        // console.log({ fullName, country, city, branchNumber });
     }
     
