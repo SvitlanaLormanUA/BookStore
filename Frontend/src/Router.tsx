@@ -17,6 +17,7 @@ import EditBooks from "./dashboard/EditBooks";
 import ManageBooks from "./dashboard/ManageBooks";
 import UploadBook from "./dashboard/UploadBook";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import UserProfile from "./components/UserProfile";
 
 
 const router = createBrowserRouter([
@@ -70,6 +71,11 @@ const router = createBrowserRouter([
                 element: <BookCart />,
                 errorElement: <NotFound />,
                 loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
+            },
+            {
+                path: '/profile',
+                element: < UserProfile />,
+                errorElement: <NotFound />,
             }
            
            
@@ -102,7 +108,7 @@ const router = createBrowserRouter([
             {
                 path: "book-db",
                 element: <BooksDatabaseManagement />
-            }
+            },
         ]
     }, {
         path: 'sign-up',
@@ -113,9 +119,8 @@ const router = createBrowserRouter([
         path: 'login',
         element: <Login/>,
         errorElement: <NotFound />,
-    },
-
-
+    }
+  
     
 ]);
 export default router;
