@@ -6,14 +6,15 @@ import { useState, useEffect, useRef, useContext } from 'react';
 import '../styles/App.css';
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { useLikedBooks } from '../context/LikedBooksContext';
-import { useBooksInCart } from '../context/BooksInCartContext';
-import { AuthContext } from '../contects/AuthProvider'; 
+import { useBooksInCart } from '../context/BooksInCartContext'; 
+import UserProfile from './UserProfile'; // Import the UserProfile component
+import { AuthContext } from '../contects/AuthProvider';
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isProfilePopupOpen, setIsProfilePopupOpen] = useState(false); // Track if the profile popup is open
     const { likedBooks } = useLikedBooks(); 
     const { booksInCart } = useBooksInCart(); 
-
     const { user } = useContext(AuthContext)!; 
     const menuRef = useRef(null);  
     const hamburgerRef = useRef(null);  
@@ -36,10 +37,12 @@ export default function Header() {
         };
     }, []);
 
+    const openProfilePopup = () => setIsProfilePopupOpen(true);
+    const closeProfilePopup = () => setIsProfilePopupOpen(false);
+
     return (
         <>
         <div className="header-container">
-            {/* Hamburger menu is shown only on smaller screens */}
             <div className="hamburger-menu" onClick={toggleMenu} ref={hamburgerRef}>
                 <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
                 <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
@@ -74,9 +77,15 @@ export default function Header() {
                     <div className="login-and-sign-up-btn">
                         {user ? (
                             user.email === "svlormanua@gmail.com" ? ( 
-                                <Link to="/admin/dashboard" className="profile-link">  <div className="profile-circle"></div> <p>Admin Profile</p></Link>
+                                <Link to="/admin/dashboard" className="profile-link">  
+                                    <div className="profile-circle"></div> 
+                                    <p>Admin Profile</p>
+                                </Link>
                             ) : (
-                                <Link to="/profile" className="profile-link">  <div className="profile-circle"></div> <p>Your Profile</p></Link>
+                                <div className="profile-link" onClick={openProfilePopup}>
+                                    <div className="profile-circle"></div>
+                                    <p>Your Profile</p>
+                                </div>
                             )
                         ) : (
                             <>
@@ -92,6 +101,16 @@ export default function Header() {
                 </div>
             </ul>
             <Outlet />
+
+            {/* Profile Popup */}
+            {isProfilePopupOpen && (
+                <div className="popup-overlay" onClick={closeProfilePopup}>
+                    <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+                        <UserProfile />
+                        <button className="close-popup" onClick={closeProfilePopup}>X</button>
+                    </div>
+                </div>
+            )}
         </div>
         </>
     );

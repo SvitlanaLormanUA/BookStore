@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../contects/AuthProvider';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faChartBar, faUpload, faBook, faDatabase, faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faChartBar, faUpload, faBook, faDatabase, faSignInAlt, faSignOutAlt, faPen } from '@fortawesome/free-solid-svg-icons'; // Import the pen icon
 
 export default function SideBar() {
     const { logOut } = useContext(AuthContext)!;
@@ -42,22 +42,22 @@ export default function SideBar() {
                     <h2>BamBook</h2>
                 </div>
                 <ul className="nav-list">
-                    <li className="nav-item"><Link to='/' className="nav-link-upload-book">Home</Link></li>
-                    <li className="nav-item"><Link to='/admin/dashboard' className="nav-link-upload-book">Dashboard</Link></li>
-                    <li className="nav-item"><Link to='/admin/dashboard/upload' className="nav-link-upload-book">Upload Books</Link></li>
-                    <li className="nav-item"><Link to='/admin/dashboard/manage' className="nav-link-upload-book">Manage Books</Link></li>
-                    <li className="nav-item"><Link to='/admin/dashboard/book-db' className="nav-link-upload-book">Database Statistics</Link></li>
+                    <li className="nav-item"><Link to='/' className="nav-link-upload-book">  Home</Link></li>
+                    <li className="nav-item"><Link to='/admin/dashboard' className="nav-link-upload-book"> Dashboard</Link></li>
+                    <li className="nav-item"><Link to='/admin/dashboard/upload' className="nav-link-upload-book">   Upload Books</Link></li>
+                    <li className="nav-item"><Link to='/admin/dashboard/manage' className="nav-link-upload-book">     Manage Books</Link></li>
+                    <li className="nav-item"><Link to='/admin/dashboard/book-db' className="nav-link-upload-book">   Database Statistics</Link></li>
+                    <li className="nav-item"><Link to='/admin/dashboard/manage-blog' className="nav-link-upload-book">  Create Blog Post</Link></li>
                     <div className="authentication-container">
-                        <li className="nav-item"><Link to='/admin/dashboard/login' className="nav-link-upload-book">Sign In</Link></li>
+                        <li className="nav-item"><Link to='/admin/dashboard/login' className="nav-link-upload-book">   <FontAwesomeIcon icon={faSignInAlt} className='icon'/> Sign In</Link></li>
                         <li className="nav-item">
-                            <Link to='/admin/dashboard' className="nav-link-upload-book" onClick={handleOpenPopup}>Log Out</Link>
+                            <Link to='/admin/dashboard' className="nav-link-upload-book" onClick={handleOpenPopup}>    <FontAwesomeIcon icon={faSignOutAlt} className='icon'/> Log Out</Link>
                         </li>
                     </div>
                 </ul>
             </div>
          
             <div className={`sidebar-container-mobile open`}>
-               
                 <ul className="nav-list mobile">
                     <li className="nav-item">
                         <Link to='/' className="nav-link-upload-book">
@@ -84,22 +84,24 @@ export default function SideBar() {
                             <FontAwesomeIcon icon={faDatabase} />
                         </Link>
                     </li>
-                  
-                        <li className="nav-item">
+                    <li className="nav-item">
+                        <Link to='/admin/dashboard/manage-blog' className="nav-link-upload-book">
+                            <FontAwesomeIcon icon={faPen} /> 
+                        </Link>
+                    </li>
+                    <li className="nav-item">
                         <a href="/login" target="_blank" rel="noopener noreferrer" className="nav-link-upload-book">
-                                <FontAwesomeIcon icon={faSignInAlt} />
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            
-                            <Link to='/admin/dashboard' className="nav-link-upload-book" onClick={handleOpenPopup}>
-                                <FontAwesomeIcon icon={faSignOutAlt} />
-                            </Link>
-                        </li>
-                  
+                            <FontAwesomeIcon icon={faSignInAlt} />
+                        </a>
+                    </li>
+                    <li className="nav-item">
+                        <Link to='/admin/dashboard' className="nav-link-upload-book" onClick={handleOpenPopup}>
+                            <FontAwesomeIcon icon={faSignOutAlt} />
+                        </Link>
+                    </li>
                 </ul>
             </div>
-            {/* Модальне вікно для підтвердження виходу */}
+            {/*  вікно для підтвердження виходу */}
             {showPopup && (
                 <div className="popup-overlay">
                     <div className="popup-content">

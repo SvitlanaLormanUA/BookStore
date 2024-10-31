@@ -34,6 +34,77 @@ async function run() {
     const purchasesCollection = client.db('BookInventory').collection('purchases');
     const blogPostsCollection = client.db('BookInventory').collection('blogPosts');
 
+    // Insert a blog post into the collection: POST method
+    app.post('/blog-posts', async (req, res) => {
+      try {
+        const data = req.body;
+        const result = await blogPostsCollection.insertOne(data);
+        res.send(result);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to upload the blog post', error });
+      }
+    });
+
+    // Get all blog posts from the database
+    app.get('/blog-posts', async (req, res) => {
+      try {
+        const blogPosts = blogPostsCollection
+      .find({});
+        const result = await blogPosts.toArray();
+        res.send(result);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to fetch blog posts', error });
+      }
+    });
+
+    // Get a blog post by ID
+    app.get('/blog-post/:id', async (req, res) => {
+      try {
+        const id = req.params.id;
+        const blogPost = await blogPostsCollection
+      .findOne({ _id: new ObjectId(id) });
+        if (!blogPost) {
+          return res.status(404).send({ message: 'Blog post not found' });
+        }
+        res.send(blogPost);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to fetch the blog post', error });
+      }
+    });
+
+    // Delete a blog post
+    app.delete('/blog-post/:id', async (req, res) => {
+      try {
+        const id = req.params.id;
+        const filter = { _id: new ObjectId(id) };
+        const result = await blogPostsCollection
+      .deleteOne(filter);
+        res.send(result);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to delete the blog post', error });
+      }
+    });
+
+    // Update blog post data
+    app.patch('/blog-post/:id', async (req, res) => {
+      try {
+        const id = req.params.id;
+        const updateBlogPost = req.body;
+        const filter = { _id: new ObjectId(id) };
+        const options = { upsert: true };
+
+        const updateDoc = {
+          $set: {
+            ...updateBlogPost,
+          },
+        };
+        const result = await blogPostsCollection
+      .updateOne(filter, updateDoc, options);
+        res.send(result);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to update the blog post', error });
+      }
+    });
     // Insert a purchase into the collection: POST method
     app.post('/add-purchase', async (req, res) => {
       try {

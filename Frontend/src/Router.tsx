@@ -18,6 +18,11 @@ import ManageBooks from "./dashboard/ManageBooks";
 import UploadBook from "./dashboard/UploadBook";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import UserProfile from "./components/UserProfile";
+import BlogPage from "./components/BlogPage";
+import ManageBlogPost from "./dashboard/ManageBlogPost";
+import CreateBlogPost from "./dashboard/CreateBlogPost";
+import EditBlogPost from "./dashboard/EditBlogPost";
+import BlogPostItem from "./components/BlogPostItem";
 
 
 const router = createBrowserRouter([
@@ -38,7 +43,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/blog',
-                element: <div>Blog Page</div>,
+                element: <BlogPage/>,
                 errorElement: <NotFound />
             },
             {
@@ -71,13 +76,12 @@ const router = createBrowserRouter([
                 element: <BookCart />,
                 errorElement: <NotFound />,
                 loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
-            },
+            },   
             {
-                path: '/profile',
-                element: < UserProfile />,
-                errorElement: <NotFound />,
+                path: 'blog-post/:id',
+                element: <BlogPostItem />,
+                loader: ({params}) => fetch(`http://localhost:3000/blog-post/${params.id}`)
             }
-           
            
         ]
     },
@@ -109,6 +113,19 @@ const router = createBrowserRouter([
                 path: "book-db",
                 element: <BooksDatabaseManagement />
             },
+            {
+                path: "manage-blog",
+                element: <ManageBlogPost/>
+            },
+            {
+                path: 'create-blog-post',
+                element: <CreateBlogPost/>
+            },
+            {
+                path: 'edit-blog-post/:id',
+                element: <EditBlogPost />,
+                loader: ({params}) => fetch(`http://localhost:3000/blog-posts/${params.id}`)
+            }
         ]
     }, {
         path: 'sign-up',
