@@ -1458,10 +1458,8 @@ input:invalid, textarea:invalid {
 /*MANAGE BOOKS*/
 
 .manage-books-container {
-  margin-top: 2em;
+  margin-top: 6em;
   padding: 2em;
-  margin: 5em;
-
 }
 .manage-books-btn {
   display: flex;
@@ -1528,10 +1526,7 @@ tbody tr:nth-of-type(even) {
   background: none;
  
 }
-.manage-books-container {
-  max-width: 100%;
-  padding: 20px;
-}
+
 
 .table-container {
   max-height: 650px;
@@ -1650,6 +1645,7 @@ height: 100%;
   align-items: center;
   margin-top: 10em;
   margin-left: 20em;
+  right: 0;
 }
 .user-profile {
   display: flex;
@@ -1688,4 +1684,13 @@ height: 100%;
 .check-icon-dashboard:hover {
   color: green;
   cursor: pointer;
+}
+.purchased {
+  margin: 2em;
+  margin-left: 3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+.profile-link {
+  display: flex;
 }

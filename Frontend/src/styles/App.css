@@ -1460,9 +1460,8 @@ input:invalid, textarea:invalid {
 
 /*MANAGE BOOKS*/
 .manage-books-container {
-  margin-top: 2em;
+  margin-top: 6em;
   padding: 2em;
-  margin: 5em;
 }
 
 .manage-books-btn {
@@ -1526,11 +1525,6 @@ tbody tr:nth-of-type(even) {
   border: 1px solid #5e2400;
   color: #5e2400;
   background: none;
-}
-
-.manage-books-container {
-  max-width: 100%;
-  padding: 20px;
 }
 
 .table-container {
@@ -1657,6 +1651,7 @@ table {
   align-items: center;
   margin-top: 10em;
   margin-left: 20em;
+  right: 0;
 }
 
 .user-profile {
@@ -1702,6 +1697,17 @@ table {
 .check-icon-dashboard:hover {
   color: green;
   cursor: pointer;
+}
+
+.purchased {
+  margin: 2em;
+  margin-left: 3em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.profile-link {
+  display: flex;
 }
 
 /*# sourceMappingURL=App.css.map */

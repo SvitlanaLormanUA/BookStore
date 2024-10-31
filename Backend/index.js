@@ -32,6 +32,7 @@ async function run() {
     // Create a collection of documents
     const booksCollection = client.db('BookInventory').collection('books');
     const purchasesCollection = client.db('BookInventory').collection('purchases');
+    const blogPostsCollection = client.db('BookInventory').collection('blogPosts');
 
     // Insert a purchase into the collection: POST method
     app.post('/add-purchase', async (req, res) => {

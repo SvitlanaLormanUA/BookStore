@@ -61,10 +61,11 @@ export default function Dashboard() {
     };
 
     return (
-        <div className='manage-books-container'>
-            <h2 className='title'>Purchased Books</h2>
+        <div className="manage-books-container">
+            <h2 className='title purchased'>Purchased Books</h2>
             {purchases.length > 0 ? (
-                <table className="purchases-table table-container">
+                 <div className="table-container purchased">
+                <table>
                     <thead>
                         <tr>
                             <th>Full Name</th>
@@ -109,6 +110,7 @@ export default function Dashboard() {
                         ))}
                     </tbody>
                 </table>
+            </div>
             ) : (
                 <p>No purchases yet.</p>
             )}

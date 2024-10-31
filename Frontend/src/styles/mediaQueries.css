@@ -167,6 +167,16 @@
   }
   
 }
-.profile-link {
-  display: flex;
+@media screen and (max-width: 1000px) {
+  .purchases-dashboard {
+    display: block;
+  }
+  .purchased {
+    margin-left: 0;
+  }
+  .manage-books-container table {
+    font-size: 12px;
+    margin: 2em;
+    padding: 2em;
+  }
 }
