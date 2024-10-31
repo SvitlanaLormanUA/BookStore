@@ -1,9 +1,9 @@
 import { Book } from "./Book";
 
     export interface Purchase {
-        id: string | number;
+        _id: string | number;
         books: Book[];
-        buyerInfo: {
+        buyer: {
             fullName: string;
             email: string;
             country: string;
@@ -12,4 +12,5 @@ import { Book } from "./Book";
         };
         purchaseDate: string;
         price: number;
+        sent: boolean;
     }

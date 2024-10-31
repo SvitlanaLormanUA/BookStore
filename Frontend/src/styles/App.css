@@ -1690,4 +1690,18 @@ table {
   text-decoration: underline;
 }
 
+/*DASHBOARD*/
+.purchases-dashboard {
+  display: flex;
+}
+
+.check-icon-dashboard {
+  font-size: 30px;
+}
+
+.check-icon-dashboard:hover {
+  color: green;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=App.css.map */

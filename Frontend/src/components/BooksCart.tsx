@@ -50,7 +50,7 @@ export default function BooksCart() {
         booksInCart.forEach((book) => {
             book.copiesInStock -= bookAmounts[book._id];
          });  
-
+         alert("Thank you for your purchase! We will process it and deliver asap!"); 
        // console.log({ fullName, country, city, branchNumber });
     }
     

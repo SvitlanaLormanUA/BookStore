@@ -84,6 +84,26 @@ async function run() {
       }
     });
 
+    //Change the status of a purchase
+    app.patch('/purchase/:id', async (req, res) => {
+      try {
+        const id = req.params.id;
+        const updatePurchase = req.body;
+        const filter = { _id: new ObjectId(id) };
+        const options = { upsert: true };
+
+        const updateDoc = {
+          $set: {
+            ...updatePurchase,
+          },
+        };
+        const result = await purchasesCollection
+      .updateOne(filter, updateDoc, options);
+        res.send(result);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to update the purchase', error });
+      }
+    });
 
     // Insert a book into the collection: POST method
     app.post('/upload-book', async (req, res) => {

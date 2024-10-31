@@ -49,6 +49,8 @@ const isBookInCart= (book: Book) => {
       books: booksToPurchase,
       buyer: { fullName, country, city, branchNumber, email },
       totalSaleAmount,
+      purchaseDate: new Date().toISOString(),
+      send: false,
   };
 
   fetch("http://localhost:3000/add-purchase", {
@@ -74,7 +76,7 @@ const isBookInCart= (book: Book) => {
   });
 
   console.log("Order details:", orderDetails);
-  // Виконати додаткову логіку для збереження/відправки замовлення
+
 }
 
 return (
