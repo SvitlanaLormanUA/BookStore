@@ -21,7 +21,8 @@ export default function Login() {
             })
             .catch((error) => {
                 const errorMessage = error.message;
-                setError(errorMessage);  // Display the error message
+                setError("Failed to log in. Please check your email and password.");
+              
             });
     };
 

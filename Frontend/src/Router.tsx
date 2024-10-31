@@ -16,7 +16,6 @@ import DashboardLayout from "./dashboard/DashboardLayout";
 import EditBooks from "./dashboard/EditBooks";
 import ManageBooks from "./dashboard/ManageBooks";
 import UploadBook from "./dashboard/UploadBook";
-import exp from "constants";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 
@@ -71,13 +70,7 @@ const router = createBrowserRouter([
                 element: <BookCart />,
                 errorElement: <NotFound />,
                 loader: ({params}) => fetch(`http://localhost:3000/books/${params.id}`)
-            },
-            {
-                path: '/jobs',
-                element: <div>Jobs Page</div>,
-                errorElement: <NotFound />,
-                
-            },
+            }
            
            
         ]

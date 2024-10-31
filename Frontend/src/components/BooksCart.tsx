@@ -7,7 +7,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contects/AuthProvider";
 
 export default function BooksCart() {
-    const { user } = useContext(AuthContext);
+    const { user } = useContext(AuthContext)!;
 
 
     const [showPurchaseForm, setShowPurchaseForm] = useState(false);
@@ -59,6 +59,7 @@ export default function BooksCart() {
             alert("Your cart is empty");
             return;
         }
+
             setShowPurchaseForm(true);
     }
     useEffect(() => {
@@ -227,7 +228,7 @@ export default function BooksCart() {
                     type="text" 
                     className="form-control" 
                     id="fullName" 
-                    placeholder="Enter your full name" 
+                    placeholder={ "Enter your full name"} 
                     required 
                 />
             </div>
@@ -237,7 +238,7 @@ export default function BooksCart() {
                     type="email" 
                     className="form-control" 
                     id="email" 
-                    placeholder="Enter your email" 
+                    placeholder={(user && user.email !=="svlormanua@gmail.com") ? user.email : "Enter your email"} 
                     required 
                 />
             </div>

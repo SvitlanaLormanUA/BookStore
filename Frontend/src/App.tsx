@@ -1,29 +1,10 @@
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
-import MainPage from './components/MainPage';
-import Header from './components/Header';
-import NotFound from './components/NotFound';
-import './styles/mediaQueries.css'
-
-import Footer from './components/Footer';
-import GenrePage from './components/GenrePage';
-import Books from './components/Books';
+import {  RouterProvider } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Book } from './interfaces/Book';
 import { BooksContext } from './context/BooksContext';
-import  DashboardLayout  from './dashboard/DashboardLayout';
-import Dashboard from './dashboard/Dashboard';
-import  UploadBook  from './dashboard/UploadBook';
-import  ManageBooks  from './dashboard/ManageBooks';
-import EditBooks from './dashboard/EditBooks';
-import BookCart from './components/BookCard';
 import { LikedBooksProvider } from './context/LikedBooksContext';
-import FavouritePage from './components/FavouritePage';
 import { BooksInCartContextProvider } from './context/BooksInCartContext';
-import BooksCart from './components/BooksCart';
-import BooksDatabaseManagement from './dashboard/BooksDatabaseManagement';
 import { AuthProvider } from './contects/AuthProvider';
-import SignUp from './components/SignUp';
-import Login from './components/Login';
 import router from './Router';
 
 

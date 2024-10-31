@@ -74,9 +74,9 @@ export default function Header() {
                     <div className="login-and-sign-up-btn">
                         {user ? (
                             user.email === "svlormanua@gmail.com" ? ( 
-                                <Link to="/admin/dashboard" className="profile-link">  <div className="profile-circle"></div> <p>Profile</p></Link>
+                                <Link to="/admin/dashboard" className="profile-link">  <div className="profile-circle"></div> <p>Admin Profile</p></Link>
                             ) : (
-                                <Link to="/profile" className="profile-link">Profile</Link>
+                                <Link to="/profile" className="profile-link">  <div className="profile-circle"></div> <p>Your Profile</p></Link>
                             )
                         ) : (
                             <>
