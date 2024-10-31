@@ -36,18 +36,45 @@ const isBookInCart= (book: Book) => {
   return booksInCart.some(b => b._id === book._id);
 };
 
-const purchaseBooks = (books: Book[], fullName: string, email: string, country: string, city: string, post: string, ) => {
-  const purchaseObj = {
-      books: books,
-      buyerInfo: {
-          fullName,
-          email,
-          country,
-          city,
-          post
-      }
-  }
-localStorage.setItem('purchasedBooks', JSON.stringify(purchaseObj));
+
+ function purchaseBooks(books: Book[], bookAmounts: { [id: string]: number }, fullName: string, country: string, city: string, branchNumber: string, email: string, totalSaleAmount: number) {
+  // Приклад обробки кожної книги з врахуванням кількості
+  const booksToPurchase = books.map((book) => ({
+      ...book,
+      amount: bookAmounts[book._id] || 1, // Отримуємо кількість для кожної книги, якщо є
+  }));
+
+  // Логіка для збереження замовлення
+  const orderDetails = {
+      books: booksToPurchase,
+      buyer: { fullName, country, city, branchNumber, email },
+      totalSaleAmount,
+  };
+
+  fetch("http://localhost:3000/add-purchase", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orderDetails),
+  })
+      .then((res) => {
+          if (!res.ok) {
+              throw new Error("Network response was not ok");
+          }
+          return res.json();
+      })
+      .then((data) => {
+          console.log("Order saved successfully:", data);
+          // Очистити кошик після успішного замовлення
+          setBooksInCart([]);
+      })
+      .catch((error) => {
+          console.error("There was a problem with the fetch operation:", error);
+  });
+
+  console.log("Order details:", orderDetails);
+  // Виконати додаткову логіку для збереження/відправки замовлення
 }
 
 return (

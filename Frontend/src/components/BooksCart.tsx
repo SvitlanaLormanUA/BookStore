@@ -35,18 +35,26 @@ export default function BooksCart() {
     }
 
 
-    function handlePurchase() {
 
+    function handlePurchase() {
+        event.preventDefault();
         const fullName = (document.getElementById("fullName") as HTMLInputElement).value;
         const country = (document.getElementById("country") as HTMLInputElement).value;
         const city = (document.getElementById("city") as HTMLInputElement).value;
         const branchNumber = (document.getElementById("branchNumber") as HTMLInputElement).value;
         const email = (document.getElementById("email") as HTMLInputElement).value;
-
-        purchaseBooks(booksInCart, fullName, country, city, branchNumber, email );
-        console.log({ fullName, country, city, branchNumber });
+    
+   
+        purchaseBooks(booksInCart, bookAmounts, fullName, country, city, branchNumber, email, Number(totalSaleAmount.toFixed(2)));
+        setShowPurchaseForm(false);
+       // console.log({ fullName, country, city, branchNumber });
     }
+    
     function handleBuy() {
+        if (totalSaleAmount == 0 || totalAmount == 0) {
+            alert("Your cart is empty");
+            return;
+        }
             setShowPurchaseForm(true);
     }
     useEffect(() => {
@@ -207,9 +215,8 @@ export default function BooksCart() {
       
         {showPurchaseForm && (
     <div className="popup-overlay">
-     
-        <form onSubmit={handleBuy} className="overlay-form">
-        <p className="close-button" onClick={() => setShowPurchaseForm(false)}>✖️</p> 
+        <form onSubmit={(e) => { e.preventDefault(); handlePurchase(); }} className="overlay-form">
+            <p className="close-button" onClick={() => setShowPurchaseForm(false)}>✖️</p> 
             <div className="form-group">
                 <label htmlFor="fullName">Full Name</label>
                 <input 
@@ -223,7 +230,7 @@ export default function BooksCart() {
             <div className="form-group">
                 <label htmlFor="email">Email</label>
                 <input 
-                    type="text" 
+                    type="email" 
                     className="form-control" 
                     id="email" 
                     placeholder="Enter your email" 
@@ -250,7 +257,6 @@ export default function BooksCart() {
                     required 
                 />
             </div>
-           
             <div className="form-group">
                 <label htmlFor="branchNumber">Post</label>
                 <input 
@@ -261,11 +267,11 @@ export default function BooksCart() {
                     required 
                 />
             </div>
-            <button type="submit" className="btn btn-primary"
-            onClick={handlePurchase}>Purchase</button>
+            <button type="submit" className="btn btn-primary">Purchase</button>
         </form>
     </div>
 )}
+
 
        
 

@@ -30,13 +30,67 @@ async function run() {
     await client.connect();
 
     // Create a collection of documents
-    const bookCollections = client.db('BookInventory').collection('books');
+    const booksCollection = client.db('BookInventory').collection('books');
+    const purchasesCollection = client.db('BookInventory').collection('purchases');
+
+    // Insert a purchase into the collection: POST method
+    app.post('/add-purchase', async (req, res) => {
+      try {
+        const data = req.body;
+        const result = await purchasesCollection.insertOne(data);
+        res.send(result);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to upload the purchase', error });
+      }
+    });
+
+    // Get all purchases from the database
+    app.get('/purchases', async (req, res) => {
+      try {
+        const purchases = purchasesCollection
+      .find({});
+        const result = await purchases.toArray();
+        res.send(result);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to fetch purchases', error });
+      }
+    });
+
+    // Get a purchase by ID
+    app.get('/purchases/:id', async (req, res) => {
+      try {
+        const id = req.params.id;
+        const purchase = await purchasesCollection
+      .findOne({ _id: new ObjectId(id) });
+        if (!purchase) {
+          return res.status(404).send({ message: 'Purchase not found' });
+        }
+        res.send(purchase);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to fetch the purchase', error });
+      }
+    });
+
+    //Delete a purchase
+    app.delete('/purchase/:id', async (req, res) => {
+      try {
+        const id = req.params.id;
+        const filter = { _id: new ObjectId(id) };
+        const result = await purchasesCollection
+      .deleteOne(filter);
+        res.send(result);
+      } catch (error) {
+        res.status(500).send({ message: 'Failed to delete the purchase', error });
+      }
+    });
+
 
     // Insert a book into the collection: POST method
     app.post('/upload-book', async (req, res) => {
       try {
         const data = req.body;
-        const result = await bookCollections.insertOne(data);
+        const result = await booksCollection
+      .insertOne(data);
         res.send(result);
       } catch (error) {
         res.status(500).send({ message: 'Failed to upload the book', error });
@@ -47,7 +101,8 @@ async function run() {
     // Get all books from the database
     app.get('/books', async (req, res) => {
       try {
-        const books = bookCollections.find({});
+        const books = booksCollection
+      .find({});
         const result = await books.toArray();
         res.send(result);
       } catch (error) {
@@ -57,7 +112,8 @@ async function run() {
     app.get('/books/:id', async (req, res) => {
       try {
         const id = req.params.id;
-        const book = await bookCollections.findOne({ _id: new ObjectId(id) });
+        const book = await booksCollection
+      .findOne({ _id: new ObjectId(id) });
         if (!book) {
           return res.status(404).send({ message: 'Book not found' });
         }
@@ -80,7 +136,8 @@ async function run() {
             ...updateBook,
           },
         };
-        const result = await bookCollections.updateOne(filter, updateDoc, options);
+        const result = await booksCollection
+      .updateOne(filter, updateDoc, options);
         res.send(result);
       } catch (error) {
         res.status(500).send({ message: 'Failed to update the book', error });
@@ -92,7 +149,8 @@ async function run() {
       try {
         const id = req.params.id;
         const filter = { _id: new ObjectId(id) };
-        const result = await bookCollections.deleteOne(filter);
+        const result = await booksCollection
+      .deleteOne(filter);
         res.send(result);
       } catch (error) {
         res.status(500).send({ message: 'Failed to delete the book', error });
@@ -121,7 +179,7 @@ app.get("/books", async (req, res) => {
     }
 
     // Fetch and return the filtered results
-    const result = await bookCollections.find(query).toArray();
+    const result = await booksCollection .find(query).toArray();
     res.send(result);
 });
 
