@@ -62,6 +62,27 @@ const handleEmailChange = (e) => {
             </ul>
           </div>
 
+          {/**Social Media */}
+          <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <h5 className="text-uppercase mb-4 link-header-in-footer">Our social Media </h5>
+            <ul className="list-unstyled">
+              <li><a href="https://www.instagram.com/bambook_korosten?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==3" className="footer-link"> bambook_korosten <i className="fab fa-instagram"></i></a></li>
+              <li><a href="https://t.me/bambook_korosten?fbclid=PAZXh0bgNhZW0CMTEAAabYS8jmNwsxugd_cCgP6J9Y6BQD28FE4inCkuGEtErM4U3CGMSQePyMS_0_aem_TPpkZsN7GkEE24gDXokeLw" className="footer-link">BAMBOOK <i className="fab fa-telegram"></i></a></li>
+              
+            </ul>
+          </div>
+
+
+
+          {/**Donations*/}
+          <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <h5 className="text-uppercase mb-4 link-header-in-footer">Help our Army </h5>
+            <ul className="list-unstyled">
+              <li><a href="https://send.monobank.ua/jar/95dA3LsyTq?fbclid=PAZXh0bgNhZW0CMTEAAaYWzAFLSm2QFUpfROa-SNIASn1-lv3Y8HFQslCudgS7P0tyxEBZ-I5RuH4_aem_sddP6HgkP61bFvmoaIVngg" className="footer-link"> <i>Link to Monobank</i></a></li>
+          
+            </ul>
+          </div>
+
           {/* CAREERS */}
           {/* 
           <div className="col-lg-3 col-md-6 mb-4 mb-lg-0">

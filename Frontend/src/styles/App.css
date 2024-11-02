@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import 'bootstrap/dist/css/bootstrap.min.css';
 body {
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   color: #331500;
   font-family: "Mulish", sans-serif;
 }
@@ -290,7 +290,7 @@ button {
 }
 
 #other-main-content {
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   padding-top: 2em;
 }
 
@@ -646,7 +646,7 @@ button {
 }
 /*BOOKS PAGE*/
 .books-page {
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   padding: 2em;
   margin-top: 10em;
 }
@@ -892,7 +892,7 @@ ul {
   left: -300px;
   width: 300px;
   height: 100%;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   color: #5e2400;
   box-shadow: 2px 0px 3px #803500;
   overflow-y: auto;
@@ -971,7 +971,7 @@ ul {
   justify-content: center;
   align-items: center;
   padding: 4em;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   width: 100%;
   height: max-content;
   margin-top: 20em;
@@ -988,7 +988,7 @@ ul {
 
 .book-details-text {
   flex-grow: 1;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
 }
 
 .description-und-price {
@@ -998,7 +998,7 @@ ul {
   gap: 2em;
   max-height: 350px;
   height: 100%;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
 }
 
 .book-price {
@@ -1094,7 +1094,7 @@ ul {
 }
 
 .favourite-page {
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
 }
 
 .favouritePage-container h1 {
@@ -1111,7 +1111,7 @@ ul {
   position: relative;
   display: flex;
   gap: 1em;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   margin-bottom: 5em;
   height: 100%;
 }
@@ -1127,7 +1127,7 @@ ul {
   margin-top: 10em;
   padding: 2em;
   gap: 4em;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
 }
 
 .favourite-page {
@@ -1233,7 +1233,7 @@ ul {
 
 .cart-to-buy-books-container {
   margin-top: 10em;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   padding: 2em;
 }
 
@@ -1253,7 +1253,7 @@ ul {
   height: 2em;
   border-radius: 0.5em;
   border: none;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
 }
 
 .this-book-amount button:hover {
@@ -1274,7 +1274,7 @@ ul {
 
 .total-books {
   margin-top: 4em;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   display: flex;
   flex-direction: row;
   gap: 3em;
@@ -1306,7 +1306,7 @@ ul {
 
 /*DASHBOARD*/
 .dashboard-layout-container {
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   display: flex;
   justify-content: space-evenly;
 }
@@ -1314,12 +1314,12 @@ ul {
 /*SIDEBAR ON Admin PANEL*/
 .sidebar-container {
   height: 100%;
-  width: fit-content;
+  width: min-content;
   position: absolute;
   background-color: #f5ecdc;
   color: #5e2400;
   transition: left 0.3s ease-in-out;
-  padding: 3em;
+  padding: 2.5em;
   padding-left: 1em;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   margin-right: 3em;
@@ -1516,7 +1516,7 @@ tbody tr:nth-of-type(odd) {
 }
 
 tbody tr:nth-of-type(even) {
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
 }
 
 .btn-edit {
@@ -1720,7 +1720,7 @@ table {
 }
 
 .user-profile {
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   margin-top: 32em;
   padding: 20px;
   max-width: 500px;
@@ -1883,7 +1883,7 @@ table {
 .manage-blog-container {
   margin-top: 5em;
   padding: 4em;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
 }
 
 h2 {
@@ -1897,6 +1897,7 @@ h2 {
 .blog-post-list {
   list-style: none;
   padding: 0;
+  padding-top: 5em;
 }
 
 .blog-post-item {
@@ -1964,7 +1965,7 @@ h3 {
 .blog-post-item-read {
   margin-top: 10em;
   padding: 4em;
-  background-color: #fff7f7;
+  background-color: #FAFCF9;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2007,6 +2008,64 @@ h3 {
     padding: 3em;
     padding-top: 1em;
   }
+}
+.about-us-page {
+  background-color: #FAFCF9;
+  margin-top: 12em;
+  padding: 3em;
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+}
+
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main-section p {
+  margin: 1em;
+  text-align: justify;
+  max-width: 1000px;
+}
+
+.workspace-moto {
+  font-weight: bold;
+  margin: 1em;
+}
+
+.about-us-page-header {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.moto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-gallery {
+  margin: 2em;
+  margin-top: 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 3em;
+  flex-wrap: wrap;
+}
+
+.image-gallery img {
+  height: auto;
+  max-width: 300px;
 }
 
 /*# sourceMappingURL=App.css.map */

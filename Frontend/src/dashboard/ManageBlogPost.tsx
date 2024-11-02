@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BlogPost } from "../interfaces/BlogPost";
 import { Link } from "react-router-dom";
-import { FaTrash, FaEdit } from 'react-icons/fa'; // Importing icons from react-icons
+import { FaTrash, FaEdit } from 'react-icons/fa'; 
 import { marked } from "marked";
 
 export default function ManageBlogPost() {

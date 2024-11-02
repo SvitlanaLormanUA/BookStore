@@ -6,7 +6,7 @@ $footer-color: #363636;
 
 $login-btn-color: #fff7f6;
 $login-btn-color-hover: #e87d6c;
-$body-bg: #fff7f7;
+$body-bg: #FAFCF9;
 
 $register-btn-color: #803500;
 $register-btn-color-hover: #5e2400;
@@ -1321,13 +1321,13 @@ font-size: 16px;
 
 .sidebar-container {
   height: 100%;
-  width: fit-content;
+  width: min-content;
   position: absolute  ;  
 
   background-color: $header-color;
   color: $register-btn-color-hover;
   transition: left 0.3s ease-in-out;
-  padding: 3em;
+  padding: 2.5em;
   padding-left: 1em;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   margin-right: 3em;
@@ -1881,6 +1881,7 @@ h2 {
 .blog-post-list {
   list-style: none; 
   padding: 0; 
+  padding-top: 5em;
 }
 
 .blog-post-item {
@@ -1985,4 +1986,59 @@ h3{
     padding-top: 1em;
   
   }
+}
+.about-us-page {
+  background-color: #FAFCF9;
+  margin-top: 12em;
+  padding: 3em;
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+}
+.main-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-section p{
+  margin: 1em;
+  text-align: justify;
+  max-width: 1000px;
+
+}
+.workspace-moto {
+  font-weight: bold;
+  margin: 1em;
+}
+.about-us-page-header{
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.moto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-gallery {
+  margin: 2em;
+  margin-top: 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 3em;
+  flex-wrap: wrap;
+ 
+}
+.image-gallery img {
+  height: auto;
+  max-width: 300px;
+
 }

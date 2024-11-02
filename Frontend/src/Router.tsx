@@ -23,6 +23,7 @@ import ManageBlogPost from "./dashboard/ManageBlogPost";
 import CreateBlogPost from "./dashboard/CreateBlogPost";
 import EditBlogPost from "./dashboard/EditBlogPost";
 import BlogPostItem from "./components/BlogPostItem";
+import AboutUsPage from "./components/AboutUsPage";
 
 
 const router = createBrowserRouter([
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <div>About Us Page</div>,
+                element: <AboutUsPage/>,
                 errorElement: <NotFound />
             },
             {
