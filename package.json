@@ -1,0 +1,22 @@
+{
+  "name": "bookstore-1",
+  "version": "1.0.0",
+  "description": "<h1> BamBook MERN Web-cite </h1>",
+  "main": "index.js",
+  "scripts": {
+   "build": "npm install --prefix Backend && npm install --prefix Frontend && npm run build --prefix Frontend",
+    "start": "npm run build && node Backend/index.js"
+  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SvitlanaLormanUA/BookStore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SvitlanaLormanUA/BookStore/issues"
+  },
+  "homepage": "https://github.com/SvitlanaLormanUA/BookStore#readme"
+}

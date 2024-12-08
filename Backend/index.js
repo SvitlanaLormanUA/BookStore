@@ -1,3 +1,4 @@
+import path from 'path';
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
@@ -10,6 +11,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.send('Hello');
 });
+const __dirname = path.resolve();
 
 // MongoDB configuration
 const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
@@ -286,6 +288,12 @@ app.get("/books", async (req, res) => {
 }
 run().catch(console.dir);
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'frontend/build')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'frontend/build', 'index.html'));
+  });
+}
 // Start the server
 app.listen(port, () => {
   console.log(`App is listening on port ${port}`);
