@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_CONFIG_API_KEY,
+  apiKey: "AIzaSyAClk7AnJAO3iziEIjzN02mmhIPdWazjaI",
   authDomain: "bambook-bookstore.firebaseapp.com",
   projectId: "bambook-bookstore",
   storageBucket: "bambook-bookstore.appspot.com",

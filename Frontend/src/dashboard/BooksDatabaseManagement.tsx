@@ -14,11 +14,11 @@ export default function BooksDatabaseManagement() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const books = await response.json();
-      console.log(books); // Лог для перевірки даних
+      console.log(books); 
       setData(books);
     } catch (error) {
       console.error('Error fetching data:', error);
-      setError(error.message);
+      setError((error as any).message);
     }
   };
 
@@ -40,22 +40,23 @@ export default function BooksDatabaseManagement() {
     dataSource: {
       data: data,
       mapping: {
-        genre: { type: 'string' }, // Визначаємо, що genre — це поле типу string
-        title: { type: 'string' }, // Визначаємо title як string
+        genre: { type: 'string' }, 
+        title: { type: 'string' }, 
       },
     },
     slice: {
       rows: [
-        { uniqueName: 'genre' }, // Використовуємо genre для групування
+        { uniqueName: 'genre' }, 
+        
       ],
       measures: [
-        { uniqueName: 'title', aggregation: 'count' }, // Підрахунок кількості книг
+        { uniqueName: 'title', aggregation: 'count' }, 
       ],
     },
     options: {
       viewType: 'charts',
       chart: {
-        type: 'column', // Встановлюємо тип діаграми на 'column'
+        type: 'column', 
       },
     },
   };
@@ -71,6 +72,7 @@ export default function BooksDatabaseManagement() {
         toolbar={true}
         width="100%"
         height="500px"
+        licenseKey="Z7XZ-10526T-236C68-5L0P05-6G4F4J-4N3F03-1Y5W6I-5L5668-4I2G2G-1R3V3R"
       />
       </div>
     </div>
